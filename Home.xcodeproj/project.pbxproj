@@ -79,7 +79,7 @@
 		A4843A8F23EED58700482719 /* currentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentUser.swift; sourceTree = "<group>"; };
 		A493900623E614CA0086CA99 /* statics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = statics.swift; sourceTree = "<group>"; };
 		A493900823E61D270086CA99 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		A4998F2123E1AA9B00A09BDC /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4998F2123E1AA9B00A09BDC /* Darakson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Darakson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4998F2423E1AA9B00A09BDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4998F2623E1AA9B00A09BDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A4998F2B23E1AA9B00A09BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 		A4998F2223E1AA9B00A09BDC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4998F2123E1AA9B00A09BDC /* Home.app */,
+				A4998F2123E1AA9B00A09BDC /* Darakson.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 			);
 			name = Home;
 			productName = Home;
-			productReference = A4998F2123E1AA9B00A09BDC /* Home.app */;
+			productReference = A4998F2123E1AA9B00A09BDC /* Darakson.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -527,7 +527,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lama.Home;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Darakson;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -546,7 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lama.Home;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Darakson;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

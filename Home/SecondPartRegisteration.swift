@@ -41,6 +41,18 @@ class SecondPartRegisteration : UIViewController , UITextFieldDelegate {
         passField4.delegate = self
         passField5.delegate = self
         passField6.delegate = self
+        
+        passField1?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+
+        passField2?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+               
+        passField3?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+
+        passField4?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+               
+        passField5?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+
+        passField6?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -66,6 +78,37 @@ class SecondPartRegisteration : UIViewController , UITextFieldDelegate {
         }
       
         }
+    
+    
+    @objc func textFieldDidChange(_ textField: UITextField){
+           if textField == passField1 {
+                      if (textField.text?.count)! == 1 {
+                          passField2?.becomeFirstResponder()
+                      }
+                  }
+                  else if textField == passField2 {
+                      if (textField.text?.count)! == 1 {
+                          passField3.becomeFirstResponder()
+                      }
+                  } else if textField == passField3 {
+                  if (textField.text?.count)! == 1 {
+                      passField4.becomeFirstResponder()
+               }}else if textField == passField4 {
+                  if (textField.text?.count)! == 1 {
+                      passField5.becomeFirstResponder()
+               }} else if textField == passField5 {
+                  if (textField.text?.count)! == 1 {
+                      passField6.becomeFirstResponder()//resignFirstResponder()
+               }}else if textField == passField6 {
+               if (textField.text?.count)! == 1 {
+                   passField6.resignFirstResponder()
+                   
+               }}
+           
+           
+          }
+
+    
     
     //Presses return key to hide the key board
        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
