@@ -19,6 +19,10 @@ class profileController: UIViewController {
     @IBOutlet weak var ChildAgeTextField: UITextField!
     @IBOutlet weak var CarNameTextField: UITextField!
     
+    
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if HomeController.globalNotification.DidAllow1 == true {
@@ -70,7 +74,48 @@ class profileController: UIViewController {
                 print("User is signed out.")
             }
     }
+        // when open profile,make all text feild edit-disabled
+                self.ChildNameTextField.isUserInteractionEnabled=false
+                  self.ChildHobbyTextField.isUserInteractionEnabled=false
+                  self.ChildAgeTextField.isUserInteractionEnabled=false
+                  self.CarNameTextField.isUserInteractionEnabled=false
+                  
+                  //self.bioTextField.isUserInteractionEnabled=false
+           
+           
+        
+     //Reminder : add bio to database
+        
     }
+    
+   //Edit buttun : all text feild edit-enabled
+    @IBAction func editProfileTapped(_ sender: Any) {
+    // edit-enabled
+   self.ChildNameTextField.isUserInteractionEnabled=true
+   self.ChildHobbyTextField.isUserInteractionEnabled=true
+   self.ChildAgeTextField.isUserInteractionEnabled=true
+   self.CarNameTextField.isUserInteractionEnabled=true
+        
+    //edit bio
+   
+    // when finish will press Done button
+        
+        
+        
+      
+        
+    }
+    
+    
+    
+    
+    //Done hidden
+    @IBAction func doneEditprofile(_ sender: Any) {
+        
+        
+        
+    }
+    
     
     @IBAction func logOutTapped(_ sender: Any) {
             let firebaseAuth = Auth.auth()
