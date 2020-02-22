@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import UserNotifications
 
 class SignUpController: UIViewController , UITextFieldDelegate{
     
@@ -30,6 +31,15 @@ class SignUpController: UIViewController , UITextFieldDelegate{
         super.viewDidLoad()
         ErrorLabel.alpha = 0
         CarNameTextField.delegate = self
+        
+        if HomeController.globalNotification.DidAllow1 == true {
+             let content = UNMutableNotificationContent()
+             content.title = "Don't forget to complete the registeration"
+             content.badge = 1
+             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+             let request = UNNotificationRequest(identifier: "registeration", content: content, trigger: trigger)
+             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+         }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

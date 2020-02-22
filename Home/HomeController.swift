@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class HomeController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     
@@ -16,7 +17,9 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
     
     let ArrayOfMenuText = ["Play","Learn","Login","Help"]
     
-    
+    struct globalNotification{
+        static var DidAllow1 = Bool()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ArrayOfMenuImage.count
     }
@@ -55,6 +58,21 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert , .sound , .badge]) { (didAllow, error) in
+            if didAllow {
+                globalNotification.DidAllow1 = true
+                if HomeController.globalNotification.DidAllow1 == true {
+                    let content = UNMutableNotificationContent()
+                    content.title = "your car is waiting for you"
+                    content.badge = 1
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                    let request = UNNotificationRequest(identifier: "waiting", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                }
+            } else {
+                globalNotification.DidAllow1 = false
+            }
+        }
     }
 
     

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import UserNotifications
 
 class SecondPartRegisteration : UIViewController , UITextFieldDelegate {
     
@@ -53,6 +54,14 @@ class SecondPartRegisteration : UIViewController , UITextFieldDelegate {
         passField5?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
 
         passField6?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        if HomeController.globalNotification.DidAllow1 == true {
+             let content = UNMutableNotificationContent()
+             content.title = "Don't forget to complete the registeration"
+             content.badge = 1
+             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+             let request = UNNotificationRequest(identifier: "registeration", content: content, trigger: trigger)
+             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+         }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

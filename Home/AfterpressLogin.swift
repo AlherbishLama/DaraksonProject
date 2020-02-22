@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 import Firebase
+import UserNotifications
 
 class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDelegate {
     
@@ -21,6 +22,15 @@ class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if HomeController.globalNotification.DidAllow1 == true {
+            let content = UNMutableNotificationContent()
+            content.title = "your car is waiting for you"
+            content.badge = 1
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let request = UNNotificationRequest(identifier: "waiting", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
+
     }
     
     @IBAction func profileTappedd(_ sender: Any) {

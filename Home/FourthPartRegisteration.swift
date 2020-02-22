@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import UserNotifications
 
 class FourthPartRegisteration : UIViewController , UITextFieldDelegate{
     
@@ -26,6 +27,14 @@ class FourthPartRegisteration : UIViewController , UITextFieldDelegate{
         ErrorLabel.alpha = 0
         ChildAgeTextField.delegate = self
         ChildNameTextField.delegate = self
+        if HomeController.globalNotification.DidAllow1 == true {
+             let content = UNMutableNotificationContent()
+             content.title = "Don't forget to complete the registeration"
+             content.badge = 1
+             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+             let request = UNNotificationRequest(identifier: "registeration", content: content, trigger: trigger)
+             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+         }
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             if textField == ChildAgeTextField {

@@ -8,6 +8,7 @@
 
 import Foundation
 import  UIKit
+import UserNotifications
 
 class thirdPartRegisteration : UIViewController , UITextFieldDelegate{
     
@@ -30,6 +31,15 @@ class thirdPartRegisteration : UIViewController , UITextFieldDelegate{
         ErrorLabel.alpha = 0
         EmailTextField.delegate = self
         FavoritHobbyTextField.delegate = self
+        
+        if HomeController.globalNotification.DidAllow1 == true {
+             let content = UNMutableNotificationContent()
+             content.title = "Don't forget to complete the registeration"
+             content.badge = 1
+             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+             let request = UNNotificationRequest(identifier: "registeration", content: content, trigger: trigger)
+             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+         }
         
     }
     

@@ -8,9 +8,8 @@
 
 import Foundation
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
 import Firebase
+import UserNotifications
 
 class profileController: UIViewController {
     
@@ -22,6 +21,14 @@ class profileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if HomeController.globalNotification.DidAllow1 == true {
+            let content = UNMutableNotificationContent()
+            content.title = "your car is waiting for you"
+            content.badge = 1
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 300, repeats: false)
+            let request = UNNotificationRequest(identifier: "waiting", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
                 print("User is signed in.")

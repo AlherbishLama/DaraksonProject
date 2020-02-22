@@ -19,7 +19,7 @@ class LoginController:UIViewController , UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
-    
+
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -27,6 +27,14 @@ class LoginController:UIViewController , UITextFieldDelegate {
         errorLabel.alpha = 0 //to hide the lable
         passwordTextField.delegate = self
         emailTextField.delegate = self
+        if HomeController.globalNotification.DidAllow1 == true {
+             let content = UNMutableNotificationContent()
+             content.title = "your car is waiting for you"
+             content.badge = 1
+             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+             let request = UNNotificationRequest(identifier: "waiting", content: content, trigger: trigger)
+             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+         }
     }
     //alphanumerics
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
