@@ -13,11 +13,11 @@ import UserNotifications
 
 class profileController: UIViewController {
     
-    @IBOutlet weak var ChildNameLabel: UILabel!
-    @IBOutlet weak var ChildHobby: UILabel!
-    @IBOutlet weak var ChildAgeLabel: UILabel!
-    @IBOutlet weak var CarNameLabel: UILabel!
    // @IBOutlet weak var BioLabel: UILabel!
+    @IBOutlet weak var ChildNameTextField: UITextField!
+    @IBOutlet weak var ChildHobbyTextField: UITextField!
+    @IBOutlet weak var ChildAgeTextField: UITextField!
+    @IBOutlet weak var CarNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +44,10 @@ class profileController: UIViewController {
                             } else { //"\(myInt)"
                                 for document in querySnapshot!.documents {
                                    let all = document.data()
-                                    self.ChildNameLabel.text = all["ChildName"] as? String
-                                    self.ChildAgeLabel.text =  "\(all["ChildAge"] ?? "" )"
-                                    self.CarNameLabel.text = all["CarName"] as? String
-                                    self.ChildHobby.text = all["FavoriteHobby"] as? String
+                                    self.ChildNameTextField.text = all["ChildName"] as? String
+                                    self.ChildAgeTextField.text =  "\(all["ChildAge"] ?? "" )"
+                                    self.CarNameTextField.text = all["CarName"] as? String
+                                    self.ChildHobbyTextField.text = all["FavoriteHobby"] as? String
                                 }
                             }
                     }
