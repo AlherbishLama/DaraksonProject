@@ -18,8 +18,12 @@ class profileController: UIViewController {
     @IBOutlet weak var ChildHobbyTextField: UITextField!
     @IBOutlet weak var ChildAgeTextField: UITextField!
     @IBOutlet weak var CarNameTextField: UITextField!
+    //bio
+    @IBOutlet weak var bioText: UITextView!
+    //buttons to hide
     
-    
+    @IBOutlet weak var editButtonToHide: UIButton!
+    @IBOutlet weak var doneButtonToHide: UIButton!
     
 
     
@@ -80,7 +84,7 @@ class profileController: UIViewController {
                   self.ChildAgeTextField.isUserInteractionEnabled=false
                   self.CarNameTextField.isUserInteractionEnabled=false
                   
-                  //self.bioTextField.isUserInteractionEnabled=false
+                   self.bioText.isUserInteractionEnabled=false
            
            
         
@@ -95,9 +99,11 @@ class profileController: UIViewController {
    self.ChildHobbyTextField.isUserInteractionEnabled=true
    self.ChildAgeTextField.isUserInteractionEnabled=true
    self.CarNameTextField.isUserInteractionEnabled=true
-        
+    self.bioText.isUserInteractionEnabled=true
     //edit bio
-   
+        self.editButtonToHide.isHidden=true
+        self.doneButtonToHide.isHidden=false
+        
     // when finish will press Done button
         
         
