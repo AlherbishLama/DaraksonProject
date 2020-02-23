@@ -852,7 +852,7 @@
                                 <state key="normal" image="Untitled_Artwork-3"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQh-6A-Yva">
-                                <rect key="frame" x="20" y="44" width="59" height="30"/>
+                                <rect key="frame" x="20" y="97" width="59" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Connect"/>
                                 <connections>
