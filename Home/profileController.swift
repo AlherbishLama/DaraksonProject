@@ -84,16 +84,10 @@ import UserNotifications
             }
     }
  */
-        
+        // will push data to feilds
         updateFeilds()
-        // when open profile,make all text feild disabled
-                self.ChildNameTextField.isUserInteractionEnabled=false
-                  self.ChildHobbyTextField.isUserInteractionEnabled=false
-                  self.ChildAgeTextField.isUserInteractionEnabled=false
-                  self.CarNameTextField.isUserInteractionEnabled=false
-                  //bio is added
-                   self.bioText.isUserInteractionEnabled=false
-      
+        // make all text feild disabled
+        disableFeilds()
      //Reminder : add bio to database
         }
     
@@ -120,16 +114,24 @@ import UserNotifications
         }
     
     
-    
+    func disableFeilds(){
+        
+self.ChildNameTextField.isUserInteractionEnabled=false
+                    self.ChildHobbyTextField.isUserInteractionEnabled=false
+                    self.ChildAgeTextField.isUserInteractionEnabled=false
+                    self.CarNameTextField.isUserInteractionEnabled=false
+                    //bio is added
+                     self.bioText.isUserInteractionEnabled=false
+        self.editButtonToHide.isHidden=false
+        
+    }
     
 
     //Done button
     @IBAction func doneEditprofile(_ sender: Any) {
         
          let db = Firestore.firestore() // refrence to the firebase obj
-        
-        //doneButtonToHide.isHidden=true?? what's wrong with u
-        self.editButtonToHide.isHidden=false
+       
         print("uid333//////")
         //update database:
         guard let userID = Auth.auth().currentUser?.uid else {
@@ -139,20 +141,23 @@ import UserNotifications
             "ChildName": self.ChildNameTextField.text! ,
             "ChildAge": self.ChildAgeTextField.text! ,
             "CarName": self.CarNameTextField.text! ,
-            "FavoriteHobby" :self.ChildHobbyTextField.text!]) { err in
+            "FavoriteHobby" :self.ChildHobbyTextField.text!,
+            "Bio": self.bioText.text!]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
                 } else {
                     print("Document successfully written!")
                     self.updateFeilds() // call to save to database
-                }
-            }
-    // create another snapchpt.?
+                }//edn else
+            }//end error
+        
+        //disable feilds again
+        disableFeilds() //doesn't work to un hide edit
+        
     }// end func
     
     
     //to slove the snapshot problem : //suggested
-    // doesn't work :( !!
     func updateFeilds(){
                   let db = Firestore.firestore()
         guard let userID = Auth.auth().currentUser?.uid else {
@@ -168,22 +173,17 @@ import UserNotifications
             print("Document data was empty.")
             return
           }
-          print("Current data:")
-            
-            self.ChildNameTextField.text = data["ChildName"] as? String
+           self.ChildNameTextField.text = data["ChildName"] as? String
             self.ChildAgeTextField.text =  "\(data["ChildAge"] ?? "" )"
             self.CarNameTextField.text = data["CarName"] as? String
             self.ChildHobbyTextField.text = data["FavoriteHobby"] as? String
-            
+            self.bioText.text = data["Bio"]as? String
         }
-        
-        
-        
         
     }//end update feild
    
     
-    
+    //Log out
     @IBAction func logOutTapped(_ sender: Any) {
             let firebaseAuth = Auth.auth()
         do {
