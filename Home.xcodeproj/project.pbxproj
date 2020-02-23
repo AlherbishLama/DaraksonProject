@@ -45,6 +45,7 @@
 		A4998F3923E1B8CE00A09BDC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4998F3823E1B8CE00A09BDC /* HomeController.swift */; };
 		A4998F3B23E1CF4B00A09BDC /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4998F3A23E1CF4B00A09BDC /* HomeTableViewCell.swift */; };
 		A4998F3D23E2BF6200A09BDC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4998F3C23E2BF6200A09BDC /* LoginController.swift */; };
+		A4A4324C2401A4C1005E11D0 /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		A4998F3823E1B8CE00A09BDC /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		A4998F3A23E1CF4B00A09BDC /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		A4998F3C23E2BF6200A09BDC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe.swift; sourceTree = "<group>"; };
 		AAADBD6B0567A3A06E71344A /* Pods_Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78C7C0D134F7BD2AC085BD9 /* Pods-Home.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home.release.xcconfig"; path = "Target Support Files/Pods-Home/Pods-Home.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +201,7 @@
 		A4998F2323E1AA9B00A09BDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A4A4324D2401A5A7005E11D0 /* SignUp */,
 				A4998F2423E1AA9B00A09BDC /* AppDelegate.swift */,
 				A4998F2623E1AA9B00A09BDC /* SceneDelegate.swift */,
 				A4998F2A23E1AA9B00A09BDC /* Main.storyboard */,
@@ -209,21 +212,29 @@
 				A4998F3223E1AA9D00A09BDC /* Info.plist */,
 				A4998F3823E1B8CE00A09BDC /* HomeController.swift */,
 				A4998F3C23E2BF6200A09BDC /* LoginController.swift */,
-				A493900823E61D270086CA99 /* SignUpController.swift */,
 				A4705E2823EF116900F0C065 /* GoogleService-Info.plist */,
 				A45F32EA23ED9393001A5AF4 /* IQKeyboardManagerSwift */,
-				A40DF20323E8AAB200A90120 /* SecondPartRegisteration.swift */,
-				A40DF20523E8B31100A90120 /* thirdPartRegisteration.swift */,
-				A40DF20723E8D5B300A90120 /* FourthPartRegisteration.swift */,
-				A40DF20923E8DA4700A90120 /* FifthPartRegisteration.swift */,
 				A455C72E23EAC8A300310690 /* ResetPassword.swift */,
 				A4843A8B23EEB0BA00482719 /* profileController.swift */,
 				A4843A8D23EEBB0200482719 /* AfterpressLogin.swift */,
 				A4843A8F23EED58700482719 /* currentUser.swift */,
 				A4705E2A23EF2B6000F0C065 /* HomeTableViewCell2.swift */,
 				A4705E2C23EF4EDB00F0C065 /* playview.swift */,
+				A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A4A4324D2401A5A7005E11D0 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A493900823E61D270086CA99 /* SignUpController.swift */,
+				A40DF20323E8AAB200A90120 /* SecondPartRegisteration.swift */,
+				A40DF20523E8B31100A90120 /* thirdPartRegisteration.swift */,
+				A40DF20723E8D5B300A90120 /* FourthPartRegisteration.swift */,
+				A40DF20923E8DA4700A90120 /* FifthPartRegisteration.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +381,7 @@
 				A45F330723ED9393001A5AF4 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				A45F330E23ED9393001A5AF4 /* IQUIView+Hierarchy.swift in Sources */,
 				A493900723E614CA0086CA99 /* statics.swift in Sources */,
+				A4A4324C2401A4C1005E11D0 /* TicTacToe.swift in Sources */,
 				A45F330023ED9393001A5AF4 /* IQTextView.swift in Sources */,
 				A40DF20A23E8DA4700A90120 /* FifthPartRegisteration.swift in Sources */,
 				A4843A9023EED58700482719 /* currentUser.swift in Sources */,
