@@ -20,5 +20,22 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA3E05E3-B5E1-4EAE-B801-C3AEF63365C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            condition = "randomNumber &gt; 7"
+            continueAfterRunningActions = "No"
+            filePath = "Home/CardModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getCards()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

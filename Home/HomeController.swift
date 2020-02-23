@@ -47,7 +47,7 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
                             self.navigationController?.pushViewController(storyboard, animated: true)
             
         } else if item == "Play" {
-            let storyboard = self.storyboard?.instantiateViewController(identifier: "Play2") as! TicTacToe
+            let storyboard = self.storyboard?.instantiateViewController(identifier: "Play3") as! CardMatchViewController
             //playview
                                                                             
            self.navigationController?.pushViewController(storyboard, animated: true)

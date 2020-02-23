@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -838,6 +839,83 @@
             </objects>
             <point key="canvasLocation" x="4034.7826086956525" y="783.48214285714278"/>
         </scene>
+        <!--Card Match View Controller-->
+        <scene sceneID="N8T-BV-ze7">
+            <objects>
+                <viewController storyboardIdentifier="Play3" id="Jd2-zV-6cj" customClass="CardMatchViewController" customModule="Darakson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IYz-iQ-6Pe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r2D-ia-dzB">
+                                <rect key="frame" x="0.0" y="183" width="414" height="596"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TQL-Xs-Xsh">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReCell" id="ZAI-5l-DGo" customClass="MatchViewCell" customModule="Darakson" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jPI-Sc-GUu">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ofr-e2-kxS" userLabel="card">
+                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0le-1o-uRG" userLabel="back">
+                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ofr-e2-kxS" firstAttribute="leading" secondItem="jPI-Sc-GUu" secondAttribute="leading" constant="20" symbolic="YES" id="0dM-OV-60W"/>
+                                                <constraint firstAttribute="bottom" secondItem="ofr-e2-kxS" secondAttribute="bottom" constant="20" symbolic="YES" id="0kf-Xy-PhR"/>
+                                                <constraint firstAttribute="trailing" secondItem="0le-1o-uRG" secondAttribute="trailing" id="N93-cE-H7o"/>
+                                                <constraint firstItem="ofr-e2-kxS" firstAttribute="top" secondItem="jPI-Sc-GUu" secondAttribute="top" constant="20" symbolic="YES" id="QH1-v2-l0L"/>
+                                                <constraint firstAttribute="bottom" secondItem="0le-1o-uRG" secondAttribute="bottom" constant="20" symbolic="YES" id="lAc-He-QJS"/>
+                                                <constraint firstAttribute="trailing" secondItem="ofr-e2-kxS" secondAttribute="trailing" constant="20" symbolic="YES" id="pvG-7v-bvs"/>
+                                                <constraint firstItem="0le-1o-uRG" firstAttribute="leading" secondItem="jPI-Sc-GUu" secondAttribute="leading" constant="20" symbolic="YES" id="t0w-ca-kVk"/>
+                                                <constraint firstItem="0le-1o-uRG" firstAttribute="top" secondItem="jPI-Sc-GUu" secondAttribute="top" constant="20" symbolic="YES" id="vSC-Jt-biV"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="BackImageView" destination="0le-1o-uRG" id="VZD-p2-UXz"/>
+                                            <outlet property="imageView" destination="ofr-e2-kxS" id="0TR-1X-imc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jd2-zV-6cj" id="XJd-Wr-08K"/>
+                                    <outlet property="delegate" destination="Jd2-zV-6cj" id="OHf-J6-7CR"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Remaining: 10 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cab-vM-us7">
+                                <rect key="frame" x="85" y="104" width="245" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40794464945793152" green="0.091965414583683014" blue="0.59946972131729126" alpha="0.58447953345070425" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="US8-6h-fFt"/>
+                    </view>
+                    <connections>
+                        <outlet property="TimerLabel" destination="cab-vM-us7" id="QTv-tI-phV"/>
+                        <outlet property="myCollectionView" destination="r2D-ia-dzB" id="COt-SB-OW2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BHJ-Qe-DWO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3876.811594202899" y="1706.9196428571429"/>
+        </scene>
         <!--Tic Tac Toe-->
         <scene sceneID="j6g-rl-0i5">
             <objects>
@@ -980,6 +1058,7 @@
         <image name="final_registration_-1" width="722" height="510"/>
         <image name="final_registration_-2" width="312" height="182"/>
         <image name="final_registration_-3" width="716" height="159"/>
+        <image name="logo" width="1280" height="906"/>
         <image name="profile" width="48" height="48"/>
         <image name="profile-2" width="702" height="571"/>
         <image name="profile-3" width="275" height="103"/>
