@@ -64,18 +64,30 @@ class FourthPartRegisteration : UIViewController , UITextFieldDelegate{
         
         
         func validateTextField () -> String? {
-            
             //it will remove all spaces and lines
             if ChildNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||  ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
                 return "please fill the field."
-            } else if ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "1" || ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "2" || ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "3" || ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "4" || ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "5" || ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "6" || ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "7" || ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "8"{
+            } else if (integer(from: ChildAgeTextField)) < 9 {
                 return "The application is designed for kids from 9 and older"
+            }else if (integer(from: ChildAgeTextField)) > 50{
+                return "Age is unrealistic , please enter again"
             }
             
             else{
                 
             return nil
             }}
+    
+    func integer(from textField: UITextField) -> Int {
+        guard let text = textField.text, let number = Int(text) else {
+            return 0
+        }
+        return number
+    }
+    
+    
+    
+    
 //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //        if textField == ChildAgeTextField {
 //           let allowCharacters = CharacterSet.decimalDigits // to restrict the user to enter only numbers
