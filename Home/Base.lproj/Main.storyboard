@@ -673,6 +673,7 @@
                         <outlet property="bioText" destination="FzT-rE-ywn" id="tcc-TN-v8X"/>
                         <outlet property="doneButtonToHide" destination="Pfi-Hj-auO" id="l2J-0S-7TM"/>
                         <outlet property="editButtonToHide" destination="Xo4-RC-UYc" id="Yam-tv-0vq"/>
+                        <outlet property="icon" destination="gZM-62-ZRn" id="PHW-zL-NwC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAY-YP-tzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
