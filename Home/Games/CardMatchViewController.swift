@@ -134,6 +134,8 @@ class CardMatchViewController : UIViewController , UICollectionViewDelegate , UI
         
         if isWon == true {
             if milliseconds > 0 {
+                [timer?.invalidate()];
+                timer = nil ;
                 title = "Congratulations"
                 message = "You've WON !!"
                 showAlert(title, message)
@@ -141,6 +143,8 @@ class CardMatchViewController : UIViewController , UICollectionViewDelegate , UI
             
         }else {
             if milliseconds <= 0 {
+                [timer?.invalidate()];
+                timer = nil ;
                 title = "Game over"
                 message = "You've lost :("
                 showAlert(title, message)

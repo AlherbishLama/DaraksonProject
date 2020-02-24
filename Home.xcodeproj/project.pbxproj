@@ -136,6 +136,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A41DB5562403BBF40010E297 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */,
+				A48A66052402FB2A00292DB1 /* MatchViewCell.swift */,
+				A48A66092402FFAF00292DB1 /* CardMatchViewController.swift */,
+				A48A660B240313C600292DB1 /* Card.swift */,
+				A48A660D2403142000292DB1 /* CardModel.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
 		A45F32EA23ED9393001A5AF4 /* IQKeyboardManagerSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +225,7 @@
 		A4998F2323E1AA9B00A09BDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A41DB5562403BBF40010E297 /* Games */,
 				A4A4324D2401A5A7005E11D0 /* SignUp */,
 				A4998F2423E1AA9B00A09BDC /* AppDelegate.swift */,
 				A4998F2623E1AA9B00A09BDC /* SceneDelegate.swift */,
@@ -226,19 +239,14 @@
 				A4998F3823E1B8CE00A09BDC /* HomeController.swift */,
 				A4998F3C23E2BF6200A09BDC /* LoginController.swift */,
 				A4705E2823EF116900F0C065 /* GoogleService-Info.plist */,
-				A45F32EA23ED9393001A5AF4 /* IQKeyboardManagerSwift */,
 				A455C72E23EAC8A300310690 /* ResetPassword.swift */,
 				A4843A8B23EEB0BA00482719 /* profileController.swift */,
 				A4843A8D23EEBB0200482719 /* AfterpressLogin.swift */,
 				A4843A8F23EED58700482719 /* currentUser.swift */,
 				A4705E2A23EF2B6000F0C065 /* HomeTableViewCell2.swift */,
 				A4705E2C23EF4EDB00F0C065 /* playview.swift */,
-				A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */,
-				A48A66052402FB2A00292DB1 /* MatchViewCell.swift */,
-				A48A66092402FFAF00292DB1 /* CardMatchViewController.swift */,
-				A48A660B240313C600292DB1 /* Card.swift */,
-				A48A660D2403142000292DB1 /* CardModel.swift */,
 				DA46C8FE24039F970078F263 /* CollectionViewCell.swift */,
+				A45F32EA23ED9393001A5AF4 /* IQKeyboardManagerSwift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
