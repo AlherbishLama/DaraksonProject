@@ -16,6 +16,7 @@ class NodeQuestion(object):
     @staticmethod
     def copy(q):
         copy = NodeQuestion(q.question, q.isQuestion)
+        copy.category = q.category
         copy.yes = q.yes
         copy.no = q.no
         return copy
@@ -63,13 +64,13 @@ class Memory(object):
         global category_q
         first = ''
         category_q = ""
-        if category_q != "":
+        if category != "":
             first = category[0].lower()
             if first == 'a' or first == 'u' or first == 'i' or first == 'e' or first == 'o':
                 first = 'an'
             else:
                 first = 'a'
-            category_q = "Is it" + first + category + " movie ?"
+            category_q = "Is it " + first + " " + category + " movie ?"
         if self.currentQuestion == self.firstQuestion:
             if ans == 'y':
                 self.currentQuestion.yes = NodeQuestion(question, True)
@@ -172,7 +173,6 @@ def prompt():
     print("Press P to Play")
     print("Press v to view")
     print("Press s to save")
-    print("Press l to load")
 
 
 # The start method that calls all the necessary methods
@@ -181,6 +181,7 @@ def start():
     brain = Memory()
     brain.beginning("Is it an animation movie?", "animation")
     while end == 0:
+        brain = load()
         prompt()
         choice = input()
         if choice == 'x':
@@ -192,8 +193,6 @@ def start():
             pprint_tree(brain.firstQuestion, 0)
         elif choice == 's':
             save(brain)
-        elif choice == 'l':
-            brain = load()
 
 
 def pprint_tree(root, level):
