@@ -1055,8 +1055,85 @@
             </objects>
             <point key="canvasLocation" x="5740.579710144928" y="1247.5446428571429"/>
         </scene>
+        <!--Developer Games-->
+        <scene sceneID="2ti-Gc-MCb">
+            <objects>
+                <viewController storyboardIdentifier="DeveloperGame" id="XM6-oN-ES1" customClass="DeveloperGames" customModule="Darakson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0hx-2p-aEd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="241" verticalHuggingPriority="257" fixedFrame="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RIY-cX-VBz">
+                                <rect key="frame" x="0.0" y="245" width="414" height="651"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <viewLayoutGuide key="safeArea" id="a0d-KP-kpn"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="2" sectionInsetReference="safeArea" id="evx-7E-TWt">
+                                    <size key="itemSize" width="415" height="211"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="right" reuseIdentifier="cell" id="Ov9-4s-CY5" customClass="CollectionViewCell" customModule="Darakson" customModuleProvider="target">
+                                        <rect key="frame" x="-0.5" y="5" width="415" height="211"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" insetsLayoutMarginsFromSafeArea="NO" id="2zB-ZF-Xbe">
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="211"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KdD-Bs-c7g">
+                                                    <rect key="frame" x="23" y="8" width="151" height="131"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="contentStretch" x="0.050000000000000003" y="0.050000000000000003" width="1" height="1"/>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06Z-o4-URv">
+                                                    <rect key="frame" x="8" y="127" width="151" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sco-Rn-mRv">
+                                                    <rect key="frame" x="47" y="140" width="108" height="63"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="415" height="211"/>
+                                        <connections>
+                                            <outlet property="Imag2" destination="sco-Rn-mRv" id="p6c-UY-fhd"/>
+                                            <outlet property="Label" destination="06Z-o4-URv" id="e7I-R6-7RJ"/>
+                                            <outlet property="imag" destination="KdD-Bs-c7g" id="jOH-Zg-FQM"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="XM6-oN-ES1" id="5F6-8e-EDw"/>
+                                    <outlet property="delegate" destination="XM6-oN-ES1" id="fkG-Sz-E75"/>
+                                </connections>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="DeveloperGames" translatesAutoresizingMaskIntoConstraints="NO" id="8gD-P1-IJl">
+                                <rect key="frame" x="85" y="93" width="245" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fvx-0c-7zm"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="RIY-cX-VBz" id="h9l-Ay-770"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIc-cP-x7T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6242.0289855072469" y="3072.9910714285711"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="DeveloperGames" width="539" height="162"/>
         <image name="LogInIcon" width="332" height="172"/>
         <image name="R1" width="434" height="344"/>
         <image name="R1.P3" width="721" height="511"/>

@@ -50,6 +50,8 @@
 		A4998F3B23E1CF4B00A09BDC /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4998F3A23E1CF4B00A09BDC /* HomeTableViewCell.swift */; };
 		A4998F3D23E2BF6200A09BDC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4998F3C23E2BF6200A09BDC /* LoginController.swift */; };
 		A4A4324C2401A4C1005E11D0 /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */; };
+		DA46C8FD24039F540078F263 /* DeveloperGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46C8FC24039F540078F263 /* DeveloperGames.swift */; };
+		DA46C8FF24039F970078F263 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46C8FE24039F970078F263 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,8 @@
 		A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe.swift; sourceTree = "<group>"; };
 		AAADBD6B0567A3A06E71344A /* Pods_Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78C7C0D134F7BD2AC085BD9 /* Pods-Home.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home.release.xcconfig"; path = "Target Support Files/Pods-Home/Pods-Home.release.xcconfig"; sourceTree = "<group>"; };
+		DA46C8FC24039F540078F263 /* DeveloperGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperGames.swift; sourceTree = "<group>"; };
+		DA46C8FE24039F970078F263 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 				A4998F2423E1AA9B00A09BDC /* AppDelegate.swift */,
 				A4998F2623E1AA9B00A09BDC /* SceneDelegate.swift */,
 				A4998F2A23E1AA9B00A09BDC /* Main.storyboard */,
+				DA46C8FC24039F540078F263 /* DeveloperGames.swift */,
 				A493900623E614CA0086CA99 /* statics.swift */,
 				A4998F3A23E1CF4B00A09BDC /* HomeTableViewCell.swift */,
 				A4998F2D23E1AA9D00A09BDC /* Assets.xcassets */,
@@ -233,6 +238,7 @@
 				A48A66092402FFAF00292DB1 /* CardMatchViewController.swift */,
 				A48A660B240313C600292DB1 /* Card.swift */,
 				A48A660D2403142000292DB1 /* CardModel.swift */,
+				DA46C8FE24039F970078F263 /* CollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				A45F330B23ED9393001A5AF4 /* IQUIScrollView+Additions.swift in Sources */,
 				A4705E2D23EF4EDB00F0C065 /* playview.swift in Sources */,
 				A48A660C240313C600292DB1 /* Card.swift in Sources */,
+				DA46C8FF24039F970078F263 /* CollectionViewCell.swift in Sources */,
 				A45F330623ED9393001A5AF4 /* IQInvocation.swift in Sources */,
 				A45F330123ED9393001A5AF4 /* IQPreviousNextView.swift in Sources */,
 				A4998F2523E1AA9B00A09BDC /* AppDelegate.swift in Sources */,
@@ -390,6 +397,7 @@
 				A45F330223ED9393001A5AF4 /* IQTitleBarButtonItem.swift in Sources */,
 				A45F330423ED9393001A5AF4 /* IQToolbar.swift in Sources */,
 				A45F330323ED9393001A5AF4 /* IQBarButtonItem.swift in Sources */,
+				DA46C8FD24039F540078F263 /* DeveloperGames.swift in Sources */,
 				A45F330C23ED9393001A5AF4 /* IQUIViewController+Additions.swift in Sources */,
 				A4998F3D23E2BF6200A09BDC /* LoginController.swift in Sources */,
 				A48A66062402FB2A00292DB1 /* MatchViewCell.swift in Sources */,
