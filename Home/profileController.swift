@@ -28,6 +28,8 @@ import UserNotifications
     
     @IBOutlet weak var icon: UIImageView!
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,8 +99,16 @@ import UserNotifications
     
    //_____Edit buttun :
     @IBAction func editProfileTapped(_ sender: Any) {
-        //save feilds in variables then make it enabled
-                //______here will add guard
+                //______make them validatable
+     ChildNameTextField.addTarget(self, action: #selector (validateName(textfield:)), for:.editingChanged)
+        
+        ChildHobbyTextField.addTarget(self, action: #selector (validateHobby(textfield:)), for:.editingChanged)
+        
+        ChildAgeTextField.addTarget(self, action: #selector (validateAge(textfield:)), for:.editingChanged)
+        
+        CarNameTextField.addTarget(self, action: #selector (validateCarName(textfield:)), for:.editingChanged)
+        
+        
     // edit-enabled
    self.ChildNameTextField.isUserInteractionEnabled=true
    self.ChildHobbyTextField.isUserInteractionEnabled=true
@@ -108,23 +118,30 @@ import UserNotifications
     //edit bio will be added here
          //add img name
         
+        //var name = validateName(textfield:)
+        // var Hobby = validateHobby(textfield:)
+       // var Age = validateAge(textfield:)
+       // var carName = validateCarName(textfield:)
+    
+        //1 hide Edit button : Always hidden
         self.editButtonToHide.isHidden=true
-        self.doneButtonToHide.isHidden=false
+            //no error will show button Done and enable it
+        if errorLabel.text?.count==0{
+         
+          self.doneButtonToHide.isHidden=false//no error
+         self.doneButtonToHide.isUserInteractionEnabled=true
+            
+        }else { //error will show Done but not abled
+            self.doneButtonToHide.isHidden=false//no error
+            self.doneButtonToHide.isUserInteractionEnabled=false
+        }
+        
+        
+        
+        
+      
     // when finish will press Done button
         }
-    
-    
-    
-    func validateInput(){
-        
-        
-        
-        
-    }
-    
-    
-    
-    
     
     
     func disableFeilds(){
@@ -160,13 +177,28 @@ self.ChildNameTextField.isUserInteractionEnabled=false
                     print("Error writing document: \(err)")
                 } else {
                     print("Document successfully written!")
+                    let alert = UIAlertController(title: "", message: "updated successfully", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                        let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC2") as! AfterpressLogin
+                                           
+                        self.navigationController?.pushViewController(storyboard, animated: true)
+                        storyboard.navigationItem.hidesBackButton = true
+                    }
+                                  alert.addAction(alertAction)
+                    self.present(alert, animated: true, completion: nil)
+                    
                     self.updateFeilds() // call to save to database
                 }//edn else
             }//end error
         
         //disable feilds again
         disableFeilds() //doesn't work to un hide edit
+        print("feild disabled?")
+         self.editButtonToHide.isHidden=false
+        self.editButtonToHide.isUserInteractionEnabled=true
         
+        self.doneButtonToHide.self.isHidden=true
+         print("feild disabled?")
     }// end func
     
     
@@ -210,6 +242,70 @@ self.ChildNameTextField.isUserInteractionEnabled=false
           print ("Error signing out: %@", signOutError)
         }
     }
+    
+    
+    
+    //child name
+    @objc func validateName(textfield: UITextField) -> Bool {
+          
+        if( ChildNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "") {
+            errorLabel.text=" please Enter Name"
+            return false
+        }//end if
+        else {
+            errorLabel.text="" //no error
+            return true
+        }//end else
+      }//end method
+    
+    
+    //Hobby
+    @objc func validateHobby(textfield: UITextField) -> Bool {
+    
+    if(ChildHobbyTextField.text?.count ?? 0 <= 0){
+          errorLabel.text=" please Enter Hobby"
+          return false
+      }//end if
+      else {
+          errorLabel.text="" //no error
+          return true
+      }//end else
+    }//end method
+    
+    
+    
+    //Age
+    @objc func validateAge(textfield: UITextField) -> Bool {
+       
+      //var agecheck = Int(ChildAgeTextField.text) == 0 number or no ?
+        
+        if(ChildAgeTextField.text?.count ?? 0 <= 0) {
+             errorLabel.text=" please Enter Age"
+             return false
+         }//end if
+         else {
+             errorLabel.text="" //no error
+             return true
+         }//end else
+       }//end method
+    
+    
+//car name
+    @objc func validateCarName(textfield: UITextField) -> Bool {
+       
+       if(CarNameTextField.text?.count ?? 0 <= 0){
+             errorLabel.text=" please Enter CarName"
+             return false
+         }//end if
+         else {
+             errorLabel.text="" //no error
+             return true
+         }//end else
+       }//end method
+    
+    
+    
+    
     
     
 }
