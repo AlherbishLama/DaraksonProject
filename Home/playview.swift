@@ -40,19 +40,19 @@ class playview: UIViewController {
     }
     
    
-    @IBAction func buttombutton(_ sender: Any) {
-    }
     
     
     @IBAction func connect(_ sender: UIButton) {  mqttClient.connect()
         
     }
-    @IBAction func Topbutton(_ sender: Any) {
-    }
+   
     
     @IBAction func con(_ sender: Any) {
     }
     
+    @IBAction func Topbutton(_ sender: UIButton) {
+         mqttClient.publish("rpi/move", withString: "Top")
+    }
     @IBAction func connadlamp(_ sender: UISwitch) {
         
       
@@ -63,16 +63,22 @@ class playview: UIViewController {
                 mqttClient.publish("rpi/gpio", withString: "off")
             }
     }
-    @IBAction func leftbutton(_ sender: Any) {
+  
+    
+    @IBAction func Leftbutton(_ sender: UIButton) {
+          mqttClient.publish("rpi/move", withString: "Left")
+    }
+    @IBAction func backButton(_ sender: UIButton) {
+         mqttClient.publish("rpi/move", withString: "Back")
     }
     
-   
-    @IBAction func rightbutton(_ sender: Any) {
+    @IBAction func RightButton(_ sender: UIButton) {
+         mqttClient.publish("rpi/move", withString: "Right")
     }
-    
-   
     @IBAction func Maxbutton(_ sender: Any) {
+        
     }
+    
     
     
     @IBAction func Minbutton(_ sender: Any) {
