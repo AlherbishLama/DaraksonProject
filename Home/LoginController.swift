@@ -25,8 +25,6 @@ class LoginController:UIViewController , UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0 //to hide the lable
-        passwordTextField.text = "123456"
-        emailTextField.text = "lamaalherbish@gmail.com"
         if HomeController.globalNotification.DidAllow1 == true {
              let content = UNMutableNotificationContent()
              content.title = "your car is waiting for you"
