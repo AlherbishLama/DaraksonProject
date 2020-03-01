@@ -18,10 +18,6 @@ class TicTacToe : UIViewController {
     var whoWon = ""
     var game = [0,0,0,0,0,0,0,0,0]
     let winingCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
-    //var crossImages = ["iconCross1.png","iconCross2.png","iconCross3.png","iconCross4.png","iconCross5.png"]
-    //var Oimages = ["iconO3.png","iconO4.png","iconO5.png","iconO1.png","iconO2.png"]
-    //var countCross = 0
-    //var countO = 0
     
     override func viewDidLoad() {
         

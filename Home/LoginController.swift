@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 import UserNotifications
 
 class LoginController:UIViewController , UITextFieldDelegate {
@@ -25,8 +25,8 @@ class LoginController:UIViewController , UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0 //to hide the lable
-        passwordTextField.delegate = self
-        emailTextField.delegate = self
+        passwordTextField.text = "123456"
+        emailTextField.text = "lamaalherbish@gmail.com"
         if HomeController.globalNotification.DidAllow1 == true {
              let content = UNMutableNotificationContent()
              content.title = "your car is waiting for you"
@@ -116,16 +116,16 @@ class LoginController:UIViewController , UITextFieldDelegate {
             loginButton.isEnabled = true
             self.activityIndicator.stopAnimating()
                } else {
-                      
+
                  let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
                 let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-                          
+
+
         //signin the user
-                       
-           Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-                           
-                           
+
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+
+
         if error != nil {
             self.activityIndicator.stopAnimating()
             self.errorLabel.text = "The combination of email and password is incorrect"
@@ -136,35 +136,30 @@ class LoginController:UIViewController , UITextFieldDelegate {
                 } else {
             if Auth.auth().currentUser!.isEmailVerified == false {
                         self.activityIndicator.stopAnimating()
-                        let alert = UIAlertController(title: "Alert", message: "Please verify your email", preferredStyle: UIAlertController.Style.alert)
-                                           
-                                           alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
-                                               alert.dismiss(animated: true, completion: nil)
-                                           }))
-                                           
-                                           self.present(alert, animated: true ,completion: nil )
-                self.loginButton.isEnabled = true
+                        statics.alert(message: "Please verify your email", title: "Alert", view: self)
+                        self.loginButton.isEnabled = true
+                self.emailTextField.isEnabled = true
+                self.passwordTextField.isEnabled = true
                         let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC") as! HomeController
-                                           
+
                 self.navigationController?.pushViewController(storyboard, animated: true) }
             else {
                                //transmit to Home page
            // self.activityIndicator.stopAnimating()
                   let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC2") as! AfterpressLogin
-                               
+
             self.navigationController?.pushViewController(storyboard, animated: true)
-                               
+
           //self.view.window?.rootViewController = storyboard
-                               
+
             // self.view.window?.makeKeyAndVisible() //it will show that the home controller is the root
             storyboard.navigationItem.hidesBackButton = true
             //storyboard.navigationItem.rightBarButtonItem =
                            }
                        }
-                         
+        }
             }
         }
-           }
     
     
     @IBAction func forgotPasswordTapped(_ sender: Any) {

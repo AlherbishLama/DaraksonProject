@@ -11,25 +11,31 @@ import UIKit
 import Firebase
 import UserNotifications
 
+
+
  class profileController: UIViewController {
     
  
-    
+
    // @IBOutlet weak var BioLabel: UILabel!
     @IBOutlet weak var ChildNameTextField: UITextField!
     @IBOutlet weak var ChildHobbyTextField: UITextField!
-    @IBOutlet weak var ChildAgeTextField: UITextField!
     @IBOutlet weak var CarNameTextField: UITextField!
-    //bio
-    @IBOutlet weak var bioText: UITextView!
+    //bio    
+    @IBOutlet weak var ChildAgeTextField: UITextField!
     //buttons to hide
+    @IBOutlet weak var BioTextFieldView: UITextView!
     @IBOutlet weak var editButtonToHide: UIButton!
-    @IBOutlet weak var doneButtonToHide: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var icon: UIImageView!
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    var isValid = true
+    var isAllowed = true
+    var isValid2 = true
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,203 +47,91 @@ import UserNotifications
             let request = UNNotificationRequest(identifier: "waiting", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         }
-        
-        
-        /*
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                print("User is signed in.")
-                guard let uid = Auth.auth().currentUser?.uid else { return}
-                print("dsfghjklkjhghjk")
-                Database.database().reference().child("users").child(uid).observe(.value, with: { (snapshot) in
-                    print("kjjj")
-                     let db = Firestore.firestore() // refrence to the firebase obj
-                db.collection("users").whereField("uid", isEqualTo: uid)
-                        .getDocuments() { (querySnapshot, err) in
-                            if let err = err {
-                                print("Error getting documents: \(err)")
-                            } else { //"\(myInt)"
-                                for document in querySnapshot!.documents {
-                                   let all = document.data()
-                                    self.ChildNameTextField.text = all["ChildName"] as? String
-                                    self.ChildAgeTextField.text =  "\(all["ChildAge"] ?? "" )"
-                                    self.CarNameTextField.text = all["CarName"] as? String
-                                    self.ChildHobbyTextField.text = all["FavoriteHobby"] as? String
-                                }
-                            }
-                    }
 
-                    
-                    //let s = db.collection("users").document(uid)
-                  //  guard let dict = snapshot.value as? [String : Any] else { return}
-                    print("ffff")
-                   // let usert = currentUser(uid: uid, dictionary: dict)
-                //    self.ChildNameLabel.text = s.ChildName
-                  //print(s.ChildName)
-                    //self.ChildAgeLabel.text = u.ChildAge
-                    //self.CarNameLabel.text = u.CarName
-                    
-                }) { (err) in
-                    print(err)
-                  print("lldlldlsldlslald")
-
-                }} else {
-                print("User is signed out.")
-            }
-    }
- */
-        // will push data to feilds
-        updateFeilds()
-        // make all text feild disabled
-        disableFeilds()
-     //Reminder : add bio to database
+        setFields()
         }
     
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == CarNameTextField || textField == ChildHobbyTextField || textField == ChildNameTextField || textField == BioTextFieldView || textField == ChildAgeTextField && isAllowed == true{
+            let allowCharacters = CharacterSet.letters // to restrict the user to enter only alpha
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowCharacters.isSuperset(of: characterSet)
+        }else {
+            let allowCharacters = CharacterSet.decimalDigits// to restrict the user to enter only numbers
+                        //   textField.Ran
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowCharacters.isSuperset(of: characterSet)
+        }
+    
+      }
+    
+    
+
+    
+    func setFields(){
+        let current = Auth.auth().currentUser?.uid
+
+    Database.database().reference().child("users").child(current!).observe(.value) { (snapshot) in
+        
+        let s = snapshot.value as? [String:String]
+        self.ChildNameTextField.text = s!["Child_Name"]
+        self.CarNameTextField.text = s!["Car_Name"]
+        self.ChildAgeTextField.text = s!["Child_Age"]
+        self.BioTextFieldView.text = s!["Bio"]
+        self.ChildHobbyTextField.text = s!["Favorit_Hobby"]
+        
+        }
+    }
+    
+
+    
+    
+        
+    
+    @IBAction func doneAction(_ sender: Any) {
+                isvalidTextField(textfield: ChildHobbyTextField)
+                isvalidTextField(textfield: ChildAgeTextField)
+                isvalidTextField(textfield: CarNameTextField)
+                isvalidTextField(textfield: ChildNameTextField)
+                isvalidTextView(BioTextFieldView)
+                
+                if isvalidTextField(textfield: ChildHobbyTextField) == false || isvalidTextField(textfield: ChildAgeTextField) == false || isvalidTextField(textfield: CarNameTextField) == false || isvalidTextField(textfield: ChildNameTextField) == false || isvalidTextView(BioTextFieldView) == false{
+                    errorLabel.text = "Please make sure you fill the field with valid data"
+                    print("Please make sure you fill the field with valid data")
+                }else{
+                    let current = Auth.auth().currentUser?.uid
+                    Database.database().reference().child("users").child(current!).updateChildValues(["Car_Name": CarNameTextField.text , "Child_Age": "\(ChildAgeTextField.text!)" , "Child_Name": ChildNameTextField.text, "Favorit_Hobby": ChildHobbyTextField.text , "Bio": BioTextFieldView.text ])
+                    statics.alert(message: "updated successfully", title: "Alert", view: self)
+
+            }
+                }// end func
     
     
     
     
    //_____Edit buttun :
     @IBAction func editProfileTapped(_ sender: Any) {
-                //______make them validatable
-     ChildNameTextField.addTarget(self, action: #selector (validateName(textfield:)), for:.editingChanged)
-        
-        ChildHobbyTextField.addTarget(self, action: #selector (validateHobby(textfield:)), for:.editingChanged)
-        
-        ChildAgeTextField.addTarget(self, action: #selector (validateAge(textfield:)), for:.editingChanged)
-        
-        CarNameTextField.addTarget(self, action: #selector (validateCarName(textfield:)), for:.editingChanged)
-        
-        
-    // edit-enabled
-   self.ChildNameTextField.isUserInteractionEnabled=true
-   self.ChildHobbyTextField.isUserInteractionEnabled=true
-   self.ChildAgeTextField.isUserInteractionEnabled=true
-   self.CarNameTextField.isUserInteractionEnabled=true
-    self.bioText.isUserInteractionEnabled=true
-    //edit bio will be added here
-         //add img name
-        
-        //var name = validateName(textfield:)
-        // var Hobby = validateHobby(textfield:)
-       // var Age = validateAge(textfield:)
-       // var carName = validateCarName(textfield:)
-    
-        //1 hide Edit button : Always hidden
         self.editButtonToHide.isHidden=true
-            //no error will show button Done and enable it
-        if errorLabel.text?.count==0{
-         
-          self.doneButtonToHide.isHidden=false//no error
-         self.doneButtonToHide.isUserInteractionEnabled=true
-            
-        }else { //error will show Done but not abled
-            self.doneButtonToHide.isHidden=false//no error
-            self.doneButtonToHide.isUserInteractionEnabled=false
-        }
-        
-        
-        
-        
-      
-    // when finish will press Done button
-        }
-    
-    
-    func disableFeilds(){
-        
-self.ChildNameTextField.isUserInteractionEnabled=false
-                    self.ChildHobbyTextField.isUserInteractionEnabled=false
-                    self.ChildAgeTextField.isUserInteractionEnabled=false
-                    self.CarNameTextField.isUserInteractionEnabled=false
-                    //bio is added
-                     self.bioText.isUserInteractionEnabled=false
-        self.editButtonToHide.isHidden=false
+            self.doneButton.isHidden=false
+        self.ChildAgeTextField.isUserInteractionEnabled = true
+        self.CarNameTextField.isUserInteractionEnabled = true
+        self.ChildHobbyTextField.isUserInteractionEnabled = true
+        self.BioTextFieldView.isUserInteractionEnabled = true
+        self.ChildNameTextField.isUserInteractionEnabled = true
         
     }
-    
-
-    //Done button
-    @IBAction func doneEditprofile(_ sender: Any) {
         
-         let db = Firestore.firestore() // refrence to the firebase obj
-       
-        print("uid333//////")
-        //update database:
-        guard let userID = Auth.auth().currentUser?.uid else {
-        return }
-        //set entire document with same uid, this is an update way
-        db.collection("users").document(userID).setData([
-            "ChildName": self.ChildNameTextField.text! ,
-            "ChildAge": self.ChildAgeTextField.text! ,
-            "CarName": self.CarNameTextField.text! ,
-            "FavoriteHobby" :self.ChildHobbyTextField.text!,
-            "Bio": self.bioText.text!]) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("Document successfully written!")
-                    let alert = UIAlertController(title: "", message: "updated successfully", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                        let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC2") as! AfterpressLogin
-                                           
-                        self.navigationController?.pushViewController(storyboard, animated: true)
-                        storyboard.navigationItem.hidesBackButton = true
-                    }
-                                  alert.addAction(alertAction)
-                    self.present(alert, animated: true, completion: nil)
-                    
-                    self.updateFeilds() // call to save to database
-                }//edn else
-            }//end error
-        
-        //disable feilds again
-        disableFeilds() //doesn't work to un hide edit
-        print("feild disabled?")
-         self.editButtonToHide.isHidden=false
-        self.editButtonToHide.isUserInteractionEnabled=true
-        
-        self.doneButtonToHide.self.isHidden=true
-         print("feild disabled?")
-    }// end func
-    
-    
-    //to slove the snapshot problem : //suggested
-    func updateFeilds(){
-                  let db = Firestore.firestore()
-        guard let userID = Auth.auth().currentUser?.uid else {
-               return }
-        
-        db.collection("users").document(userID)
-        .addSnapshotListener { documentSnapshot, error in
-          guard let document = documentSnapshot else {
-            print("Error fetching document: \(error!)")
-            return
-          }
-          guard let data = document.data() else {
-            print("Document data was empty.")
-            return
-          }
-           self.ChildNameTextField.text = data["ChildName"] as? String
-            self.ChildAgeTextField.text =  "\(data["ChildAge"] ?? "" )"
-            self.CarNameTextField.text = data["CarName"] as? String
-            self.ChildHobbyTextField.text = data["FavoriteHobby"] as? String
-            self.bioText.text = data["Bio"]as? String
-        }
-        
-    }//end update feild
-   
-    
     //Log out
     @IBAction func logOutTapped(_ sender: Any) {
             let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
             let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC") as! HomeController
-                                                           
+
             self.navigationController?.pushViewController(storyboard, animated: false)
             storyboard.navigationItem.hidesBackButton = true
-            
+
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
@@ -245,66 +139,48 @@ self.ChildNameTextField.isUserInteractionEnabled=false
     
     
     
-    //child name
-    @objc func validateName(textfield: UITextField) -> Bool {
-          
-        if( ChildNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "") {
-            errorLabel.text=" please Enter Name"
+    func isvalidTextField(textfield: UITextField) -> Bool{
+        //bioTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+        if CarNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || ChildHobbyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || ChildNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || ChildAgeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  {
+            print("Empty fields are not allowed")
+            errorLabel.text = "Empty fields are not allowed"
             return false
-        }//end if
-        else {
-            errorLabel.text="" //no error
-            return true
-        }//end else
-      }//end method
+        }else if textfield == ChildAgeTextField {
+             if (statics.integer(from: ChildAgeTextField)) < 9 {
+                errorLabel.text = "The application is designed for kids from 9 and older"
+                print("The application is designed for kids from 9 and older")
+                return false
+             }else if (statics.integer(from: ChildAgeTextField)) > 50{
+                errorLabel.text = "Age is unrealistic , please enter again"
+                print("Age is unrealistic , please enter again")
+
+               return false
+                
+            }
+        }
+        return true
+    }
+    
+    func isvalidTextView (_ textView : UITextView) -> Bool{
+        if BioTextFieldView.text!.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            print("Empty fields are not allowed")
+            errorLabel.text = "Empty fields are not allowed"
+            return false
+        }
+        return true
+    }
     
     
-    //Hobby
-    @objc func validateHobby(textfield: UITextField) -> Bool {
-    
-    if(ChildHobbyTextField.text?.count ?? 0 <= 0){
-          errorLabel.text=" please Enter Hobby"
-          return false
-      }//end if
-      else {
-          errorLabel.text="" //no error
-          return true
-      }//end else
-    }//end method
-    
-    
-    
-    //Age
-    @objc func validateAge(textfield: UITextField) -> Bool {
-       
-      //var agecheck = Int(ChildAgeTextField.text) == 0 number or no ?
-        
-        if(ChildAgeTextField.text?.count ?? 0 <= 0) {
-             errorLabel.text=" please Enter Age"
-             return false
-         }//end if
-         else {
-             errorLabel.text="" //no error
-             return true
-         }//end else
-       }//end method
-    
-    
-//car name
-    @objc func validateCarName(textfield: UITextField) -> Bool {
-       
-       if(CarNameTextField.text?.count ?? 0 <= 0){
-             errorLabel.text=" please Enter CarName"
-             return false
-         }//end if
-         else {
-             errorLabel.text="" //no error
-             return true
-         }//end else
-       }//end method
-    
-    
-    
+  
+    //Presses return key to hide the key board
+          func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+              textField.resignFirstResponder()
+              return true
+          }
+          // to hide the keyboard when the user preeses outside
+          override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+              self.view.endEditing(true)
+          }
     
     
     

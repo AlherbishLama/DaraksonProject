@@ -61,8 +61,6 @@ class SignUpController: UIViewController , UITextFieldDelegate{
         self.view.endEditing(true)
     }
     
-    
-    
     func validateTextField () -> String? {
         
         if CarNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
@@ -73,8 +71,6 @@ class SignUpController: UIViewController , UITextFieldDelegate{
          global1.carName = CarNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         return nil
         }}
-    
-    
     
     
     @IBAction func Next(_ sender: Any) {

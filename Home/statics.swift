@@ -21,9 +21,6 @@ class statics {
     static let ResetPasswordView = "ForgotPassword"
     static let LoginView = "LoginVC"
     
-    
-    
-    
     static func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
@@ -32,5 +29,21 @@ class statics {
     }//end of the method
     
     
+    static func alert( message: String , title: String , view: UIViewController){
+          let alert = UIAlertController(title: title, message: message , preferredStyle: UIAlertController.Style.alert)
+                                       
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+                            alert.dismiss(animated: true, completion: nil)
+                                       }))
+                                       
+        view.present(alert, animated: true ,completion: nil )
+    }
+    
+    static func integer(from textField: UITextField) -> Int {
+        guard let text = textField.text, let number = Int(text) else {
+            return 0
+        }
+        return number
+    }
     
 }

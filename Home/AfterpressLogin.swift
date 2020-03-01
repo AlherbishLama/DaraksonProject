@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import FirebaseDatabase
-import Firebase
 import UserNotifications
 
 class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDelegate {

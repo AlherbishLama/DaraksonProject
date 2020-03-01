@@ -29,12 +29,10 @@
 		A45F330D23ED9393001A5AF4 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F32FD23ED9393001A5AF4 /* IQUITextFieldView+Additions.swift */; };
 		A45F330E23ED9393001A5AF4 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F32FE23ED9393001A5AF4 /* IQUIView+Hierarchy.swift */; };
 		A45F330F23ED9393001A5AF4 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F32FF23ED9393001A5AF4 /* IQNSArray+Sort.swift */; };
-		A4705E2923EF116900F0C065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4705E2823EF116900F0C065 /* GoogleService-Info.plist */; };
 		A4705E2B23EF2B6000F0C065 /* HomeTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4705E2A23EF2B6000F0C065 /* HomeTableViewCell2.swift */; };
 		A4705E2D23EF4EDB00F0C065 /* playview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4705E2C23EF4EDB00F0C065 /* playview.swift */; };
 		A4843A8C23EEB0BA00482719 /* profileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4843A8B23EEB0BA00482719 /* profileController.swift */; };
 		A4843A8E23EEBB0200482719 /* AfterpressLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4843A8D23EEBB0200482719 /* AfterpressLogin.swift */; };
-		A4843A9023EED58700482719 /* currentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4843A8F23EED58700482719 /* currentUser.swift */; };
 		A48A66062402FB2A00292DB1 /* MatchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A66052402FB2A00292DB1 /* MatchViewCell.swift */; };
 		A48A660A2402FFAF00292DB1 /* CardMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A66092402FFAF00292DB1 /* CardMatchViewController.swift */; };
 		A48A660C240313C600292DB1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A660B240313C600292DB1 /* Card.swift */; };
@@ -50,6 +48,7 @@
 		A4998F3B23E1CF4B00A09BDC /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4998F3A23E1CF4B00A09BDC /* HomeTableViewCell.swift */; };
 		A4998F3D23E2BF6200A09BDC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4998F3C23E2BF6200A09BDC /* LoginController.swift */; };
 		A4A4324C2401A4C1005E11D0 /* TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */; };
+		A4A775EF2404FB3E004DED8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4A775EE2404FB3E004DED8C /* GoogleService-Info.plist */; };
 		DA46C8FD24039F540078F263 /* DeveloperGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46C8FC24039F540078F263 /* DeveloperGames.swift */; };
 		DA46C8FF24039F970078F263 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46C8FE24039F970078F263 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -78,12 +77,10 @@
 		A45F32FD23ED9393001A5AF4 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		A45F32FE23ED9393001A5AF4 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		A45F32FF23ED9393001A5AF4 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
-		A4705E2823EF116900F0C065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4705E2A23EF2B6000F0C065 /* HomeTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell2.swift; sourceTree = "<group>"; };
 		A4705E2C23EF4EDB00F0C065 /* playview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playview.swift; sourceTree = "<group>"; };
 		A4843A8B23EEB0BA00482719 /* profileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileController.swift; sourceTree = "<group>"; };
 		A4843A8D23EEBB0200482719 /* AfterpressLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterpressLogin.swift; sourceTree = "<group>"; };
-		A4843A8F23EED58700482719 /* currentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentUser.swift; sourceTree = "<group>"; };
 		A48A66052402FB2A00292DB1 /* MatchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewCell.swift; sourceTree = "<group>"; };
 		A48A66092402FFAF00292DB1 /* CardMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMatchViewController.swift; sourceTree = "<group>"; };
 		A48A660B240313C600292DB1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -101,6 +98,7 @@
 		A4998F3A23E1CF4B00A09BDC /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		A4998F3C23E2BF6200A09BDC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		A4A4324B2401A4C1005E11D0 /* TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToe.swift; sourceTree = "<group>"; };
+		A4A775EE2404FB3E004DED8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAADBD6B0567A3A06E71344A /* Pods_Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78C7C0D134F7BD2AC085BD9 /* Pods-Home.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home.release.xcconfig"; path = "Target Support Files/Pods-Home/Pods-Home.release.xcconfig"; sourceTree = "<group>"; };
 		DA46C8FC24039F540078F263 /* DeveloperGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperGames.swift; sourceTree = "<group>"; };
@@ -238,11 +236,10 @@
 				A4998F3223E1AA9D00A09BDC /* Info.plist */,
 				A4998F3823E1B8CE00A09BDC /* HomeController.swift */,
 				A4998F3C23E2BF6200A09BDC /* LoginController.swift */,
-				A4705E2823EF116900F0C065 /* GoogleService-Info.plist */,
 				A455C72E23EAC8A300310690 /* ResetPassword.swift */,
+				A4A775EE2404FB3E004DED8C /* GoogleService-Info.plist */,
 				A4843A8B23EEB0BA00482719 /* profileController.swift */,
 				A4843A8D23EEBB0200482719 /* AfterpressLogin.swift */,
-				A4843A8F23EED58700482719 /* currentUser.swift */,
 				A4705E2A23EF2B6000F0C065 /* HomeTableViewCell2.swift */,
 				A4705E2C23EF4EDB00F0C065 /* playview.swift */,
 				DA46C8FE24039F970078F263 /* CollectionViewCell.swift */,
@@ -324,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4998F3123E1AA9D00A09BDC /* LaunchScreen.storyboard in Resources */,
-				A4705E2923EF116900F0C065 /* GoogleService-Info.plist in Resources */,
+				A4A775EF2404FB3E004DED8C /* GoogleService-Info.plist in Resources */,
 				A4998F2E23E1AA9D00A09BDC /* Assets.xcassets in Resources */,
 				A4998F2C23E1AA9B00A09BDC /* Main.storyboard in Resources */,
 			);
@@ -416,7 +413,6 @@
 				A4A4324C2401A4C1005E11D0 /* TicTacToe.swift in Sources */,
 				A45F330023ED9393001A5AF4 /* IQTextView.swift in Sources */,
 				A40DF20A23E8DA4700A90120 /* FifthPartRegisteration.swift in Sources */,
-				A4843A9023EED58700482719 /* currentUser.swift in Sources */,
 				A4843A8C23EEB0BA00482719 /* profileController.swift in Sources */,
 				A40DF20623E8B31100A90120 /* thirdPartRegisteration.swift in Sources */,
 			);

@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
 
 class ResetPassword : UIViewController  , UITextFieldDelegate{
     
@@ -43,23 +42,15 @@ class ResetPassword : UIViewController  , UITextFieldDelegate{
             ErrorLabel.alpha = 1
             ErrorLabel.text = "Please enter a valid email"
         } else {
-            
-        
-        
-        
             Auth.auth().sendPasswordReset(withEmail: ResetEmail.text!) { error in
                 
                 if error != nil {
                     self.ErrorLabel.alpha = 1
                     self.ErrorLabel.text = "There was a problem in sending a reset email"
                 } else {
-                    let alert = UIAlertController(title: "Alert", message: "Please check your email to reset your password", preferredStyle: UIAlertController.Style.alert)
+                    statics.alert(message: "Please check your email to reset your password", title: "Alert", view: self)
                     
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
-                        alert.dismiss(animated: true, completion: nil)
-                    }))
-                    
-                    self.present(alert, animated: true ,completion: nil )
+
                 }
           
         }
@@ -67,5 +58,5 @@ class ResetPassword : UIViewController  , UITextFieldDelegate{
     
     
 }
-
 }
+

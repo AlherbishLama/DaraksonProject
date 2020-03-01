@@ -112,12 +112,6 @@ class CardMatchViewController : UIViewController , UICollectionViewDelegate , UI
             cardTwoCell?.flipBack()
         }
         
-//        if cardOneCell == nil {
-//            myCollectionView.reloadItems(at: [firstFlippedCardIndex!])
-//        }
-        
-        
-        
         firstFlippedCardIndex = nil
     }
     
@@ -138,7 +132,7 @@ class CardMatchViewController : UIViewController , UICollectionViewDelegate , UI
                 timer = nil ;
                 title = "Congratulations"
                 message = "You've WON !!"
-                showAlert(title, message)
+                statics.alert(message: message, title: title, view: self)
             }
             
         }else {
@@ -147,18 +141,10 @@ class CardMatchViewController : UIViewController , UICollectionViewDelegate , UI
                 timer = nil ;
                 title = "Game over"
                 message = "You've lost :("
-                showAlert(title, message)
+                statics.alert(message: message, title: title, view: self)
             }
         }
     }
-    
-    func showAlert(_ title: String, _ message: String){
-         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-               let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-               alert.addAction(alertAction)
-               present(alert, animated: true, completion: nil)
-    }
-
     
     
 }//end of CardMatchViewController

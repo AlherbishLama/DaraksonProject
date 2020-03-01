@@ -3,34 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>276523974928-6mrhs6o96l07c2qvc4l3uheb84iqhprs.apps.googleusercontent.com</string>
+	<string>826934659087-n2155n45ovdjacr1oq4m6942calkaka3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.276523974928-6mrhs6o96l07c2qvc4l3uheb84iqhprs</string>
+	<string>com.googleusercontent.apps.826934659087-n2155n45ovdjacr1oq4m6942calkaka3</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDjCJ7BEyOgBwyBQglCu0WyN4GoBTvj8v8</string>
+	<string>AIzaSyBB8rukiR4c9sRcR1TNSkDBQAUAhEKa5Bk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>276523974928</string>
+	<string>826934659087</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>Lama.Home</string>
 	<key>PROJECT_ID</key>
-	<string>darakson-aa1d7</string>
+	<string>darakson-4e7aa</string>
 	<key>STORAGE_BUCKET</key>
-	<string>darakson-aa1d7.appspot.com</string>
+	<string>darakson-4e7aa.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:276523974928:ios:c57390f3fb8219a423e595</string>
+	<string>1:826934659087:ios:831ead98298075e1be7b7a</string>
 	<key>DATABASE_URL</key>
-	<string>https://darakson-aa1d7.firebaseio.com</string>
+	<string>https://darakson-4e7aa.firebaseio.com</string>
 </dict>
 </plist>
