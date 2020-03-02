@@ -142,17 +142,12 @@ class LoginController:UIViewController , UITextFieldDelegate {
 
                 self.navigationController?.pushViewController(storyboard, animated: true) }
             else {
-                               //transmit to Home page
-           // self.activityIndicator.stopAnimating()
+                    //transmit to Home page
                   let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC2") as! AfterpressLogin
 
             self.navigationController?.pushViewController(storyboard, animated: true)
 
-          //self.view.window?.rootViewController = storyboard
-
-            // self.view.window?.makeKeyAndVisible() //it will show that the home controller is the root
             storyboard.navigationItem.hidesBackButton = true
-            //storyboard.navigationItem.rightBarButtonItem =
                            }
                        }
         }

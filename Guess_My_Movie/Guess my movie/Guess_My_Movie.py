@@ -2,6 +2,11 @@
 #     This code is subject to change for further improvements
 
 import pickle
+import paho.mqtt.client as mqtt
+import time
+import I2CDriver
+
+my_lcd = I2CDriver.lcd()
 
 
 class NodeQuestion(object):
@@ -25,6 +30,7 @@ class NodeQuestion(object):
 class Memory(object):
     firstQuestion = None
     currentQuestion = None
+    won = 'z'
 
     # This method starts the root with Animation
     def beginning(self, first_q, category):
@@ -36,9 +42,12 @@ class Memory(object):
     def ask(self):
         if not self.currentQuestion.isQuestion:
             print("Is the name of the movie " + self.currentQuestion.question + "?")
+            my_lcd.lcd_display_string("Is the name of the movie " + self.currentQuestion.question + "?", 1)
         else:
             print(self.currentQuestion.question)
+            my_lcd.lcd_display_string(self.currentQuestion.question, 1)
         print("N:no     Y:yes     X:exit")
+        my_lcd.lcd_display_string("N:no     Y:yes     X:exit", 2)
 
     # This method will check if the guess was correct in not then it will continue to the next question by returning c
     def if_won(self, yes):
@@ -46,8 +55,10 @@ class Memory(object):
             if self.currentQuestion.isQuestion:
                 return 'n'
         if not self.currentQuestion.isQuestion and yes == 'y':
+            self.won = 'y'
             return 'y'
         elif not self.currentQuestion.isQuestion and yes == 'n':
+            self.won = 'n'
             return 'n'
         return 'c'
 
@@ -120,6 +131,8 @@ class Memory(object):
 def welcome():
     upper_screen = "Hi World!"
     lower_screen = "____GUESS MY MOVIE GAME____"
+    my_lcd.lcd_display_string(upper_screen, 1)
+    my_lcd.lcd_display_string(lower_screen, 2)
     return lower_screen, upper_screen
 
 
@@ -130,9 +143,11 @@ def lets_play(brain):
         answer = input()
         if answer == 'x':
             print("Exiting the game")
+            my_lcd.lcd_display_string("Exiting the game")
         won = brain.if_won(answer)
         if won == 'y':
             print("I Know Everything ^_^")
+            my_lcd.lcd_display_string("I Know Everything ^_^")
             break
         elif won == 'c':
             if answer == 'y':
@@ -144,6 +159,7 @@ def lets_play(brain):
             break
 
 
+# the learn process will currently be locked so that no one teaches the game unnecessary things
 def learn(brain, answer):
     print("We learn much from defeat!...\nWhat is your movie's name?")
     name_movie = input()
@@ -176,23 +192,21 @@ def prompt():
 
 
 # The start method that calls all the necessary methods
-def start():
-    end = 0
+def start(choice):
     brain = Memory()
     brain.beginning("Is it an animation movie?", "animation")
-    while end == 0:
-        brain = load()
-        prompt()
-        choice = input()
-        if choice == 'x':
-            end = 1
-        elif choice == 'p':
-            lets_play(brain)
-            brain.currentQuestion = brain.firstQuestion
-        elif choice == 'v':
-            pprint_tree(brain.firstQuestion, 0)
-        elif choice == 's':
-            save(brain)
+    if choice == 'x':
+        end = 1
+        mqtt_client.disconnect()
+        exit()
+    elif choice == 'p':
+        brain.ask()
+        lets_play(brain)
+        brain.currentQuestion = brain.firstQuestion
+    elif choice == 'v':
+        pprint_tree(brain.firstQuestion, 0)
+    elif choice == 's':
+        save(brain)
 
 
 def pprint_tree(root, level):
@@ -220,4 +234,58 @@ def load():
     return obj
 
 
-start()
+# -------------------------------------- Part of the code for MQTT Sub -------------------------------------------------
+def on_publish(client, userdata, result):
+    print("published data is : ")
+    pass
+
+
+def on_connect(client, userdata, flags, rc):
+    # The topic subscribing to.
+    mqtt_client.subscribe("GMM")
+
+
+# The MQTT methods to start up the game
+def on_message(client, userdata, msg):
+    message = msg.payload.decode(encoding='UTF-8')
+    wonn = brain.if_won(message)
+    if wonn == 'y':
+        print("I Know Everything ^_^")
+        my_lcd.lcd_display_string("I Know Everything ^_^")
+        time.sleep(5)
+    elif wonn == 'c':
+        if message == 'y':
+            brain.next_question(True)
+        elif message == 'n':
+            brain.next_question(False)
+    else:
+        print("You out smarted me")
+        my_lcd.lcd_display_string("You out smarted me")
+        time.sleep(5)
+    mqtt_client.disconnect()
+
+
+# host name is localhost because both broker and python are Running on same
+# machine/Computer this needs to be changed to the raspberry pi IP address
+broker = "localhost"
+port = 1883     # The MQTT port number
+client2 = "user"
+topic = "GMM"
+brain = load()
+mqtt_client = mqtt.Client(client2)
+brain.currentQuestion = brain.firstQuestion
+welcome()
+time.sleep(1)
+
+while True:
+    if brain.won == 'y' or brain.won == 'y':
+        brain.currentQuestion = brain.firstQuestion
+    brain.ask()
+    mqtt_client.on_connect = on_connect
+    mqtt_client.on_message = on_message
+    mqtt_client.connect(broker)
+    mqtt_client.loop_forever()
+
+
+
+

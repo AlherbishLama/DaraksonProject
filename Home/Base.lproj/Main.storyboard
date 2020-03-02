@@ -1154,11 +1154,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIc-cP-x7T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6242.0289855072469" y="3072.9910714285711"/>
+            <point key="canvasLocation" x="1414" y="1911"/>
+        </scene>
+        <!--Guss My Movie-->
+        <scene sceneID="tzf-k9-DTY">
+            <objects>
+                <viewController storyboardIdentifier="YesOrNo" id="yIo-1O-ssD" customClass="GussMyMovie" customModule="Darakson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tez-wg-Oo4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="GMM_W" translatesAutoresizingMaskIntoConstraints="NO" id="jhS-y2-pfL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iwf-hv-aOt">
+                                <rect key="frame" x="239" y="659" width="124" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="GMM_yes"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmE-K9-CQh">
+                                <rect key="frame" x="59" y="659" width="125" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="GMM_no"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jhS-y2-pfL" firstAttribute="trailing" secondItem="UuO-6s-Jo4" secondAttribute="trailing" id="CuL-2E-85e"/>
+                            <constraint firstAttribute="bottom" secondItem="jhS-y2-pfL" secondAttribute="bottom" id="W9X-4S-52T"/>
+                            <constraint firstItem="jhS-y2-pfL" firstAttribute="top" secondItem="Tez-wg-Oo4" secondAttribute="top" id="blv-ZB-SIk"/>
+                            <constraint firstItem="jhS-y2-pfL" firstAttribute="leading" secondItem="UuO-6s-Jo4" secondAttribute="leading" id="po5-pa-y9l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UuO-6s-Jo4"/>
+                    </view>
+                    <connections>
+                        <outlet property="NoButton" destination="xmE-K9-CQh" id="yr7-S1-MTa"/>
+                        <outlet property="YesButton" destination="Iwf-hv-aOt" id="KqO-4q-O38"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="esc-HL-3qq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2538" y="1722"/>
         </scene>
     </scenes>
     <resources>
         <image name="DeveloperGames" width="539" height="162"/>
+        <image name="GMM_W" width="750" height="1334"/>
+        <image name="GMM_no" width="254" height="142"/>
+        <image name="GMM_yes" width="251" height="139"/>
         <image name="LogInIcon" width="332" height="172"/>
         <image name="R1" width="434" height="344"/>
         <image name="R1.P3" width="721" height="511"/>

@@ -12,6 +12,7 @@
 		A40DF20623E8B31100A90120 /* thirdPartRegisteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DF20523E8B31100A90120 /* thirdPartRegisteration.swift */; };
 		A40DF20823E8D5B300A90120 /* FourthPartRegisteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DF20723E8D5B300A90120 /* FourthPartRegisteration.swift */; };
 		A40DF20A23E8DA4700A90120 /* FifthPartRegisteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DF20923E8DA4700A90120 /* FifthPartRegisteration.swift */; };
+		A40E19DC240CEDEB008AF678 /* GussMyMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E19DB240CEDEB008AF678 /* GussMyMovie.swift */; };
 		A455C72F23EAC8A300310690 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455C72E23EAC8A300310690 /* ResetPassword.swift */; };
 		A45F330023ED9393001A5AF4 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F32EC23ED9393001A5AF4 /* IQTextView.swift */; };
 		A45F330123ED9393001A5AF4 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45F32EE23ED9393001A5AF4 /* IQPreviousNextView.swift */; };
@@ -59,6 +60,7 @@
 		A40DF20523E8B31100A90120 /* thirdPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdPartRegisteration.swift; sourceTree = "<group>"; };
 		A40DF20723E8D5B300A90120 /* FourthPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPartRegisteration.swift; sourceTree = "<group>"; };
 		A40DF20923E8DA4700A90120 /* FifthPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthPartRegisteration.swift; sourceTree = "<group>"; };
+		A40E19DB240CEDEB008AF678 /* GussMyMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GussMyMovie.swift; sourceTree = "<group>"; };
 		A455C72E23EAC8A300310690 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		A45F32EC23ED9393001A5AF4 /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
 		A45F32EE23ED9393001A5AF4 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				A48A66052402FB2A00292DB1 /* MatchViewCell.swift */,
 				A48A66092402FFAF00292DB1 /* CardMatchViewController.swift */,
 				A48A660B240313C600292DB1 /* Card.swift */,
+				A40E19DB240CEDEB008AF678 /* GussMyMovie.swift */,
 				A48A660D2403142000292DB1 /* CardModel.swift */,
 			);
 			path = Games;
@@ -396,6 +399,7 @@
 				A45F330D23ED9393001A5AF4 /* IQUITextFieldView+Additions.swift in Sources */,
 				A4843A8E23EEBB0200482719 /* AfterpressLogin.swift in Sources */,
 				A40DF20823E8D5B300A90120 /* FourthPartRegisteration.swift in Sources */,
+				A40E19DC240CEDEB008AF678 /* GussMyMovie.swift in Sources */,
 				A4998F2723E1AA9B00A09BDC /* SceneDelegate.swift in Sources */,
 				A48A660A2402FFAF00292DB1 /* CardMatchViewController.swift in Sources */,
 				A4705E2B23EF2B6000F0C065 /* HomeTableViewCell2.swift in Sources */,

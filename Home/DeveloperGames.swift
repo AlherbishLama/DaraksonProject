@@ -52,11 +52,11 @@ class DeveloperGames: UIViewController,UICollectionViewDataSource, UICollectionV
                                                                  
                             self.navigationController?.pushViewController(storyboard, animated: true)
             
-        } // else if item == "YesOrNo-1" {
-           // let storyboard = self.storyboard?.instantiateViewController(identifier: "") as!
-                                                                            
-         //  self.navigationController?.pushViewController(storyboard, animated: true)
-     //   }
+        }  else if item == "YesOrNo-1" {
+            let storyboard = self.storyboard?.instantiateViewController(identifier: "YesOrNo") as! GussMyMovie
+                                                                                
+            self.navigationController?.pushViewController(storyboard, animated: true)
+         }
        else if item == "X and O-1" {
         let storyboard = self.storyboard?.instantiateViewController(identifier: "Play2") as!TicTacToe
                                                                             
