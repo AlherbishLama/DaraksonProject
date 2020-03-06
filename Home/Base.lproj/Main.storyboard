@@ -855,21 +855,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCF-xD-wQz">
-                                <rect key="frame" x="26" y="769" width="118" height="52"/>
+                                <rect key="frame" x="26" y="769" width="84" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Untitled_Artwork-4"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrl-MJ-sSE">
-                                <rect key="frame" x="254" y="769" width="118" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Untitled_Artwork-3"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQh-6A-Yva">
-                                <rect key="frame" x="172" y="562" width="59" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Connect"/>
+                                <state key="normal" image="Steering_Wheel-1 (1)"/>
                                 <connections>
-                                    <action selector="connect:" destination="Tu5-wl-jxC" eventType="touchUpInside" id="jrs-wc-VAb"/>
+                                    <action selector="connect:" destination="Tu5-wl-jxC" eventType="touchUpInside" id="DP7-N1-b9n"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9JX-bC-Kko">
@@ -877,6 +867,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrl-MJ-sSE">
+                                <rect key="frame" x="303" y="769" width="76" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Steering_Wheel-1"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Yy9-H8-fvl"/>
@@ -1219,11 +1214,11 @@
         <image name="Registration_part_3-4 copy" width="321" height="149"/>
         <image name="Reset" width="394" height="156"/>
         <image name="ResetV" width="723" height="513"/>
+        <image name="Steering_Wheel-1" width="216" height="212"/>
+        <image name="Steering_Wheel-1 (1)" width="123" height="125"/>
         <image name="Untitled_Artwork-10" width="84" height="123"/>
         <image name="Untitled_Artwork-11" width="120" height="89"/>
         <image name="Untitled_Artwork-12" width="75" height="130"/>
-        <image name="Untitled_Artwork-3" width="215" height="112"/>
-        <image name="Untitled_Artwork-4" width="215" height="113"/>
         <image name="Untitled_Artwork-5" width="387" height="180"/>
         <image name="Untitled_Artwork-6" width="187" height="426"/>
         <image name="Untitled_Artwork-7" width="215" height="428"/>
