@@ -51,6 +51,11 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
                                                                                        
                       self.navigationController?.pushViewController(storyboard, animated: true)
         }
+        else if item == "Learn" {
+             let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
+                                                                                       
+                      self.navigationController?.pushViewController(storyboard, animated: true)
+        }
         
     }
     
