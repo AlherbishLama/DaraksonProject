@@ -1166,11 +1166,17 @@
                                 <rect key="frame" x="239" y="659" width="124" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="GMM_yes"/>
+                                <connections>
+                                    <action selector="Yes:" destination="yIo-1O-ssD" eventType="touchUpInside" id="jnN-Cd-lVx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmE-K9-CQh">
                                 <rect key="frame" x="59" y="659" width="125" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="GMM_no"/>
+                                <connections>
+                                    <action selector="No:" destination="yIo-1O-ssD" eventType="touchUpInside" id="C17-S6-cEA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
