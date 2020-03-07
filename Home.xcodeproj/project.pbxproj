@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38E85E3724139A6300BFEE66 /* B.wav in Resources */ = {isa = PBXBuildFile; fileRef = 38E85E3624139A6300BFEE66 /* B.wav */; };
 		9686B61982AB6545C4BCAC1D /* Pods_Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAADBD6B0567A3A06E71344A /* Pods_Home.framework */; };
 		A40DF20423E8AAB200A90120 /* SecondPartRegisteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DF20323E8AAB200A90120 /* SecondPartRegisteration.swift */; };
 		A40DF20623E8B31100A90120 /* thirdPartRegisteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DF20523E8B31100A90120 /* thirdPartRegisteration.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		24430AEDAA91C7BBE89D0185 /* Pods-Home.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home.debug.xcconfig"; path = "Target Support Files/Pods-Home/Pods-Home.debug.xcconfig"; sourceTree = "<group>"; };
+		38E85E3624139A6300BFEE66 /* B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = B.wav; path = ../../../../../Downloads/B.wav; sourceTree = "<group>"; };
 		A40DF20323E8AAB200A90120 /* SecondPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPartRegisteration.swift; sourceTree = "<group>"; };
 		A40DF20523E8B31100A90120 /* thirdPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdPartRegisteration.swift; sourceTree = "<group>"; };
 		A40DF20723E8D5B300A90120 /* FourthPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPartRegisteration.swift; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38E85E3524139A3600BFEE66 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				38E85E3624139A6300BFEE66 /* B.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		6C61D7B4A132A7DEB3A6E8CA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +236,7 @@
 		A4998F2323E1AA9B00A09BDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				38E85E3524139A3600BFEE66 /* Sounds */,
 				A41DB5562403BBF40010E297 /* Games */,
 				A4A4324D2401A5A7005E11D0 /* SignUp */,
 				A4998F2423E1AA9B00A09BDC /* AppDelegate.swift */,
@@ -324,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4998F3123E1AA9D00A09BDC /* LaunchScreen.storyboard in Resources */,
+				38E85E3724139A6300BFEE66 /* B.wav in Resources */,
 				A4A775EF2404FB3E004DED8C /* GoogleService-Info.plist in Resources */,
 				A4998F2E23E1AA9D00A09BDC /* Assets.xcassets in Resources */,
 				A4998F2C23E1AA9B00A09BDC /* Main.storyboard in Resources */,
