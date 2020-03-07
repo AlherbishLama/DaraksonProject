@@ -15,7 +15,7 @@ import CocoaMQTT
 
 //----------------The circles-------------------------
 class CircleView:UIView{
-    let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "172.20.10.12", port: 1883)
+    
     override func draw(_ rect: CGRect) {
         
         let path = UIBezierPath()
@@ -59,6 +59,7 @@ class CView:UIView{
 }
 
 class Level0: UIViewController {
+    let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "172.20.10.12", port: 1883)
     
     //All the Buttons initialized here
     
@@ -117,13 +118,16 @@ class Level0: UIViewController {
     
     //Running the code after finishing to try
     @IBAction func runCode(_ sender: UIButton) {
+        mqttClient.connect()
         self.animateButton(sender)
-        print(self.printField.text)
+        print(String(self.printField.text!))
         UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveEaseOut, animations: {
             self.backL.alpha = 1.0
             self.happyCloud.alpha = 1.0
             self.youDidIt.alpha = 1.0
         })
+        
+        mqttClient.publish("lvl/0", withString: String(printField.text!))
     }
             
     //this will appear 3 times for the scenario
