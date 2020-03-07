@@ -1198,13 +1198,130 @@
                     <view key="view" contentMode="scaleToFill" id="4he-Ve-ekn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7De-SJ-el5">
+                                <rect key="frame" x="84" y="667" width="246" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="start"/>
+                                <connections>
+                                    <action selector="Button:" destination="Lae-dF-mal" eventType="touchUpInside" id="r5p-Vx-XA4"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="SjQ-YH-b7d">
+                                <rect key="frame" x="26" y="578" width="355" height="227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2f-NW-RXq">
+                                <rect key="frame" x="286" y="697" width="58" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="next"/>
+                                <connections>
+                                    <action selector="gotoNext:" destination="Lae-dF-mal" eventType="touchUpInside" id="0SN-Ts-0gu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrF-SR-z66">
+                                <rect key="frame" x="72" y="528" width="327" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJ4-hx-8cF">
+                                <rect key="frame" x="275" y="706" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="try"/>
+                                <connections>
+                                    <action selector="letsTry:" destination="Lae-dF-mal" eventType="touchUpInside" id="Z5v-Se-0O1"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Hello car " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UpU-Ip-urO">
+                                <rect key="frame" x="99" y="639" width="278" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTn-kZ-F5p">
+                                <rect key="frame" x="13" y="656" width="87" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Print(">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="Menlo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="395-08-hjN">
+                                <rect key="frame" x="379" y="650" width="15" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=")">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="Menlo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beZ-BD-Hp2">
+                                <rect key="frame" x="236" y="706" width="125" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="run"/>
+                                <connections>
+                                    <action selector="runCode:" destination="Lae-dF-mal" eventType="touchUpInside" id="27c-D5-jr4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVl-c9-vzR">
+                                <rect key="frame" x="72" y="706" width="131" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backToLearn:" destination="Lae-dF-mal" eventType="touchUpInside" id="ks5-aZ-Quj"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-2p-0xU">
+                                <rect key="frame" x="187" y="236" width="190" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPt-Ka-sEE">
+                                <rect key="frame" x="230" y="215" width="105" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="you did it! first python word">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Cd7-8h-u8H"/>
                     </view>
+                    <connections>
+                        <outlet property="b" destination="395-08-hjN" id="Jj7-YD-Yde"/>
+                        <outlet property="backL" destination="IVl-c9-vzR" id="QRm-To-u8b"/>
+                        <outlet property="cloudBubble" destination="SjQ-YH-b7d" id="9hT-cb-T7v"/>
+                        <outlet property="gonext" destination="f2f-NW-RXq" id="EQA-cJ-a33"/>
+                        <outlet property="happyCloud" destination="MFh-2p-0xU" id="Qef-oj-YDE"/>
+                        <outlet property="printField" destination="UpU-Ip-urO" id="kcv-zD-v5B"/>
+                        <outlet property="printb" destination="uTn-kZ-F5p" id="i2T-dd-vCF"/>
+                        <outlet property="runthecode" destination="beZ-BD-Hp2" id="skY-9k-zCf"/>
+                        <outlet property="startButton" destination="7De-SJ-el5" id="6jI-cl-Vfo"/>
+                        <outlet property="talking" destination="xrF-SR-z66" id="NK4-Pf-Nw0"/>
+                        <outlet property="trying" destination="vJ4-hx-8cF" id="aPQ-qM-gGk"/>
+                        <outlet property="youDidIt" destination="fPt-Ka-sEE" id="21p-F6-Kmq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yic-F7-lF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7523" y="926"/>
+            <point key="canvasLocation" x="7521.739130434783" y="925.44642857142856"/>
         </scene>
         <!--Learnpage-->
         <scene sceneID="uYk-BL-5L9">
@@ -1324,16 +1441,22 @@
         <image name="Untitled_Artwork-8" width="429" height="193"/>
         <image name="Untitled_Artwork-9" width="130" height="90"/>
         <image name="WhatsApp Image 2020-02-08 at 3.09.36 PM" width="314" height="166"/>
+        <image name="back" width="738" height="397"/>
         <image name="board2" width="520" height="521"/>
+        <image name="cloud" width="226" height="145"/>
         <image name="final_registration_-1" width="722" height="510"/>
         <image name="final_registration_-2" width="312" height="182"/>
         <image name="final_registration_-3" width="716" height="159"/>
         <image name="logo" width="1280" height="906"/>
+        <image name="next" width="144" height="137"/>
         <image name="profile" width="48" height="48"/>
         <image name="profile-2" width="702" height="571"/>
         <image name="profile-3" width="275" height="103"/>
         <image name="profile-4" width="296" height="293"/>
         <image name="profile-5 copy" width="721" height="180"/>
         <image name="profile-6 copy" width="242" height="97"/>
+        <image name="run" width="401" height="243"/>
+        <image name="start" width="751" height="400"/>
+        <image name="try" width="417" height="298"/>
     </resources>
 </document>
