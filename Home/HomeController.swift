@@ -11,11 +11,11 @@ import UserNotifications
 
 class HomeController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     
-    let ArrayOfMenuImage = ["Play","Learn","2","About"]
+    let ArrayOfMenuImage = ["Play","2","About"]
     
-    let ArrayOfColors = ["T","Y","B","P"]
+    let ArrayOfColors = ["T","B","P"]
     
-    let ArrayOfMenuText = ["Play","Learn","Login","Help"]
+    let ArrayOfMenuText = ["Play","Login","Help"]
     
     struct globalNotification{
         static var DidAllow1 = Bool()
@@ -51,11 +51,7 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
                                                                                        
                       self.navigationController?.pushViewController(storyboard, animated: true)
         }
-        else if item == "Learn" {
-             let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
-                                                                                       
-                      self.navigationController?.pushViewController(storyboard, animated: true)
-        }
+        
         
     }
     

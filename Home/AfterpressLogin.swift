@@ -61,11 +61,14 @@ class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDeleg
            let item = ArrayOfMenuText[indexPath.row]
            
            if item == "Play" {
-              let storyboard = self.storyboard?.instantiateViewController(identifier: "Play") as! playview
+              let storyboard = self.storyboard?.instantiateViewController(identifier: "DeveloperGame") as! DeveloperGames
                                                                     
                 self.navigationController?.pushViewController(storyboard, animated: true)
                
            } else if item == "Learn" {
+                let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
+                                                                                          
+                         self.navigationController?.pushViewController(storyboard, animated: true)
            } else {
             
             
