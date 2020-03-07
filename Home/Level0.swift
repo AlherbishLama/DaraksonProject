@@ -11,10 +11,11 @@
 import UIKit
 import AVFoundation
 import UIKit.UIFont
+import CocoaMQTT
 
 //----------------The circles-------------------------
 class CircleView:UIView{
-    
+    let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "172.20.10.12", port: 1883)
     override func draw(_ rect: CGRect) {
         
         let path = UIBezierPath()
