@@ -1,10 +1,12 @@
 import paho.mqtt.client as mqtt
 import time
+import I2CDriver
+
 clientName = "RPI"
 Server = "localhost"
 mqttClient = mqtt.Client(clientName)
 topic = "lvl/0"
-
+mylcd = I2CDriver.lcd()
 
 def on_connect(client, userdata, flags, rc):
     # The topic subscribing to.
@@ -13,7 +15,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
     message = msg.payload.decode(encoding='UTF-8')
-    print(message)
+    mylcd.lcd_display_string(msg, 1)
 
 
 mqttClient.on_connect = on_connect
