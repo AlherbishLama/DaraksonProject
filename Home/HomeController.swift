@@ -11,6 +11,12 @@ import UserNotifications
 
 class HomeController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     
+    @IBOutlet weak var Logo3: UIImageView!
+    @IBOutlet weak var Logo2: UIImageView!
+    @IBOutlet weak var Logo1: UIImageView!
+    @IBOutlet weak var Logo4: UIImageView!
+    @IBOutlet weak var bhckgroundstartpage: UIImageView!
+    @IBOutlet weak var Logo5: UIImageView!
     let ArrayOfMenuImage = ["Play","2","About"]
     
     let ArrayOfColors = ["T","B","P"]
@@ -55,6 +61,24 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
         
     }
     
+    func rotate1(imageView: UIImageView, aCircleTime: Double) { //CABasicAnimation
+            
+            let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.fromValue = 0.0
+            rotationAnimation.toValue = Double.pi * 4 //Minus can be Direction
+            rotationAnimation.duration = aCircleTime
+        rotationAnimation.repeatCount = 1.0
+            imageView.layer.add(rotationAnimation, forKey: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+           let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
+           cell.layer.transform = rotationTransform
+           
+        UIView.animate(withDuration: 1.0,delay: 1.7, options: .curveLinear ,animations: {
+               cell.layer.transform = CATransform3DIdentity
+           })
+       }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +97,121 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
             } else {
                 globalNotification.DidAllow1 = false
             }
-        }
+        }//startpage
+
+             UIView.animate(withDuration: 1, animations: {
+                 self.Logo5.frame.origin.y += 140
+             }, completion: nil)
+             
+             UIView.animate(withDuration: 1, animations: {
+                 self.Logo3.frame.origin.y -= 150
+             }, completion: nil)
+             
+             UIView.animate(withDuration: 1, animations: {
+                 self.Logo2.frame.origin.y -= 150
+             }, completion: nil)
+             
+             UIView.animate(withDuration: 1, animations: {
+                 self.Logo4.frame.origin.x -= 3
+             }, completion: nil)
+             
+             UIView.animate(withDuration: 1, animations: {
+                 self.Logo1.frame.origin.x += 7
+             }, completion: nil)
+             
+             
+            rotate1(imageView: Logo1, aCircleTime: 1)
+            rotate1(imageView: Logo4, aCircleTime: 1)
+             
+            
+
+             
+             let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 500, 10, 0)
+             bhckgroundstartpage.layer.transform = rotationTransform
+             UIView.animate(withDuration: 1, animations: {
+                 self.bhckgroundstartpage.layer.transform = CATransform3DIdentity
+                 self.bhckgroundstartpage.frame.origin.x += 1
+                 
+             }, completion: nil)
+            self.bhckgroundstartpage.layer.transform = CATransform3DIdentity
+
+
+             UIView.animate(withDuration: 1,delay: 0.001, options: .curveLinear , animations: {
+                     
+                 UIView.animate(withDuration:2, animations: {() -> Void in
+                       self.Logo5.frame.origin.y += 40
+                    }, completion: {(_ finished: Bool) -> Void in
+                     UIView.animate(withDuration: 1,  animations:{() -> Void in
+                      self.Logo5.frame.origin.y -= 40            })
+             })
+              })
+             
+             UIView.animate(withDuration: 1,delay: 0.01, options: .curveLinear , animations: {
+                     
+                 UIView.animate(withDuration:2, animations: {() -> Void in
+                       self.Logo1.frame.origin.y -= 20
+                    }, completion: {(_ finished: Bool) -> Void in
+                     UIView.animate(withDuration: 1,  animations:{() -> Void in
+                      self.Logo1.frame.origin.y += 20            })
+             })
+              })
+             UIView.animate(withDuration: 1,delay: 0.001, options: .curveLinear , animations: {
+                           
+                       UIView.animate(withDuration:2, animations: {() -> Void in
+                             self.Logo4.frame.origin.y += 30
+                          }, completion: {(_ finished: Bool) -> Void in
+                           UIView.animate(withDuration: 1,  animations:{() -> Void in
+                            self.Logo4.frame.origin.y -= 30            })
+                   })
+                    })
+             UIView.animate(withDuration: 1,delay: 0.01, options: .curveLinear , animations: {
+                                  
+                              UIView.animate(withDuration:2, animations: {() -> Void in
+                                    self.Logo3.frame.origin.y -= 30
+                                 }, completion: {(_ finished: Bool) -> Void in
+                                  UIView.animate(withDuration: 1,  animations:{() -> Void in
+                                   self.Logo3.frame.origin.y += 30            })
+                          })
+                           })
+             UIView.animate(withDuration: 1,delay: 0.001, options: .curveLinear , animations: {
+                                         
+                                     UIView.animate(withDuration:2, animations: {() -> Void in
+                                           self.Logo2.frame.origin.y -= 30
+                                        }, completion: {(_ finished: Bool) -> Void in
+                                         UIView.animate(withDuration: 1,  animations:{() -> Void in
+                                          self.Logo2.frame.origin.y += 30            })
+                                 })
+                                  })
+           
+             
+
+        
+             UIView.animate(withDuration: 1.1,delay: 1.2, options: .curveLinear, animations: {
+                 
+                 UIView.animate(withDuration:1.1, animations: {() -> Void in
+                   self.bhckgroundstartpage.layer.transform = CATransform3DIdentity
+                   self.bhckgroundstartpage.transform = CGAffineTransform(scaleX: 1, y: 1)
+                }, completion: {(_ finished: Bool) -> Void in
+                 UIView.animate(withDuration: 1.1, delay: 1.6, options: .curveLinear, animations:{() -> Void in
+                   self.bhckgroundstartpage.transform = CGAffineTransform(scaleX: 10, y: 10)
+                     self.Logo2.alpha = 0.0
+                     self.Logo1.alpha = 0.0
+                     self.Logo3.alpha = 0.0
+                     self.Logo4.alpha = 0.0
+                     self.Logo5.alpha = 0.0
+                    self.bhckgroundstartpage.alpha = 0.0
+
+               
+                 })  })  })
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 
     

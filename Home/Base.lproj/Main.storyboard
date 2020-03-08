@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="giv-TP-GSd">
-                                <rect key="frame" x="0.0" y="185" width="414" height="677"/>
+                                <rect key="frame" x="0.0" y="185" width="414" height="711"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -72,11 +72,43 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="3dB-0a-TdA"/>
                                 </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bhckgroundstartpage" translatesAutoresizingMaskIntoConstraints="NO" id="WIA-bg-NuD">
+                                <rect key="frame" x="89" y="437" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="KNN-DD-QD8">
+                                <rect key="frame" x="223" y="472" width="67" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo4" translatesAutoresizingMaskIntoConstraints="NO" id="Gfq-kJ-43G">
+                                <rect key="frame" x="133" y="472" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="hJe-JO-zYU">
+                                <rect key="frame" x="212" y="626" width="60" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo3" translatesAutoresizingMaskIntoConstraints="NO" id="QrU-FG-TbA">
+                                <rect key="frame" x="158" y="625" width="57" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo5" translatesAutoresizingMaskIntoConstraints="NO" id="McG-7p-Jdj">
+                                <rect key="frame" x="189" y="326" width="62" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Darakson" prompt="                                                        " id="ST9-z5-deI"/>
+                    <connections>
+                        <outlet property="Logo1" destination="KNN-DD-QD8" id="1N5-lR-qUz"/>
+                        <outlet property="Logo2" destination="hJe-JO-zYU" id="y19-rn-MEb"/>
+                        <outlet property="Logo3" destination="QrU-FG-TbA" id="r3m-Nt-Mc2"/>
+                        <outlet property="Logo4" destination="Gfq-kJ-43G" id="vCt-Yl-7ha"/>
+                        <outlet property="Logo5" destination="McG-7p-Jdj" id="Umb-1m-6Mi"/>
+                        <outlet property="bhckgroundstartpage" destination="WIA-bg-NuD" id="cdS-B7-Czq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -1448,12 +1480,18 @@
         <image name="Untitled_Artwork-9" width="130" height="90"/>
         <image name="WhatsApp Image 2020-02-08 at 3.09.36 PM" width="314" height="166"/>
         <image name="back" width="738" height="397"/>
+        <image name="bhckgroundstartpage" width="721" height="651"/>
         <image name="board2" width="520" height="521"/>
         <image name="cloud" width="226" height="145"/>
         <image name="final_registration_-1" width="722" height="510"/>
         <image name="final_registration_-2" width="312" height="182"/>
         <image name="final_registration_-3" width="716" height="159"/>
         <image name="logo" width="1280" height="906"/>
+        <image name="logo1" width="47" height="125"/>
+        <image name="logo2" width="104" height="106"/>
+        <image name="logo3" width="94" height="103"/>
+        <image name="logo4" width="46" height="119"/>
+        <image name="logo5" width="117" height="169"/>
         <image name="next" width="144" height="137"/>
         <image name="profile" width="48" height="48"/>
         <image name="profile-2" width="702" height="571"/>
