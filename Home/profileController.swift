@@ -21,7 +21,7 @@ import UserNotifications
     @IBOutlet weak var ChildNameTextField: UITextField!
     @IBOutlet weak var ChildHobbyTextField: UITextField!
     @IBOutlet weak var CarNameTextField: UITextField!
-    //bio    
+    //bio
     @IBOutlet weak var ChildAgeTextField: UITextField!
     //buttons to hide
     @IBOutlet weak var BioTextFieldView: UITextView!
@@ -52,23 +52,6 @@ import UserNotifications
         }
     
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == CarNameTextField || textField == ChildHobbyTextField || textField == ChildNameTextField || textField == BioTextFieldView || textField == ChildAgeTextField && isAllowed == true{
-            let allowCharacters = CharacterSet.letters // to restrict the user to enter only alpha
-            let characterSet = CharacterSet(charactersIn: string)
-            return allowCharacters.isSuperset(of: characterSet)
-        }else {
-            let allowCharacters = CharacterSet.decimalDigits// to restrict the user to enter only numbers
-                        //   textField.Ran
-            let characterSet = CharacterSet(charactersIn: string)
-            return allowCharacters.isSuperset(of: characterSet)
-        }
-    
-      }
-    
-    
-
-    
     func setFields(){
         let current = Auth.auth().currentUser?.uid
 
@@ -83,11 +66,47 @@ import UserNotifications
         
         }
     }
+       
     
-
+   //_____Edit buttun :
+    @IBAction func editProfileTapped(_ sender: Any) {
+        self.editButtonToHide.isHidden=true
+            self.doneButton.isHidden=false
     
-    
+    // show white background and make it editable : editFeildsToWhite()
+        editFeildsToWhite( textfield: ChildAgeTextField )
+        editFeildsToWhite( textfield: ChildNameTextField )
+        editFeildsToWhite( textfield: CarNameTextField )
+        editFeildsToWhite( textfield: ChildHobbyTextField )
         
+        //bio
+        BioTextFieldView.isUserInteractionEnabled = true
+        BioTextFieldView.backgroundColor = UIColor.white
+    }
+    
+    
+    
+    func editFeildsToWhite (textfield: UITextField ){
+              textfield.isUserInteractionEnabled = true //enable edit
+              textfield.textColor = UIColor.black
+              textfield.backgroundColor = UIColor.white
+              textfield.borderStyle = UITextField.BorderStyle(rawValue: 2)!
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+           if textField == CarNameTextField || textField == ChildHobbyTextField || textField == ChildNameTextField || textField == BioTextFieldView || textField == ChildAgeTextField && isAllowed == true{
+               let allowCharacters = CharacterSet.letters // to restrict the user to enter only alpha
+               let characterSet = CharacterSet(charactersIn: string)
+               return allowCharacters.isSuperset(of: characterSet)
+           }else {
+               let allowCharacters = CharacterSet.decimalDigits// to restrict the user to enter only numbers
+                           //   textField.Ran
+               let characterSet = CharacterSet(charactersIn: string)
+               return allowCharacters.isSuperset(of: characterSet)
+           }
+       
+         }
+     
     
     @IBAction func doneAction(_ sender: Any) {
                 isvalidTextField(textfield: ChildHobbyTextField)
@@ -104,23 +123,29 @@ import UserNotifications
                     Database.database().reference().child("users").child(current!).updateChildValues(["Car_Name": CarNameTextField.text , "Child_Age": "\(ChildAgeTextField.text!)" , "Child_Name": ChildNameTextField.text, "Favorit_Hobby": ChildHobbyTextField.text , "Bio": BioTextFieldView.text ])
                     statics.alert(message: "updated successfully", title: "Alert", view: self)
 
+                    //fields
+                    makeFeildsGreyAgain(textfield: ChildAgeTextField )
+                    makeFeildsGreyAgain(textfield: ChildNameTextField )
+                    makeFeildsGreyAgain(textfield: CarNameTextField )
+                    makeFeildsGreyAgain(textfield: ChildHobbyTextField )
+               
+                   BioTextFieldView.isUserInteractionEnabled = false
+                    BioTextFieldView.backgroundColor = UIColor.clear
+                    
+                    
+                    self.doneButton.isHidden = true
+                    self.editButtonToHide.isHidden = false
             }
                 }// end func
     
-    
-    
-    
-   //_____Edit buttun :
-    @IBAction func editProfileTapped(_ sender: Any) {
-        self.editButtonToHide.isHidden=true
-            self.doneButton.isHidden=false
-        self.ChildAgeTextField.isUserInteractionEnabled = true
-        self.CarNameTextField.isUserInteractionEnabled = true
-        self.ChildHobbyTextField.isUserInteractionEnabled = true
-        self.BioTextFieldView.isUserInteractionEnabled = true
-        self.ChildNameTextField.isUserInteractionEnabled = true
-        
+    func makeFeildsGreyAgain (textfield: UITextField ){
+         textfield.isUserInteractionEnabled = false //enable edit
+        textfield.textColor = UIColor.white
+        textfield.backgroundColor = UIColor.systemFill
+        UITextField.BorderStyle(rawValue: 0)!
     }
+     
+
         
     //Log out
     @IBAction func logOutTapped(_ sender: Any) {
