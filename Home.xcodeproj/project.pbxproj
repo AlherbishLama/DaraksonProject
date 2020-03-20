@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		38E85E3A2413A6F600BFEE66 /* B.wav in Resources */ = {isa = PBXBuildFile; fileRef = 38E85E392413A6F600BFEE66 /* B.wav */; };
+		38F241E32424D91C00B6450B /* level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F241E22424D91C00B6450B /* level1.swift */; };
+		38F241E52424EC3B00B6450B /* m.wav in Resources */ = {isa = PBXBuildFile; fileRef = 38F241E42424EC3B00B6450B /* m.wav */; };
 		9686B61982AB6545C4BCAC1D /* Pods_Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAADBD6B0567A3A06E71344A /* Pods_Home.framework */; };
 		A40DF20423E8AAB200A90120 /* SecondPartRegisteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DF20323E8AAB200A90120 /* SecondPartRegisteration.swift */; };
 		A40DF20623E8B31100A90120 /* thirdPartRegisteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DF20523E8B31100A90120 /* thirdPartRegisteration.swift */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		24430AEDAA91C7BBE89D0185 /* Pods-Home.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home.debug.xcconfig"; path = "Target Support Files/Pods-Home/Pods-Home.debug.xcconfig"; sourceTree = "<group>"; };
 		38E85E392413A6F600BFEE66 /* B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = B.wav; sourceTree = "<group>"; };
+		38F241E22424D91C00B6450B /* level1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = level1.swift; sourceTree = "<group>"; };
+		38F241E42424EC3B00B6450B /* m.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = m.wav; sourceTree = "<group>"; };
 		A40DF20323E8AAB200A90120 /* SecondPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPartRegisteration.swift; sourceTree = "<group>"; };
 		A40DF20523E8B31100A90120 /* thirdPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdPartRegisteration.swift; sourceTree = "<group>"; };
 		A40DF20723E8D5B300A90120 /* FourthPartRegisteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthPartRegisteration.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				38E85E392413A6F600BFEE66 /* B.wav */,
+				38F241E42424EC3B00B6450B /* m.wav */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				A4998F2423E1AA9B00A09BDC /* AppDelegate.swift */,
 				A4998F2623E1AA9B00A09BDC /* SceneDelegate.swift */,
 				A4998F2A23E1AA9B00A09BDC /* Main.storyboard */,
+				38F241E22424D91C00B6450B /* level1.swift */,
 				DAB5851D2413A292001311D3 /* Level0.swift */,
 				DAB5851F2413A29D001311D3 /* LearnCollectionViewCell.swift */,
 				DAB585212413A2A5001311D3 /* Learnpage.swift */,
@@ -343,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F241E52424EC3B00B6450B /* m.wav in Resources */,
 				A4998F3123E1AA9D00A09BDC /* LaunchScreen.storyboard in Resources */,
 				38E85E3A2413A6F600BFEE66 /* B.wav in Resources */,
 				A4A775EF2404FB3E004DED8C /* GoogleService-Info.plist in Resources */,
@@ -412,6 +419,7 @@
 				A4705E2D23EF4EDB00F0C065 /* playview.swift in Sources */,
 				A48A660C240313C600292DB1 /* Card.swift in Sources */,
 				DA46C8FF24039F970078F263 /* CollectionViewCell.swift in Sources */,
+				38F241E32424D91C00B6450B /* level1.swift in Sources */,
 				A45F330623ED9393001A5AF4 /* IQInvocation.swift in Sources */,
 				A45F330123ED9393001A5AF4 /* IQPreviousNextView.swift in Sources */,
 				A4998F2523E1AA9B00A09BDC /* AppDelegate.swift in Sources */,

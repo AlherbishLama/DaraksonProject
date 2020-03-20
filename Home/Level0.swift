@@ -225,7 +225,6 @@ class Level0: UIViewController {
             print("Audio error")
         }
     }
-    
     //This method animates all the button to give them the spring effect
     func animateButton(_ viewA: UIView){
         UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.3, options: .curveEaseIn, animations: {

@@ -46,11 +46,11 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
                                                                   
                              self.navigationController?.pushViewController(storyboard, animated: true)
              
-         } //else if item == "Level1" {
-           // let storyboard = self.storyboard?.instantiateViewController(identifier: "") as!
+         } else if item == "L1" {
+            let storyboard = self.storyboard?.instantiateViewController(identifier: "1") as! level1
                                                                              
-        // self.navigationController?.pushViewController(storyboard, animated: true)
-     //  }
+         self.navigationController?.pushViewController(storyboard, animated: true)
+       }
       //  else if item == "Level2" {
         // let storyboard = self.storyboard?.instantiateViewController(identifier: "") as!
                                                                              
@@ -64,7 +64,5 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
 //
          
      }
-    
-    
 
 }
