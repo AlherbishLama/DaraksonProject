@@ -75,8 +75,8 @@ class Level0: UIViewController {
     
     @IBOutlet weak var talking: UILabel!// tha moving words
     
+    @IBOutlet weak var finishh: UIButton!
     
-   
     @IBOutlet weak var happyCloud: UIImageView!// the happy cloud after finishing
     
     @IBOutlet weak var youDidIt: UILabel!//the happy words!
@@ -99,7 +99,11 @@ class Level0: UIViewController {
       
       ]
     var line = 0
-        
+    
+    @IBAction func finished(_ sender: UIButton) {
+        levell0 = true
+        LockimagArr[1] = ""
+    }
     //pressing try button
     @IBAction func letsTry(_ sender: Any) {
         talking.text = ""
@@ -127,6 +131,9 @@ class Level0: UIViewController {
                 print("inside")
                 self.notdidit.alpha = 0
                 self.youDidIt.alpha = 1.0
+                self.finishh.alpha = 1.0
+                self.finishh.alpha = 1.0
+                levell0 = true
             }
             else{
                 UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveEaseOut, animations: {
@@ -279,6 +286,7 @@ class Level0: UIViewController {
         gradient.add(animation, forKey: nil)
             
             super.viewDidLoad()
+
         //Head of Mr.Robot
         let head = UIView(frame: CGRect(x: 94, y: 300, width:240, height:180 ) )
         head.backgroundColor = UIColor.init(red: 206/255, green: 236/255, blue: 242/255, alpha: 1.0)
@@ -349,6 +357,7 @@ class Level0: UIViewController {
         
         youDidIt.alpha = 0.0
         notdidit.alpha = 0.0
+        finishh.alpha = 0.0
             
         printField.delegate = self
          
@@ -365,6 +374,7 @@ class Level0: UIViewController {
         view.addSubview(happyCloud)
         view.addSubview(youDidIt)
         view.addSubview(notdidit)
+        view.addSubview(finishh)
         view.addSubview(startButton)
     }
     

@@ -1476,6 +1476,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-94-99j">
+                                <rect key="frame" x="84" y="698" width="140" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <segue destination="Run-wG-hMP" kind="show" id="ywB-Et-KV4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Cd7-8h-u8H"/>
@@ -1483,6 +1491,7 @@
                     <connections>
                         <outlet property="b" destination="395-08-hjN" id="Jj7-YD-Yde"/>
                         <outlet property="cloudBubble" destination="SjQ-YH-b7d" id="9hT-cb-T7v"/>
+                        <outlet property="finishh" destination="Xf2-94-99j" id="5aj-eR-NN1"/>
                         <outlet property="gonext" destination="f2f-NW-RXq" id="EQA-cJ-a33"/>
                         <outlet property="happyCloud" destination="MFh-2p-0xU" id="Qef-oj-YDE"/>
                         <outlet property="notdidit" destination="MEQ-Y6-AzJ" id="5Oh-48-mLj"/>
@@ -1497,18 +1506,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yic-F7-lF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6783" y="1528"/>
+            <point key="canvasLocation" x="6782.608695652174" y="1527.4553571428571"/>
         </scene>
         <!--Learnpage-->
         <scene sceneID="uYk-BL-5L9">
             <objects>
                 <viewController storyboardIdentifier="Learnpage" id="Run-wG-hMP" customClass="Learnpage" customModule="Darakson" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V8y-iy-xR8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rA3-0m-5fj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="2" sectionInsetReference="safeArea" id="uX6-Y3-Rig">
                                     <size key="itemSize" width="407" height="335"/>
@@ -1517,7 +1526,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="BackgroundLearn" id="vhC-cY-hvr">
-                                    <rect key="frame" x="0.0" y="-44" width="414" height="896"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <cells>
@@ -1574,6 +1583,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P4o-in-R97"/>
                     </view>
+                    <navigationItem key="navigationItem" id="den-q9-4Vi"/>
                     <connections>
                         <outlet property="levelcollection" destination="rA3-0m-5fj" id="iU7-Gs-hGB"/>
                     </connections>
@@ -1617,6 +1627,7 @@
         <image name="Untitled_Artwork-8" width="429" height="193"/>
         <image name="Untitled_Artwork-9" width="130" height="90"/>
         <image name="WhatsApp Image 2020-02-08 at 3.09.36 PM" width="314" height="166"/>
+        <image name="back" width="738" height="397"/>
         <image name="bhckgroundstartpage" width="721" height="651"/>
         <image name="board2" width="520" height="521"/>
         <image name="cloud" width="226" height="145"/>
