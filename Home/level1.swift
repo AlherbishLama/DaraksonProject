@@ -57,12 +57,43 @@ class cView:UIView{
 
 class level1: UIViewController {
 
+    @IBOutlet weak var counter: UILabel!
+    @IBOutlet weak var field: UITextField!
+    @IBOutlet weak var greenbox: UIImageView!
+    @IBOutlet weak var level1: UILabel!
+    @IBOutlet weak var pinkbox: UIImageView!
+    @IBOutlet weak var redbox: UIImageView!
+    @IBOutlet weak var yellowbox: UIImageView!
     @IBOutlet weak var lastcloud: UIImageView!
     @IBOutlet weak var start1: UIButton!
     @IBOutlet weak var nextgo: UIButton!
     @IBOutlet weak var dialog: UILabel!
     @IBOutlet weak var dialogcloud: UIImageView!
     var audioPlayer : AVAudioPlayer?
+    
+    @IBOutlet weak var insidebox: UILabel!
+    var words : [String] = []
+    
+    @IBOutlet weak var runn: UIButton!
+    
+    
+    @IBAction func empty(_ sender: Any) {
+        //Here i will send to the car
+        
+        
+        counter.text = "stored 0"
+        count = 0
+        words.removeAll()
+        //Then hide button
+        UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+            self.runn.alpha = 0.0
+            self.field.alpha = 1.0
+            self.counter.alpha = 1.0
+            self.lastcloud.alpha = 1.0
+            self.storeb.alpha = 1.0
+            self.insidebox.text = ""
+        })
+    }
     var storyLine: [String] = ["Welcome Back, nice to see you!\nLets learn\nabout \"variables\"",
                                   "hmm how do I\nremember your name everytime\nyou log-in?",
                                   "I save all your data \ninside boxes named variables",
@@ -73,6 +104,33 @@ class level1: UIViewController {
        
     ]
     var line = 0
+    var count = 0
+    @IBOutlet weak var storeb: UIButton!
+    
+    @IBAction func storecounter(_ sender: UIButton) {
+        if (field.text! != ""){
+            if (count < 3){
+                count = count + 1
+                words.append(field.text!)
+                insidebox.text = insidebox.text! + words[count-1] + "\n"
+                counter.text = "stored \(count)"
+                field.text = ""
+            }
+            if (count >= 3){
+                counter.text = "level 1 is full click\n run to empty "
+                UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+                           self.runn.alpha = 1.0
+                           self.field.alpha = 0.0
+                           self.counter.alpha = 1.0
+                           self.lastcloud.alpha = 1.0
+                           self.storeb.alpha = 0.0
+                           
+                       })
+            }
+        }
+        
+        
+    }
     
     @IBAction func nextt(_ sender: UIButton) {
         UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseOut, animations: {
@@ -87,12 +145,42 @@ class level1: UIViewController {
                    self.line = self.line + 1
                    if line > 6{
                        self.nextgo.alpha = 0.0
-                           
-//                       UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
-//                           self.trying.alpha = 1.0
-//                       })
+                    
+                    RunLoop.current.run(until: Date() + 0.5)
+                    self.dialog.alpha = 0.0
+                       UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+                        self.dialogcloud.alpha = 0.0
+                        self.field.alpha = 1.0
+                        self.counter.alpha = 1.0
+                        self.lastcloud.alpha = 1.0
+                        self.storeb.alpha = 1.0
+                        
+                       })
                             
                    }
+        if line == 3 {
+        UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+            self.yellowbox.alpha = 1.0
+        })
+        }
+        else if line == 4 || line == 5{
+            UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+                self.yellowbox.alpha = 0.0
+                self.greenbox.alpha = 1.0
+                self.pinkbox.alpha = 1.0
+                self.redbox.alpha = 1.0
+            })
+        }
+        else if line == 6 {
+            UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+                     self.yellowbox.alpha = 1.0
+                     self.level1.alpha = 1.0
+                     self.greenbox.alpha = 0.0
+                     self.pinkbox.alpha = 0.0
+                     self.redbox.alpha = 0.0
+                 })
+        }
+        
     }
     @IBAction func startb(_ sender: UIButton) {
         if start1.alpha == 1.0{
@@ -142,7 +230,7 @@ class level1: UIViewController {
         }
         else if nextgo.alpha == 0.0{
                 
-            UIView.animate(withDuration: 0.1, delay: 9.9, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.1, delay: 10.1, options: .curveEaseOut, animations: {
                     self.nextgo.alpha = 1
             })
         }
@@ -250,13 +338,33 @@ class level1: UIViewController {
         
         blinkeye()
         dialogcloud.alpha = 0.0
-        //dialog.alpha = 0.0
+        yellowbox.alpha = 0.0
+        redbox.alpha = 0.0
+        pinkbox.alpha = 0.0
+        greenbox.alpha = 0.0
         nextgo.alpha = 0.0
-        
+        level1.alpha = 0.0
+        field.alpha = 0.0
+        counter.alpha = 0.0
+        lastcloud.alpha = 0.0
+        storeb.alpha = 0.0
+        runn.alpha = 0.0
+        insidebox.alpha = 1.0
         
         view.addSubview(dialogcloud)
         view.addSubview(nextgo)
         view.addSubview(dialog)
+        view.addSubview(yellowbox)
+        view.addSubview(redbox)
+        view.addSubview(pinkbox)
+        view.addSubview(greenbox)
+        view.addSubview(level1)
+        view.addSubview(field)
+        view.addSubview(lastcloud)
+        view.addSubview(storeb)
+        view.addSubview(counter)
+        view.addSubview(runn)
+        view.addSubview(insidebox)
         view.addSubview(start1)
     }
     func blinkeye(){
