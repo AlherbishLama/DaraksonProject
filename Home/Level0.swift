@@ -75,7 +75,7 @@ class Level0: UIViewController {
     
     @IBOutlet weak var talking: UILabel!// tha moving words
     
-    @IBOutlet weak var backL: UIButton!// return to the main menu
+    
    
     @IBOutlet weak var happyCloud: UIImageView!// the happy cloud after finishing
     
@@ -86,21 +86,20 @@ class Level0: UIViewController {
     @IBOutlet weak var startButton: UIButton!// the start button
     
     var audioPlayer : AVAudioPlayer?
-    
+    @IBOutlet weak var notdidit: UILabel!
     @IBOutlet weak var gonext: UIButton!
     //------------- The helping variables for the movie scene-----------
-    var storyLine: [String] = ["Hello World \nMy Name is Mr. Robot!\nLet us talk about Languages ",
-                                   "Robots don't\nunderstand human language\nwe know machine language",
-                                   "I speak python!\nusing key word \"print()\"...\nyou can learn to speak python too",
-                                   "Type \"Hello Car\"\ninside the print and see it \non your car try it!!"]
+      var storyLine: [String] = ["Hello World \nMy Name is Mr. Robot!",
+                                 "Let us talk about Languages",
+                                 "we don't know human language",
+                                 "we know machine language",
+                                 "I speak python!\nusing word \"print()\".",
+                                 "you can learn to speak python too.",
+                                 "Type a word in print\n to see it in your car\n try it!!"
+      
+      ]
     var line = 0
-    
-    //This will take us back to the main menu not complete
-    @IBAction func backToLearn(_ sender: UIButton) {
-        self.animateButton(sender)
-        // need to get back to learn
-    }
-    
+        
     //pressing try button
     @IBAction func letsTry(_ sender: Any) {
         talking.text = ""
@@ -118,13 +117,24 @@ class Level0: UIViewController {
     
     //Running the code after finishing to try
     @IBAction func runCode(_ sender: UIButton) {
-        mqttClient.connect()
+        //mqttClient.connect()
         self.animateButton(sender)
         print(String(self.printField.text!))
         UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveEaseOut, animations: {
-            self.backL.alpha = 1.0
             self.happyCloud.alpha = 1.0
-            self.youDidIt.alpha = 1.0
+            //Changed here
+            if self.printField.text != ""{
+                print("inside")
+                self.notdidit.alpha = 0
+                self.youDidIt.alpha = 1.0
+            }
+            else{
+                UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveEaseOut, animations: {
+                    self.notdidit.alpha = 1.0
+                    self.youDidIt.alpha = 0.0
+                              
+                })
+            }
         })
         
         mqttClient.publish("lvl/0", withString: String(printField.text!))
@@ -132,7 +142,7 @@ class Level0: UIViewController {
             
     //this will appear 3 times for the scenario
     @IBAction func gotoNext(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseOut, animations: {
                 self.gonext.alpha = 0.0
             })
             self.animateButton(sender)
@@ -142,10 +152,10 @@ class Level0: UIViewController {
             appearNext()
             animateText(words: storyLine[line])
             self.line = self.line + 1
-            if line > 3{
+            if line > 6{
                 self.gonext.alpha = 0.0
                     
-                UIView.animate(withDuration: 0.8, delay: 0.1, options: .curveEaseOut, animations: {
+                UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
                     self.trying.alpha = 1.0
                 })
                      
@@ -154,7 +164,8 @@ class Level0: UIViewController {
     
     //The start button at the beginning of the intro
     @IBAction func Button(_ sender: UIButton) {
-        sound()
+        if startButton.alpha == 1.0{
+              sound()
               self.animateButton(sender)
               fade()
               appearcloud()
@@ -163,6 +174,7 @@ class Level0: UIViewController {
               talking.font = talking.font.withSize(18)
               animateText(words: storyLine[line])
               self.line = self.line + 1
+        }
     }
     
     //-------My helping functions to read code easier an reuse them again------
@@ -175,9 +187,12 @@ class Level0: UIViewController {
     
     //will let the next button appear
     func appearNext(){
-        if gonext.alpha == 0.0{
+        if line >= 6{
+                   self.gonext.alpha = 0.0
+        }
+        else if gonext.alpha == 0.0{
                 
-        UIView.animate(withDuration: 0.1, delay: 8.8, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.1, delay: 6.0, options: .curveEaseOut, animations: {
                     self.gonext.alpha = 1
             })
         }
@@ -226,18 +241,22 @@ class Level0: UIViewController {
     
     //to animate the typing effect of the words
     func animateText(words: String){
-        audioPlayer?.setVolume(0.0, fadeDuration: 0.0)
+        //audioPlayer?.setVolume(0.5, fadeDuration: 0.5)
+        
         for i in words{
-            //AudioServicesPlaySystemSound(1306)
+           
+            AudioServicesPlaySystemSound(1306)
+           
             talking.text! += "\(i)"
-            RunLoop.current.run(until: Date() + 0.12)
+            RunLoop.current.run(until: Date() + 0.18)
+            
         }
     }
     
 //------------------The main---------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        mqttClient.connect()
         // the background of the view
         let backview = UIView()
         backview.frame.size = CGSize(width: 500, height: 1000)
@@ -328,8 +347,9 @@ class Level0: UIViewController {
         b.alpha = 0.0
         runthecode.alpha = 0.0
         happyCloud.alpha = 0.0
-        backL.alpha = 0.0
+        
         youDidIt.alpha = 0.0
+        notdidit.alpha = 0.0
             
         printField.delegate = self
          
@@ -342,9 +362,10 @@ class Level0: UIViewController {
         view.addSubview(printb)
         view.addSubview(b)
         view.addSubview(runthecode)
-        view.addSubview(backL)
+   
         view.addSubview(happyCloud)
         view.addSubview(youDidIt)
+        view.addSubview(notdidit)
         view.addSubview(startButton)
     }
     
