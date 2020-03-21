@@ -1311,7 +1311,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scs-PX-05R">
-                                <rect key="frame" x="152" y="683" width="125" height="73"/>
+                                <rect key="frame" x="175" y="683" width="125" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="run"/>
                                 <connections>
@@ -1332,10 +1332,16 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="storev:" destination="EKR-p2-1n0" eventType="editingDidEnd" id="xnt-6K-rtC"/>
-                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lz1-3Z-rfn">
+                                <rect key="frame" x="55" y="686" width="111" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <action selector="fefo:" destination="EKR-p2-1n0" eventType="touchUpInside" id="ecT-6j-UHK"/>
+                                    <segue destination="Run-wG-hMP" kind="show" id="j76-7m-T4G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="D2Q-9h-bl9"/>
@@ -1345,6 +1351,7 @@
                         <outlet property="dialog" destination="wJY-dx-s6b" id="5fZ-yG-JR4"/>
                         <outlet property="dialogcloud" destination="IBl-bA-Bje" id="fWF-gf-z2c"/>
                         <outlet property="field" destination="JQk-cn-FDt" id="Vji-Gt-AnM"/>
+                        <outlet property="finsh" destination="Lz1-3Z-rfn" id="fy5-tC-OxT"/>
                         <outlet property="greenbox" destination="paZ-Rp-qei" id="bws-Mr-6DT"/>
                         <outlet property="insidebox" destination="Cyg-ch-8JQ" id="W4c-bj-Dec"/>
                         <outlet property="lastcloud" destination="Lso-BC-4zf" id="lUx-Cw-nDQ"/>
@@ -1360,7 +1367,137 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krY-Rg-jjs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6782.608695652174" y="867.85714285714278"/>
+            <point key="canvasLocation" x="6807" y="783"/>
+        </scene>
+        <!--Level2-->
+        <scene sceneID="JmG-Aw-UAi">
+            <objects>
+                <viewController storyboardIdentifier="2" id="hQk-6h-nQs" customClass="Level2" customModule="Darakson" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Is9-Z8-SAI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhf-ku-lDM">
+                                <rect key="frame" x="95" y="625" width="246" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="start"/>
+                                <connections>
+                                    <action selector="thefirstone:" destination="hQk-6h-nQs" eventType="touchUpInside" id="onV-4q-Fku"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="2kz-4B-JtE">
+                                <rect key="frame" x="37" y="568" width="355" height="227"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgC-qw-pBy">
+                                <rect key="frame" x="286" y="696" width="58" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="next"/>
+                                <connections>
+                                    <action selector="next:" destination="hQk-6h-nQs" eventType="touchUpInside" id="DZ5-R1-mPg"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="You can learn anything" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87S-Us-MyX">
+                                <rect key="frame" x="161" y="653" width="113" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="arrowright" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-1I-e6L">
+                                <rect key="frame" x="89" y="662" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="arrowlift" translatesAutoresizingMaskIntoConstraints="NO" id="MrL-Uq-at7">
+                                <rect key="frame" x="278" y="658" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oS-Q6-JAk">
+                                <rect key="frame" x="234" y="716" width="125" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="run"/>
+                                <connections>
+                                    <action selector="rrun:" destination="hQk-6h-nQs" eventType="touchUpInside" id="vQS-NX-lNr"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="hfd-on-oFT">
+                                <rect key="frame" x="223" y="234" width="190" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jd-kZ-7Te">
+                                <rect key="frame" x="266" y="213" width="105" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="you did it not type anything try again">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYO-6d-bSB">
+                                <rect key="frame" x="266" y="213" width="121" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Take a look ">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="SukhumvitSet-Text"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="at your car!">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="SukhumvitSet-Text"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj8-9K-8vR">
+                                <rect key="frame" x="44" y="526" width="327" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jH-HG-la6">
+                                <rect key="frame" x="113" y="715" width="116" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <action selector="FFinshh:" destination="hQk-6h-nQs" eventType="touchUpInside" id="PRb-Uu-lDt"/>
+                                    <segue destination="Run-wG-hMP" kind="show" id="4mT-hV-9wt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qsi-ZL-X0m"/>
+                    </view>
+                    <connections>
+                        <outlet property="FFinsh" destination="3jH-HG-la6" id="I9Y-NG-Z5c"/>
+                        <outlet property="Start2" destination="Zhf-ku-lDM" id="Vuj-Iw-dzb"/>
+                        <outlet property="arrowlift" destination="MrL-Uq-at7" id="nwl-68-d6s"/>
+                        <outlet property="arrowright" destination="Vgf-1I-e6L" id="inf-g6-Uf7"/>
+                        <outlet property="cloudbubble" destination="2kz-4B-JtE" id="pG1-kf-qfj"/>
+                        <outlet property="gonext2" destination="tgC-qw-pBy" id="k6n-sR-mDt"/>
+                        <outlet property="happycloud" destination="hfd-on-oFT" id="vqa-Ac-Ckc"/>
+                        <outlet property="notdidit" destination="VYO-6d-bSB" id="CZ2-mJ-10X"/>
+                        <outlet property="run" destination="3oS-Q6-JAk" id="b9b-gi-ClQ"/>
+                        <outlet property="talk" destination="Hj8-9K-8vR" id="JVz-Ws-0s9"/>
+                        <outlet property="youcan" destination="87S-Us-MyX" id="N2P-al-0vr"/>
+                        <outlet property="youdidit" destination="1Jd-kZ-7Te" id="SqB-m2-koW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKA-PY-xdo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7786.9565217391309" y="1052.6785714285713"/>
         </scene>
         <!--Level0-->
         <scene sceneID="X7A-4v-UAa">
@@ -1481,6 +1618,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="back"/>
                                 <connections>
+                                    <action selector="finished:" destination="Lae-dF-mal" eventType="touchUpInside" id="Wqf-x7-Xdn"/>
                                     <segue destination="Run-wG-hMP" kind="show" id="ywB-Et-KV4"/>
                                 </connections>
                             </button>
@@ -1627,6 +1765,8 @@
         <image name="Untitled_Artwork-8" width="429" height="193"/>
         <image name="Untitled_Artwork-9" width="130" height="90"/>
         <image name="WhatsApp Image 2020-02-08 at 3.09.36 PM" width="314" height="166"/>
+        <image name="arrowlift" width="297" height="512"/>
+        <image name="arrowright" width="512" height="512"/>
         <image name="back" width="738" height="397"/>
         <image name="bhckgroundstartpage" width="721" height="651"/>
         <image name="board2" width="520" height="521"/>
@@ -1655,4 +1795,7 @@
         <image name="try" width="417" height="298"/>
         <image name="yellowbox" width="257" height="194"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4mT-hV-9wt"/>
+    </inferredMetricsTieBreakers>
 </document>

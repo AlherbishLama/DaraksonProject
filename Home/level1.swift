@@ -69,6 +69,9 @@ class level1: UIViewController {
     @IBOutlet weak var nextgo: UIButton!
     @IBOutlet weak var dialog: UILabel!
     @IBOutlet weak var dialogcloud: UIImageView!
+    
+    @IBOutlet weak var finsh: UIButton!
+    
     var audioPlayer : AVAudioPlayer?
     
     @IBOutlet weak var insidebox: UILabel!
@@ -76,6 +79,7 @@ class level1: UIViewController {
     
     @IBOutlet weak var runn: UIButton!
     
+
     
     @IBAction func empty(_ sender: Any) {
         //Here i will send to the car
@@ -92,6 +96,7 @@ class level1: UIViewController {
             self.lastcloud.alpha = 1.0
             self.storeb.alpha = 1.0
             self.insidebox.text = ""
+            self.finsh.alpha = 1.0
         })
     }
     var storyLine: [String] = ["Welcome Back, nice to see you!\nLets learn\nabout \"variables\"",
@@ -131,6 +136,22 @@ class level1: UIViewController {
         
         
     }
+    
+    
+
+    @IBAction func fefo(_ sender: UIButton) {
+        levell1 = true
+        LockimagArr[2] = ""
+    }
+    
+    
+    
+    
+// @IBAction func finshh(_ sender: UIButton) {
+    //     levell1 = true
+    //     LockimagArr[2] = ""
+   //  }
+ 
     
     @IBAction func nextt(_ sender: UIButton) {
         UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseOut, animations: {
@@ -350,6 +371,7 @@ class level1: UIViewController {
         storeb.alpha = 0.0
         runn.alpha = 0.0
         insidebox.alpha = 1.0
+        finsh.alpha = 0.0
         
         view.addSubview(dialogcloud)
         view.addSubview(nextgo)
@@ -365,7 +387,9 @@ class level1: UIViewController {
         view.addSubview(counter)
         view.addSubview(runn)
         view.addSubview(insidebox)
+        view.addSubview(finsh)
         view.addSubview(start1)
+        
     }
     func blinkeye(){
         //The eyelids blinking ^_^

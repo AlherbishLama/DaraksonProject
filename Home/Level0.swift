@@ -100,6 +100,10 @@ class Level0: UIViewController {
       ]
     var line = 0
     
+    
+
+    
+    
     @IBAction func finished(_ sender: UIButton) {
         levell0 = true
         LockimagArr[1] = ""

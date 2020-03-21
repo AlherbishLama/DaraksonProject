@@ -9,6 +9,8 @@
 import UIKit
 
 var levell0 = false
+var levell1 = false
+var levell2 = false
 var LockimagArr = ["","Lock","Lock","Lock"]
 
 class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate{
@@ -20,8 +22,12 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         if (levell0 == true){
-            LockimagArr[1] = ""
+           LockimagArr[1] = ""
         }
+         if (levell1 == true){
+           LockimagArr[2] = ""
+        }
+        
         levelcollection.delegate = self
         levelcollection.dataSource = self 
         let width =  (view.frame.size.width - 20 ) / 2
@@ -62,11 +68,13 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
                 self.navigationController?.pushViewController(storyboard, animated: true)
             }
        }
-      //  else if item == "Level2" {
-        // let storyboard = self.storyboard?.instantiateViewController(identifier: "") as!
+        else if item == "L2" {
+           if (levell1 == true){
+        let storyboard = self.storyboard?.instantiateViewController(identifier: "2") as! Level2
                                                                              
-          // self.navigationController?.pushViewController(storyboard, animated: true)
-       // }
+       self.navigationController?.pushViewController(storyboard, animated: true)//
+           }}
+        
        // else if item == "Level3" {
          // let storyboard = self.storyboard?.instantiateViewController(identifier: "") as!
                                                                              

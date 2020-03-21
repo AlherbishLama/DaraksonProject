@@ -55,6 +55,7 @@
 		A4A775EF2404FB3E004DED8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4A775EE2404FB3E004DED8C /* GoogleService-Info.plist */; };
 		DA46C8FD24039F540078F263 /* DeveloperGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46C8FC24039F540078F263 /* DeveloperGames.swift */; };
 		DA46C8FF24039F970078F263 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA46C8FE24039F970078F263 /* CollectionViewCell.swift */; };
+		DA61E5D3242661C200CE8CBD /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61E5D2242661C200CE8CBD /* Level2.swift */; };
 		DAB5851E2413A292001311D3 /* Level0.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5851D2413A292001311D3 /* Level0.swift */; };
 		DAB585202413A29D001311D3 /* LearnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5851F2413A29D001311D3 /* LearnCollectionViewCell.swift */; };
 		DAB585222413A2A5001311D3 /* Learnpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB585212413A2A5001311D3 /* Learnpage.swift */; };
@@ -114,6 +115,7 @@
 		B78C7C0D134F7BD2AC085BD9 /* Pods-Home.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home.release.xcconfig"; path = "Target Support Files/Pods-Home/Pods-Home.release.xcconfig"; sourceTree = "<group>"; };
 		DA46C8FC24039F540078F263 /* DeveloperGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperGames.swift; sourceTree = "<group>"; };
 		DA46C8FE24039F970078F263 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		DA61E5D2242661C200CE8CBD /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
 		DAB5851D2413A292001311D3 /* Level0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level0.swift; sourceTree = "<group>"; };
 		DAB5851F2413A29D001311D3 /* LearnCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAB585212413A2A5001311D3 /* Learnpage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Learnpage.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				A4998F2423E1AA9B00A09BDC /* AppDelegate.swift */,
 				A4998F2623E1AA9B00A09BDC /* SceneDelegate.swift */,
 				A4998F2A23E1AA9B00A09BDC /* Main.storyboard */,
+				DA61E5D2242661C200CE8CBD /* Level2.swift */,
 				38F241E22424D91C00B6450B /* level1.swift */,
 				DAB5851D2413A292001311D3 /* Level0.swift */,
 				DAB5851F2413A29D001311D3 /* LearnCollectionViewCell.swift */,
@@ -407,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA61E5D3242661C200CE8CBD /* Level2.swift in Sources */,
 				A45F330F23ED9393001A5AF4 /* IQNSArray+Sort.swift in Sources */,
 				A45F330523ED9393001A5AF4 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				A45F330823ED9393001A5AF4 /* IQKeyboardManagerConstants.swift in Sources */,
