@@ -88,5 +88,5 @@ class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDeleg
            //UIApplication.shared.open(url, options: [:])
           }
     
-    
+    //check?
 }
