@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import UserNotifications
+import SafariServices
 
 class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDelegate {
     
@@ -69,12 +70,23 @@ class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDeleg
                 let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
                                                                                           
                          self.navigationController?.pushViewController(storyboard, animated: true)
-           } else {
-            
-            
-        }
-           
+        } else if item == "Help" {
+                              //    let storyboard = self.storyboard?.instantiateViewController(identifier: "DeveloperGame") as! DeveloperGames
+                                        openURL(url: "https://ilv0hoq7zrpnr8zqkghitw-on.drv.tw/Sprint3/www.landingpage/index")
+                                        //   self.navigationController?.pushViewController(storyboard, animated: true)
+                             }
+
+    
        }
+    
+
+       // URL
+          func openURL (url: String){
+              guard let url = URL(string: url) else {return}
+           let safariViewController=SFSafariViewController (url: url)
+           present(safariViewController, animated: true)
+           //UIApplication.shared.open(url, options: [:])
+          }
     
     
 }

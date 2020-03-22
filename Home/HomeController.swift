@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import SafariServices
 
 class HomeController: UIViewController , UITableViewDataSource, UITableViewDelegate{
     
@@ -56,7 +57,11 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
              let storyboard = self.storyboard?.instantiateViewController(identifier: "DeveloperGame") as! DeveloperGames
                                                                                        
                       self.navigationController?.pushViewController(storyboard, animated: true)
-        }
+        } else if item == "Help" {
+                       //    let storyboard = self.storyboard?.instantiateViewController(identifier: "DeveloperGame") as! DeveloperGames
+                                 openURL(url: "https://ilv0hoq7zrpnr8zqkghitw-on.drv.tw/Sprint3/www.landingpage/index")
+                                 //   self.navigationController?.pushViewController(storyboard, animated: true)
+                      }
         
         
     }
@@ -205,14 +210,15 @@ class HomeController: UIViewController , UITableViewDataSource, UITableViewDeleg
                  })  })  })
     
     
-    
-    
-    
-    
-    
-    
-    
     }
 
+
+      // URL
+         func openURL (url: String){
+             guard let url = URL(string: url) else {return}
+          let safariViewController=SFSafariViewController (url: url)
+          present(safariViewController, animated: true)
+          //UIApplication.shared.open(url, options: [:])
+         }
     
 }

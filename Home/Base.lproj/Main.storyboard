@@ -1441,15 +1441,7 @@
                                 <rect key="frame" x="266" y="213" width="121" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Take a look ">
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="SukhumvitSet-Text"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="at your car!">
+                                    <fragment content="Take a look at your car!">
                                         <attributes>
                                             <font key="NSFont" size="18" name="SukhumvitSet-Text"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="468" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
