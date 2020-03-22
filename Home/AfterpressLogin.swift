@@ -72,7 +72,7 @@ class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDeleg
                          self.navigationController?.pushViewController(storyboard, animated: true)
         } else if item == "Help" {
                               //    let storyboard = self.storyboard?.instantiateViewController(identifier: "DeveloperGame") as! DeveloperGames
-                                        openURL(url: "https://ilv0hoq7zrpnr8zqkghitw-on.drv.tw/Sprint3/www.landingpage/index")
+                                        openURL(url: "https://ilv0hoq7zrpnr8zqkghitw-on.drv.tw/Sprint3/www.landingpage/index3.html")
                                         //   self.navigationController?.pushViewController(storyboard, animated: true)
                              }
 
