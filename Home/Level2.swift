@@ -58,7 +58,7 @@ class CView2:UIView{
 }
 
 
-class Level2: UIViewController {
+class Level2: UIViewController,UITextFieldDelegate {
     let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "172.20.10.12", port: 1883)
 
     @IBOutlet weak var Start2: UIButton!
@@ -110,21 +110,22 @@ class Level2: UIViewController {
     }
     
   
-   
-    //  @IBAction func letstry2(_ sender: Any) {
-   //     talk.text = ""
-   //     UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseOut, animations: {//
-       //     self.talk.alpha = 0.0
-      //      self.cloudbubble.alpha = 0.0
-     //   })
-    //    UIView.animate(withDuration: 0.8, delay: 0.1, options: .curveEaseOut, animations: {
-        //    self.youcan.alpha = 1.0
-    //        self.arrowright.alpha = 1.0
-      //      self.arrowlift.alpha = 1.0
-   //         self.run.alpha = 1.0
-     //   })
-   // }
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    //   Find out what the text field will be after adding the current edit
+        
+        //self.run.alpha = 1.0
+        //rrun(run)
+        let text = CharacterSet.decimalDigits
+        let l = CharacterSet(charactersIn: string)
+        self.run.alpha = 1.0
+        return text.isSuperset(of: l)
+
+     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+           textField.resignFirstResponder()
+           return true
+       }
+
     
     @IBAction func rrun(_ sender: UIButton) {
         //mqttClient.connect()
@@ -133,15 +134,15 @@ class Level2: UIViewController {
              UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveEaseOut, animations: {
                  self.happycloud.alpha = 1.0
                  //Changed here
-                 if self.youcan.text != "" {
-                   self.notdidit.alpha = 1.0
-                   self.youdidit.alpha = 0.0
+                 if self.youcan.text == "" {
+                   self.notdidit.alpha = 0.0
+                   self.youdidit.alpha = 1.0
                  }
                  else{
                      UIView.animate(withDuration: 0.4, delay: 0.4, options: .curveEaseOut, animations: {
                         print("inside")
-                        self.notdidit.alpha = 0
-                        self.youdidit.alpha = 1.0
+                        self.notdidit.alpha = 1.0
+                        self.youdidit.alpha = 0.0
                         self.FFinsh.alpha = 1.0
                         self.FFinsh.alpha = 1.0
                         levell2 = true
@@ -173,8 +174,7 @@ class Level2: UIViewController {
                        self.youcan.alpha = 1.0
                        self.arrowright.alpha = 1.0
                        self.arrowlift.alpha = 1.0
-                       self.run.alpha = 1.0
-                    //       self.trying2.alpha = 1.0
+            //         self.run.alpha = 1.0
                        })
                     
                     
@@ -276,6 +276,8 @@ class Level2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mqttClient.connect()
+        youcan.delegate = self
+
         // the background of the view
         let backview = UIView()
         backview.frame.size = CGSize(width: 500, height: 1000)
@@ -433,14 +435,7 @@ class Level2: UIViewController {
     } }
 
 
-    extension Level2: UITextFieldDelegate{
-            
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool{
-            textField.resignFirstResponder()
-            return true
-        }
-
-    }
+ 
 
 
 
