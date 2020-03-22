@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Darakson </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- added Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- added jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+
+
+#nav-bar{
+
+    position: sticky;
+    top:0 ;
+    z-index: 10; 
+}
+.navbar{
+
+background-image: linear-gradient(to right,rgb(141, 217, 236), #fcb3ff) ;
+padding: 0 !important;
+
+}
+.navbar-brand img {
+
+height: 40px;
+padding-left:20px ;
+}
+.navbar-nav li {
+padding:0 10px ;
+}
+.navbar-nav li a{
+color: #fff !important ;
+font-weight:600; 
+float: right;
+text-align: left;
+}
+.fa-bars {
+color: #fff;
+font-size: 30px !important;
+}
+.navbar-toggler{
+
+outline: none !important;
+
+}
+
+#banner{
+background-image: linear-gradient(to right,rgb(141, 217, 236), #fcb3ff) ;
+color: #fff;
+padding-top: 5% ;
+}
+
+.promo-title{
+font-size: 40px;
+font-weight: 600;
+margin-top: 100px;
+}
+.play-btn{
+
+width: 45px;
+margin:20px;
+}
+
+#banner a{
+
+color: #fff;
+text-decoration: none;
+}
+
+.img-fluid{
+    width: 200px;
+margin:20px;
+}
+
+.bottom-img{
+
+width: 100%;
+}
+/* services section */ 
+
+#services{
+padding: 80px 0 ;
+}
+
+.service-img{
+width: 100px;
+margin-top: 20px;
+}
+
+.services{
+padding: 20px;
+}
+
+.services h4{
+padding: 5px;
+margin-top: 25px;
+text-transform: uppercase;
+}
+
+/* the line lol */ 
+.title::before {
+content: '';
+background: rgb(141, 217, 236);
+height: 5px;
+width: 200px;
+margin-left:auto ;
+margin-right: auto;
+display: block;
+transform: translateY(63px);
+}
+
+/* the line lol */ 
+.title::after {
+content: '';
+background:rgb(141, 217, 236);
+height: 10px;
+width: 50px;
+margin-left:auto ;
+margin-right: auto;
+margin-bottom: 40px;
+display: block;
+transform: translateY(8px);
+}
+#services .btn-primary {
+
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none;
+    border-radius:20px ;
+    background-image: linear-gradient(to right,rgb(141, 217, 236), #fcb3ff) ;
+
+}
+
+/* ---------------About Us Section------------------- */
+#about-us{
+background: #f8f9fa;
+padding-bottom: 50px;
+padding-top: 50px;
+}
+
+.about-title{
+font-size: 40px;
+font-weight: 600;
+margin-top:8% ;
+}
+#about-us ul li {
+margin: 10px 0 ;
+}
+
+#about-us ul{
+margin-left: 20px ;
+
+}
+
+.about-us{
+
+    margin-left: 0 px ;
+
+
+}
+/* I don't know*/
+
+.img-build{
+
+    border-radius: 22%;
+    width: 150px;
+   margin-left: 100px;
+}
+
+
+/* ------------------3rd section----------*/ 
+#testimonials {
+margin: 100px 0;
+}
+.testimonials{
+border-left: 4px solid rgb(141, 217, 236);
+margin-top: 50px;
+margin-bottom: 50px ;
+}
+.testimonials img {
+
+height:60px;
+width: 60px;
+border-radius: 50%;
+margin:0 10px ;
+}
+.user-details{
+display: inline-block;
+font-size: 12px;
+}
+/*------------------4th sectio Social MEdia----------*/
+#social-media{
+background-color: #f8f9fa;
+padding: 100px 0;
+}
+#social-media p{
+font-size: 40px;
+font-weight: 600;
+margin-bottom: 30px;
+}
+.social-icons img {
+
+   width: 60px; 
+   transition: 0.5s ;
+}
+.social-icons a:hover img {
+transform:translateY(-10px);
+}
+/*--------------------footer*/
+
+#footer{
+    background-image: linear-gradient(to right,rgb(141, 217, 236), #fcb3ff) ;
+color: #fff;
+}
+
+.footer-img{
+
+width: 100%;
+}
+
+.footer-box {
+    padding: 20px;
+}
+.footer-box img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+hr{
+
+    background-color: #fff;
+}
+.email{
+    padding:60px;
+
+
+
+}
+
+</style>
+
+
+<body>
+<section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#top">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">About Darakson</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">Build Your Car</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#testimonials" >Contact Darakson Team </a>
+              </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+</section>
+
+
+<!------------banner section------------>
+<section id="banner">
+   <div class="container" >
+<div class="row">
+    <div class="col-md-6">
+    <p class="promo-title"> Darakson</p>
+    <p> Learn While you Drive : <i class="fa fa-id-card" aria-hidden="true"></i> </p>
+    <p>  <i class="fa fa-forward" aria-hidden="true"></i> Build Your Remote Car using Rasparry Pi and Drive it with Darakson App </p>
+    </div>
+
+     <div class="col-md-6 text-center"> 
+         <!-- iphone and logo -->
+     <img src="images/mainPage.png" class="img-fluid">
+    </div>
+</div>
+</div>
+
+
+<img src="images/line.png" class="bottom-img" >
+
+</section>
+
+<!------------About Darakson : Services ID -->
+
+<section id="services">
+<div class="container text-center"> 
+
+<h1 class="title">
+ About Darakson   
+</h1>
+<div class="row text-center">
+
+    
+    <p id="about-darakson-title"> Darakson is a project that aims to develop an iOS application for children who are interested in simple robotics, giving them a platform where they can create their own account in order to use the application, personalize their profile, control the movement of the physical car built using raspberry pi 3 (model b+ ) for short and long distances, and having a live stream of the car from its attached camera.  </p>
+
+    <div class="col-md-4 services">
+        <img src="images/profile-2.png" class="service-img">
+        <h4> Driver License </h4>
+        <p> Sign Up for Account and get your Driver License 
+        </p>
+    
+    
+    </div>
+
+<div class="col-md-4 services">
+    <img src="images/CarDaraksonIcon.png" class="service-img">
+    <h4> Play</h4>
+    <p> Drive your remote car using your Darakson App! 
+    </p>
+
+
+</div>
+
+
+
+<div class="col-md-4 services">
+    <img src="images/Level3 2.png" class="service-img">
+    <h4> Learn </h4>
+    <p>  Learn Python Programming Language interactively, starting from Level0
+    </p>
+
+
+</div>
+
+
+</div>
+
+<button type="button" class="btn btn-primary"> Download the App for more Games!</button>
+
+</div>
+</section>
+
+<!---------------Build Your Car--------------->
+<section id="about-us">
+<div class="container">
+<h1 class="title text-center"> 
+Build Your Car
+</h1>
+<div class="row">
+
+    <div class="col-md-6 align-build-car"> <!--- added one img with class img fluid on right side-->
+        <img src="images/1.png" class="img-fluid img-build">
+        
+        
+        </div>
+<div class="col-md-6 about-us">
+<p> In theis section, we will show you how to Build your own car  </p>
+   <p id="coming soon"> coming soon..!</p>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+<!--------------------Section4 Contact US -------------------------->
+<!-- 
+<section id="social-media">
+    <div class="container text-center">
+    <p> Contact Darakson Team :  </p>
+    <div class="social-icons">
+        <a href="#"> <img src="images/Learn.png">  </a>
+        <a href="#"> <img src="images/Learn.png">  </a>
+        <a href="#"> <img src="images/Learn.png">  </a>
+    
+    </div>
+    </div>
+    
+    </section>
+
+ --> 
+<!--------------------------Testimuals ---------------------------->
+<section id="testimonials">
+
+<div class="container">
+    <h1 class="title text-center"> 
+        Contact Darakson
+        </h1>
+    <div class="row offset-1">
+        <div class="col-md-5 testimonials">
+            <p>  Darakson Team is five Software Engineer Students who study in King Saud University, we will be Happy to Answear Any inquieres 
+            </p>
+
+            <img src="images/Learn.png">
+            <p class="user-details"> <b>  Darakson </b> <br>  SWE444 Team  </p>
+            
+        </div>
+
+        <div class="col-md-5 testimonials email">
+            <p>  <i class="fa fa-envelope" aria-hidden="true"></i>  <a href = "mailto: darakson.444@gmail.com">Send Us Email</a>
+            </p>
+           
+    
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!----------------Foooter-->
+<section id="footer">
+<img src="images/line.png" class="footer-img">
+<div class="container">
+<div class="row">
+<div class="col-md-4 footer-box"> 
+
+</div>
+
+
+</section>
+
+<!---------- smooth scroll-->
+<script src="smooth-scroll.js"></script>
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+
+
+</body>
+
+
+</html>
