@@ -5,12 +5,18 @@ from playsound import playsound
 # playsound("/home/pi/Desktop/s.mp3")
 from pydub import AudioSegment
 from pydub.playback import play
-def play_song(filename):
+def play_song():
     song = AudioSegment.from_wav("b.wav")
+    play(song)
+def play_song1():
+    song = AudioSegment.from_wav("s.wav")
+    play(song)
+def play_song2():
+    song = AudioSegment.from_wav("y.wav")
     play(song)
 clientName = "RPI"
 # mqtt server address
-serverAddress = "192.168.100.209"
+serverAddress = "192.168.1.152"
 def topic(client, userdata, flags, rc):
     # The topic that the raspberry pi is subscribing to.
     mqttClient.subscribe("rpi/move")
@@ -70,11 +76,28 @@ def display_play(client, userdata, msg):
     elif message == "Left":
         left(2)
     elif message == "beeb":
-        play(song)
+        play_song()
+    elif message == "lose":
+        forword(2)
+        back(2)
+        play_song1()
     else:
         mylcd.lcd_display_string("", 1)
         mqtt.Client(clientName).loop_stop()
         mqtt.Client(clientName).disconnect()
+
+
+
+#play_song()
+time.sleep(10)
+right(2)
+time.sleep(2)
+left(2)
+time.sleep(2)
+right(2)
+#right(3)
+#left(2)
+#play_song2()
 
 mqttClient = mqtt.Client(clientName)
 mqttClient.on_connect = topic
