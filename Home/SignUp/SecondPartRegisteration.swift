@@ -5,7 +5,7 @@
 //Importing essintial dependencies and freamworks here
 import Foundation // provides the NSObject root class
 import UIKit // for UI object
-import UserNotifications // will have to request permission from the user to
+import UserNotifications // will have to request permission from the user to recive Notification.
 
 //-----------------------------start of the class---------------------------------------------------------
 class SecondPartRegisteration : UIViewController , UITextFieldDelegate {

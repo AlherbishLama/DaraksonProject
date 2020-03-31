@@ -7,8 +7,10 @@ import UIKit // for UI object
 import FirebaseAuth // Pod for User Authintication from Firebase.
 import Firebase // for linking the project with firebase.
 import UserNotifications // will have to request permission from the user to recive Notification.
+
 //-------------------------------start of the class---------------------------------------------
 class SignUpController: UIViewController , UITextFieldDelegate{
+    
     @IBOutlet weak var CarNameTextField: UITextField! //recive car name from the user.
     @IBOutlet weak var NextButtonToTheRegisterPart2: UIButton!
     @IBOutlet weak var ErrorLabel: UILabel!
