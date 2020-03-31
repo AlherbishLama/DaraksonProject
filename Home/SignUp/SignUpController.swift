@@ -1,6 +1,6 @@
 //  SignUpController.swift
 //  Home
-//  Copyright © 2020 Darakson
+//  Copyright © 2020 Darakson. All rights reserved.
 //------------------------Refactor Status : Completed.---------------------------------------------
 // Importing essintial dependencies and freamworks here
 import UIKit // for UI object

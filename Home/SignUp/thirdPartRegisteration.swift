@@ -1,11 +1,8 @@
-//
-//  thirdPartRegisteration.swift
+//thirdPartRegisteration.swift
 //  Home
-//
-//  Created by Lama Alherbish on 2/3/20.
-//  Copyright © 2020 Lama Alherbish. All rights reserved.
-//
-
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refactor Status : Completed.---------------------------------------------
+// Importing essintial dependencies and freamworks here
 import Foundation
 import  UIKit
 import UserNotifications
