@@ -85,6 +85,10 @@ class Level2: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var arrowlift: UIImageView!
     @IBOutlet weak var notdidit: UILabel!
+    @IBOutlet weak var skip: UILabel!
+    
+    @IBOutlet weak var ski: UIButton!
+    
     
 
     @IBOutlet weak var FFinsh: UIButton!
@@ -109,7 +113,22 @@ class Level2: UIViewController,UITextFieldDelegate {
         LockimagArr[3] = ""
     }
     
-  
+
+    @IBAction func Skip(_ sender: UIButton) {
+        line = 7
+        talk.text = ""
+        gonext2.alpha = 1.0
+        animateText(words: storyLine[line])
+        self.gonext2.alpha = 0.0
+                             UIView.animate(withDuration: 1.0, delay: 3, options: .curveEaseOut, animations: {
+                             self.cloudbubble.alpha = 0.0
+                             self.talk.alpha = 0.0
+                             self.youcan.alpha = 1.0
+                             self.arrowright.alpha = 1.0
+                             self.arrowlift.alpha = 1.0
+                  //         self.run.alpha = 1.0
+                             })
+    }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     //   Find out what the text field will be after adding the current edit
         
@@ -196,6 +215,8 @@ class Level2: UIViewController,UITextFieldDelegate {
                   animateText(words: storyLine[line])
                   self.line = self.line + 1
             }
+        ski.alpha = 1.0
+        skip.alpha = 1.0
     }
     
    func fade(){
@@ -372,6 +393,8 @@ class Level2: UIViewController,UITextFieldDelegate {
         youdidit.alpha = 0.0
         notdidit.alpha = 0.0
         FFinsh.alpha = 0.0
+        ski.alpha = 0.0
+        skip.alpha = 0.0
             
         youcan.delegate = self
 
@@ -389,6 +412,8 @@ class Level2: UIViewController,UITextFieldDelegate {
              view.addSubview(notdidit)
              view.addSubview(FFinsh)
              view.addSubview(Start2)
+        view.addSubview(ski)
+        view.addSubview(skip)
          }
     
     //The typing field if user touch to exit then save user input

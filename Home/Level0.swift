@@ -102,7 +102,10 @@ class Level0: UIViewController {
     
     @IBOutlet weak var ski: UIButton!
     
+    @IBOutlet weak var skip: UILabel!
     @IBAction func Skip(_ sender: UIButton) {
+        ski.alpha = 0.0
+        skip.alpha = 0.0
         line = 6;
         talking.text = ""
         self.gonext.alpha = 0.0
@@ -203,6 +206,7 @@ class Level0: UIViewController {
               self.line = self.line + 1
         }
         ski.alpha = 1.0
+        skip.alpha = 1.0
     }
     
     //-------My helping functions to read code easier an reuse them again------
@@ -380,6 +384,7 @@ class Level0: UIViewController {
         notdidit.alpha = 0.0
         finishh.alpha = 0.0
         ski.alpha = 0.0
+        skip.alpha = 0.0
             
         printField.delegate = self
          
@@ -399,6 +404,7 @@ class Level0: UIViewController {
         view.addSubview(finishh)
         view.addSubview(startButton)
         view.addSubview(ski)
+        view.addSubview(skip)
     }
     
     //The typing field if user touch to exit then save user input

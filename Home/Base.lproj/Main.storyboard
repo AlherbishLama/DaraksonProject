@@ -1311,7 +1311,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scs-PX-05R">
-                                <rect key="frame" x="172" y="759" width="125" height="73"/>
+                                <rect key="frame" x="172" y="687" width="125" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="run"/>
                                 <connections>
@@ -1327,7 +1327,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="store your words" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQk-cn-FDt">
-                                <rect key="frame" x="95" y="605" width="278" height="53"/>
+                                <rect key="frame" x="86" y="605" width="278" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1342,15 +1342,24 @@
                                     <segue destination="Run-wG-hMP" kind="show" id="j76-7m-T4G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CW-po-Yar">
-                                <rect key="frame" x="187" y="286" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CW-po-Yar">
+                                <rect key="frame" x="20" y="100" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Skip"/>
+                                <state key="normal" title="skip" image="bhckgroundstartpage">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="Skip:" destination="Lae-dF-mal" eventType="touchUpInside" id="fIG-tC-wOu"/>
                                     <action selector="skipp:" destination="EKR-p2-1n0" eventType="touchUpInside" id="rb4-Un-RLb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcC-Ff-iC6">
+                                <rect key="frame" x="28" y="113" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="D2Q-9h-bl9"/>
@@ -1370,6 +1379,7 @@
                         <outlet property="redbox" destination="5xA-fA-ONb" id="d9c-nA-aa4"/>
                         <outlet property="runn" destination="Scs-PX-05R" id="83l-qH-yyD"/>
                         <outlet property="skii" destination="0CW-po-Yar" id="fiS-Qp-fv9"/>
+                        <outlet property="skip" destination="FcC-Ff-iC6" id="hPx-hz-mRN"/>
                         <outlet property="start1" destination="suQ-rW-HdR" id="AeI-BX-3MS"/>
                         <outlet property="storeb" destination="x5v-uk-K5A" id="XXy-R9-94E"/>
                         <outlet property="yellowbox" destination="FdS-k4-A1u" id="F1R-sa-3iW"/>
@@ -1377,7 +1387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krY-Rg-jjs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6807" y="783"/>
+            <point key="canvasLocation" x="6805.7971014492759" y="782.8125"/>
         </scene>
         <!--Level2-->
         <scene sceneID="JmG-Aw-UAi">
@@ -1478,6 +1488,21 @@
                                     <segue destination="Run-wG-hMP" kind="show" id="4mT-hV-9wt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOX-ki-Pzh">
+                                <rect key="frame" x="20" y="100" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="bhckgroundstartpage"/>
+                                <connections>
+                                    <action selector="Skip:" destination="hQk-6h-nQs" eventType="touchUpInside" id="p7z-9W-Uhw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-O8-WeE">
+                                <rect key="frame" x="27" y="114" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qsi-ZL-X0m"/>
@@ -1492,6 +1517,8 @@
                         <outlet property="happycloud" destination="hfd-on-oFT" id="vqa-Ac-Ckc"/>
                         <outlet property="notdidit" destination="VYO-6d-bSB" id="CZ2-mJ-10X"/>
                         <outlet property="run" destination="3oS-Q6-JAk" id="b9b-gi-ClQ"/>
+                        <outlet property="ski" destination="rOX-ki-Pzh" id="uQT-3X-wEr"/>
+                        <outlet property="skip" destination="5fn-O8-WeE" id="R3p-Y6-PXb"/>
                         <outlet property="talk" destination="Hj8-9K-8vR" id="JVz-Ws-0s9"/>
                         <outlet property="youcan" destination="87S-Us-MyX" id="N2P-al-0vr"/>
                         <outlet property="youdidit" destination="1Jd-kZ-7Te" id="SqB-m2-koW"/>
@@ -1624,14 +1651,21 @@
                                     <segue destination="Run-wG-hMP" kind="show" id="ywB-Et-KV4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-aL-caE">
-                                <rect key="frame" x="182" y="119" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-aL-caE">
+                                <rect key="frame" x="20" y="100" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Skip"/>
+                                <state key="normal" title="Skip" image="bhckgroundstartpage"/>
                                 <connections>
                                     <action selector="Skip:" destination="Lae-dF-mal" eventType="touchUpInside" id="7ah-LQ-YIK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0p-M7-hbX">
+                                <rect key="frame" x="27" y="113" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Cd7-8h-u8H"/>
@@ -1647,6 +1681,7 @@
                         <outlet property="printb" destination="uTn-kZ-F5p" id="i2T-dd-vCF"/>
                         <outlet property="runthecode" destination="beZ-BD-Hp2" id="skY-9k-zCf"/>
                         <outlet property="ski" destination="qev-aL-caE" id="8q3-AP-30d"/>
+                        <outlet property="skip" destination="q0p-M7-hbX" id="Aia-5h-epV"/>
                         <outlet property="startButton" destination="7De-SJ-el5" id="6jI-cl-Vfo"/>
                         <outlet property="talking" destination="xrF-SR-z66" id="NK4-Pf-Nw0"/>
                         <outlet property="trying" destination="vJ4-hx-8cF" id="aPQ-qM-gGk"/>
@@ -1807,6 +1842,6 @@
         <image name="yellowbox" width="257" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j76-7m-T4G"/>
+        <segue reference="4mT-hV-9wt"/>
     </inferredMetricsTieBreakers>
 </document>

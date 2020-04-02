@@ -70,6 +70,7 @@ class level1: UIViewController {
     @IBOutlet weak var dialog: UILabel!
     @IBOutlet weak var dialogcloud: UIImageView!
     
+    @IBOutlet weak var skip: UILabel!
     @IBOutlet weak var finsh: UIButton!
     
     var audioPlayer : AVAudioPlayer?
@@ -82,12 +83,34 @@ class level1: UIViewController {
     @IBOutlet weak var skii: UIButton!
     
     @IBAction func skipp(_ sender: UIButton) {
+        nextgo.alpha = 0.0
+        skii.alpha = 0.0
+        skip.alpha = 0.0
+        line = 6
+        dialog.text  = ""
+        animateText(words: storyLine[line])
+        UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+            self.yellowbox.alpha = 1.0
+            self.level1.alpha = 1.0
+            self.greenbox.alpha = 0.0
+            self.pinkbox.alpha = 0.0
+            self.redbox.alpha = 0.0
+        })
+         
+                        
+            RunLoop.current.run(until: Date() + 0.5)
+            self.dialog.alpha = 0.0
+            UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+                self.dialogcloud.alpha = 0.0
+                self.field.alpha = 1.0
+                self.counter.alpha = 1.0
+                self.lastcloud.alpha = 1.0
+                self.storeb.alpha = 1.0
+                
+            })
     }
     
     @IBAction func empty(_ sender: Any) {
-        //Here i will send to the car
-        
-        
         counter.text = "stored 0"
         count = 0
         words.removeAll()
@@ -217,6 +240,9 @@ class level1: UIViewController {
                      dialog.font = dialog.font.withSize(18)
                      animateText(words: storyLine[line])
                      self.line = self.line + 1
+            
+                skii.alpha = 1.0
+                skip.alpha = 1.0
                }
     }
     func animateButton(_ viewA: UIView){
@@ -375,6 +401,8 @@ class level1: UIViewController {
         runn.alpha = 0.0
         insidebox.alpha = 1.0
         finsh.alpha = 0.0
+        skii.alpha  = 0.0
+        skip.alpha = 0.0
         
         view.addSubview(dialogcloud)
         view.addSubview(nextgo)
@@ -391,6 +419,8 @@ class level1: UIViewController {
         view.addSubview(runn)
         view.addSubview(insidebox)
         view.addSubview(finsh)
+        view.addSubview(skii)
+        view.addSubview(skip)
         view.addSubview(start1)
         
     }
