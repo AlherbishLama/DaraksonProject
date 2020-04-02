@@ -100,8 +100,23 @@ class Level0: UIViewController {
       ]
     var line = 0
     
+    @IBOutlet weak var ski: UIButton!
     
-
+    @IBAction func Skip(_ sender: UIButton) {
+        line = 6;
+        talking.text = ""
+        self.gonext.alpha = 0.0
+        animateText(words: storyLine[line])
+        UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseOut, animations: {
+            
+            self.trying.alpha = 1.0
+            self.ski.alpha = 0.0
+            self.trying.alpha = 0.0
+            //self.view.addSubview(self.trying)
+            })
+        self.trying.alpha = 1.0
+    }
+    
     
     
     @IBAction func finished(_ sender: UIButton) {
@@ -171,6 +186,7 @@ class Level0: UIViewController {
                 })
                      
             }
+        
     }
     
     //The start button at the beginning of the intro
@@ -186,6 +202,7 @@ class Level0: UIViewController {
               animateText(words: storyLine[line])
               self.line = self.line + 1
         }
+        ski.alpha = 1.0
     }
     
     //-------My helping functions to read code easier an reuse them again------
@@ -362,6 +379,7 @@ class Level0: UIViewController {
         youDidIt.alpha = 0.0
         notdidit.alpha = 0.0
         finishh.alpha = 0.0
+        ski.alpha = 0.0
             
         printField.delegate = self
          
@@ -380,6 +398,7 @@ class Level0: UIViewController {
         view.addSubview(notdidit)
         view.addSubview(finishh)
         view.addSubview(startButton)
+        view.addSubview(ski)
     }
     
     //The typing field if user touch to exit then save user input

@@ -1303,7 +1303,7 @@
                                 <color key="highlightedColor" red="0.94097001899999999" green="0.27684461719999998" blue="0.2302144039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5v-uk-K5A">
-                                <rect key="frame" x="0.0" y="605" width="94" height="61"/>
+                                <rect key="frame" x="187" y="686" width="94" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="store"/>
                                 <connections>
@@ -1311,7 +1311,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scs-PX-05R">
-                                <rect key="frame" x="175" y="683" width="125" height="73"/>
+                                <rect key="frame" x="172" y="759" width="125" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="run"/>
                                 <connections>
@@ -1342,6 +1342,15 @@
                                     <segue destination="Run-wG-hMP" kind="show" id="j76-7m-T4G"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CW-po-Yar">
+                                <rect key="frame" x="187" y="286" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="Skip:" destination="Lae-dF-mal" eventType="touchUpInside" id="fIG-tC-wOu"/>
+                                    <action selector="skipp:" destination="EKR-p2-1n0" eventType="touchUpInside" id="rb4-Un-RLb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="D2Q-9h-bl9"/>
@@ -1360,6 +1369,7 @@
                         <outlet property="pinkbox" destination="VOa-6e-o15" id="k9z-Sv-iwa"/>
                         <outlet property="redbox" destination="5xA-fA-ONb" id="d9c-nA-aa4"/>
                         <outlet property="runn" destination="Scs-PX-05R" id="83l-qH-yyD"/>
+                        <outlet property="skii" destination="0CW-po-Yar" id="fiS-Qp-fv9"/>
                         <outlet property="start1" destination="suQ-rW-HdR" id="AeI-BX-3MS"/>
                         <outlet property="storeb" destination="x5v-uk-K5A" id="XXy-R9-94E"/>
                         <outlet property="yellowbox" destination="FdS-k4-A1u" id="F1R-sa-3iW"/>
@@ -1614,6 +1624,14 @@
                                     <segue destination="Run-wG-hMP" kind="show" id="ywB-Et-KV4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-aL-caE">
+                                <rect key="frame" x="182" y="119" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="Skip:" destination="Lae-dF-mal" eventType="touchUpInside" id="7ah-LQ-YIK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Cd7-8h-u8H"/>
@@ -1628,6 +1646,7 @@
                         <outlet property="printField" destination="UpU-Ip-urO" id="kcv-zD-v5B"/>
                         <outlet property="printb" destination="uTn-kZ-F5p" id="i2T-dd-vCF"/>
                         <outlet property="runthecode" destination="beZ-BD-Hp2" id="skY-9k-zCf"/>
+                        <outlet property="ski" destination="qev-aL-caE" id="8q3-AP-30d"/>
                         <outlet property="startButton" destination="7De-SJ-el5" id="6jI-cl-Vfo"/>
                         <outlet property="talking" destination="xrF-SR-z66" id="NK4-Pf-Nw0"/>
                         <outlet property="trying" destination="vJ4-hx-8cF" id="aPQ-qM-gGk"/>
@@ -1788,6 +1807,6 @@
         <image name="yellowbox" width="257" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4mT-hV-9wt"/>
+        <segue reference="j76-7m-T4G"/>
     </inferredMetricsTieBreakers>
 </document>

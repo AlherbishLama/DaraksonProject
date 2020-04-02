@@ -79,7 +79,10 @@ class level1: UIViewController {
     
     @IBOutlet weak var runn: UIButton!
     
-
+    @IBOutlet weak var skii: UIButton!
+    
+    @IBAction func skipp(_ sender: UIButton) {
+    }
     
     @IBAction func empty(_ sender: Any) {
         //Here i will send to the car
