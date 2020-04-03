@@ -211,7 +211,7 @@ class Level0: UIViewController {
 //will let the next button appear
     func appearNext(){
         if line >= 6{ // if it is the end of the story line
-                   self.gonext.alpha = 0.0// hide
+            self.gonext.alpha = 0.0// hide
         }
         else if gonext.alpha == 0.0{
             UIView.animate(withDuration: 0.1, delay: 6.0, options: .curveEaseOut, animations: {
@@ -237,7 +237,6 @@ class Level0: UIViewController {
     func sound(){
         let pathsound = Bundle.main.path(forResource: "B", ofType: "wav")!// The sound file
         let url = URL(fileURLWithPath: pathsound)
-        //Playing the sound
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.play()
@@ -275,8 +274,7 @@ class Level0: UIViewController {
         mrRobot()// Draw Mr.Robot
         blinkeye() //Let Mr.Robot blink!!! ^_~
 
-        startButton.translatesAutoresizingMaskIntoConstraints = false
-//---------------hide all the icons first, then let the appear as i want----------------------------------
+//---------------hide all the icons first, then let the appear as wanted----------------------------------
         //Buttons respinsible for diplaying text and moving along the story line
         cloudBubble.alpha = 0.0
         gonext.alpha = 0.0
