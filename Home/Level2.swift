@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import UIKit.UIFont
 import CocoaMQTT
+import Firebase
 
 
 class CircleView2:UIView{
@@ -110,7 +111,12 @@ class Level2: UIViewController,UITextFieldDelegate {
     
     @IBAction func FFinshh(_ sender: UIButton) {
         levell2 = true
+        updateChildLevel()
         LockimagArr[3] = ""
+    }
+    func updateChildLevel(){
+        let current = Auth.auth().currentUser?.uid
+        Database.database().reference().child("users").child(current!).updateChildValues(["Level":"3"])
     }
     
 

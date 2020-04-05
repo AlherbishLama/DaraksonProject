@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 var levell0 = false
 var levell1 = false
 var levell2 = false
 var LockimagArr = ["","Lock","Lock","Lock"]
-
+var childLevel = ""
 class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate{
     
     let LevelimagArr = ["L0","L1","L2","L3"]
@@ -20,11 +21,12 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
     @IBAction func unwind(_ sender: UIStoryboardSegue){}
     @IBOutlet weak var levelcollection: UICollectionView!
     override func viewDidLoad() {
+        childLevel = getLevel()
         super.viewDidLoad()
-        if (levell0 == true){
+        if (levell0 == true || childLevel == "1"){
            LockimagArr[1] = ""
         }
-         if (levell1 == true){
+         if (levell1 == true || childLevel == "2"){
            LockimagArr[2] = ""
         }
         
@@ -82,6 +84,19 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
          //}
 //
          
+     }
+    
+    func getLevel() -> String {
+         let current = Auth.auth().currentUser?.uid
+         var childLevel = ""
+        Database.database().reference().child("users").child(current!).observe(.value) { (snapshot) in
+         
+         let s = snapshot.value as? [String:String]
+         childLevel = s!["Level"]!
+         
+         }
+         return childLevel
+
      }
 
 }

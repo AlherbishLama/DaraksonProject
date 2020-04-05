@@ -6,6 +6,7 @@
 import UIKit // For UI
 import AVFoundation // To draw Circles
 import CocoaMQTT // To connect to the car wirelessly
+import Firebase
 
 //----------------The circles-------------------------
 class CircleView:UIView{
@@ -96,8 +97,15 @@ class Level0: UIViewController {
 //Takes the user to the learning page
     @IBAction func finished(_ sender: UIButton) {
         levell0 = true//To open the next level
+        updateChildLevel()
         LockimagArr[1] = "" // removing the lock from level 1 which is the next level
     }
+    
+    func updateChildLevel(){
+        let current = Auth.auth().currentUser?.uid
+        Database.database().reference().child("users").child(current!).updateChildValues(["Level":"1"])
+    }
+    
 //The skip button to start learning
     @IBAction func Skip(_ sender: UIButton) {
         //Intializing the value in order to skip and start learning

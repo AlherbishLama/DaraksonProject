@@ -105,7 +105,7 @@ class FourthPartRegisteration : UIViewController , UITextFieldDelegate{
         let childName = self.ChildNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let childAge = Int(self.ChildAgeTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0
         // following same structure in Database Scheema.
-        ref.child("users").child((result?.user.uid)!).setValue(["Child_Name" : childName , "Child_Age" : "\(childAge)" , "Car_Name" : self.CarName , "Favorit_Hobby": self.FavoritHobby , "Bio": ""] )
+        ref.child("users").child((result?.user.uid)!).setValue(["Child_Name" : childName , "Child_Age" : "\(childAge)" , "Car_Name" : self.CarName , "Favorit_Hobby": self.FavoritHobby , "Bio": "" , "Level": "0"] )
             { (err, reff) in
             if err != nil {
                 self.ErrorLabel.text = "TRY AGAIN LATER , couldn't save your data"
