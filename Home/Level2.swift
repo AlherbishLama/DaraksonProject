@@ -1,18 +1,13 @@
-//
 //  Level2.swift
-//  Home
-//
-//  Created by  Hanen Alkhalf on 26/07/1441 AH.
-//  Copyright © 1441 Lama Alherbish. All rights reserved.
-//
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refactor Status : Completed---------------------------------------------
+import UIKit // for UI object
+import AVFoundation // provides media moving
+import UIKit.UIFont // provides access to the font’s characteristics
+import CocoaMQTT // import MQTT module dependency
+import Firebase // for linking the project with firebase.
 
-import UIKit
-import AVFoundation
-import UIKit.UIFont
-import CocoaMQTT
-import Firebase
-
-
+//-----------------------------start of the class CircleView2---------------------------------------------------------
 class CircleView2:UIView{
     
     override func draw(_ rect: CGRect) {
@@ -35,7 +30,9 @@ class CircleView2:UIView{
         path.fill()
     }
     
-}
+}//end class
+
+//-----------------------------start of the class CView2 ---------------------------------------------------------
 
 class CView2:UIView{
     let path = UIBezierPath()
@@ -56,49 +53,31 @@ class CView2:UIView{
         path.fill()
     }
     
-}
+} //end class
 
+//-----------------------------start of the class Level 2---------------------------------------------------------
 
 class Level2: UIViewController,UITextFieldDelegate {
+    // Link MQTT
     let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "172.20.10.12", port: 1883)
 
+    // UI components & Variables
     @IBOutlet weak var Start2: UIButton!
-    
     @IBOutlet weak var cloudbubble: UIImageView!
-    
-    
     @IBOutlet weak var gonext2: UIButton!
-    
    // @IBOutlet weak var trying2: UIButton!
-    
-    
     @IBOutlet weak var youcan: UITextField!
-    
-    
     @IBOutlet weak var run: UIButton!
-    
-    
     @IBOutlet weak var happycloud: UIImageView!
-    
     @IBOutlet weak var youdidit: UILabel!
-    
     @IBOutlet weak var arrowright: UIImageView!
-    
     @IBOutlet weak var arrowlift: UIImageView!
     @IBOutlet weak var notdidit: UILabel!
     @IBOutlet weak var skip: UILabel!
-    
     @IBOutlet weak var ski: UIButton!
-    
-    
-
     @IBOutlet weak var FFinsh: UIButton!
-    
     @IBOutlet weak var talk: UILabel!
-    
-    
     var audioPlayer : AVAudioPlayer?
-    
     var storyLine: [String] = ["Now, we will learn how to use loop!",
                                "Remember when you used the print() statement?",
                                  "Let’s say you wanted to greet your car 10 times","then, you have to write print() 10 times too",
@@ -108,18 +87,18 @@ class Level2: UIViewController,UITextFieldDelegate {
                                  "Enter the number of loops"]
     var line = 0
     
-    
+    //---------------------------------------------------Finish---------------------------------------------------------
     @IBAction func FFinshh(_ sender: UIButton) {
         levell2 = true
         updateChildLevel()
         LockimagArr[3] = ""
     }
+    //-----------------------------update level in Database ---------------------------------------------------------
     func updateChildLevel(){
         let current = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").child(current!).updateChildValues(["Level":"3"])
     }
-    
-
+    //-------------------------------------------Skip button---------------------------------------------------------
     @IBAction func Skip(_ sender: UIButton) {
         line = 7
         talk.text = ""
@@ -135,23 +114,22 @@ class Level2: UIViewController,UITextFieldDelegate {
                   //         self.run.alpha = 1.0
                              })
     }
+    
+    //--------------------------------text field will ------------------------------
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    //   Find out what the text field will be after adding the current edit
-        
         //self.run.alpha = 1.0
         //rrun(run)
         let text = CharacterSet.decimalDigits
         let l = CharacterSet(charactersIn: string)
         self.run.alpha = 1.0
         return text.isSuperset(of: l)
-
      }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
            textField.resignFirstResponder()
            return true
        }
 
-    
+    //--------------------------------------Run-------------------------
     @IBAction func rrun(_ sender: UIButton) {
         //mqttClient.connect()
              self.animateButton(sender)
@@ -179,7 +157,7 @@ class Level2: UIViewController,UITextFieldDelegate {
              
              mqttClient.publish("lvl/0", withString: String(youcan.text!))
     }
-    
+  //--------------------------------------Next Button-------------------------
     @IBAction func next(_ sender: UIButton) {
         UIView.animate(withDuration: 0.8, delay: 0.2, options: .curveEaseOut, animations: {
                        self.gonext2.alpha = 0.0
@@ -201,14 +179,9 @@ class Level2: UIViewController,UITextFieldDelegate {
                        self.arrowlift.alpha = 1.0
             //         self.run.alpha = 1.0
                        })
-                    
-                    
-                            
                    }
-        
     }
-    
-    
+     //--------------------------------------??-------------------------
     @IBAction func thefirstone(_ sender: UIButton) {
         if Start2.alpha == 1.0{
                   sound()
@@ -256,7 +229,7 @@ class Level2: UIViewController,UITextFieldDelegate {
                })
            }
        }
-    
+ //--------------------------------------Typing Sound-------------------------
     func sound(){
         let pathsound = Bundle.main.path(forResource: "B", ofType: "wav")!
         let url = URL(fileURLWithPath: pathsound)
@@ -280,26 +253,17 @@ class Level2: UIViewController,UITextFieldDelegate {
                    viewA.transform = CGAffineTransform(scaleX: 1, y: 1)
                }, completion: nil)
            }
-    
+   //--------------------------------------Animate Text-------------------------
     func animateText(words: String){
         //audioPlayer?.setVolume(0.5, fadeDuration: 0.5)
-        
         for i in words{
-           
             AudioServicesPlaySystemSound(1306)
-           
             talk.text! += "\(i)"
             RunLoop.current.run(until: Date() + 0.18)
-            
         }
     }
-    
-    
 
-    
-    
-    
-    
+    //------------------------------viewDidLoad()-----------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         mqttClient.connect()
@@ -389,7 +353,7 @@ class Level2: UIViewController,UITextFieldDelegate {
         //I hide all the icons first then let the appear as i want
         cloudbubble.alpha = 0.0
         gonext2.alpha = 0.0
-     //   trying2.alpha = 0.0
+     //  trying2.alpha = 0.0
         youcan.alpha = 0.0
         arrowlift.alpha = 0.0
         arrowright.alpha = 0.0
@@ -407,7 +371,7 @@ class Level2: UIViewController,UITextFieldDelegate {
         view.addSubview(cloudbubble)
              view.addSubview(gonext2)
              view.addSubview(talk)
-      //       view.addSubview(trying2)
+      //     view.addSubview(trying2)
              view.addSubview(youcan)
              view.addSubview(arrowlift)
              view.addSubview(arrowright)
@@ -463,7 +427,8 @@ class Level2: UIViewController,UITextFieldDelegate {
         postion.repeatCount = Float.infinity
         postion.speed = 2.0
         return postion
-    } }
+    }
+} //end class
 
 
  

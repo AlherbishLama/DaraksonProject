@@ -1,12 +1,8 @@
-//
 //  HomeTableViewCell.swift
-//  Home
-//
-//  Created by Lama Alherbish on 1/29/20.
-//  Copyright © 2020 Lama Alherbish. All rights reserved.
-//
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status :Completed-----------------------------------------------
 
-import UIKit
+import UIKit // for UI object
 
 class HomeTableViewCell: UITableViewCell {
 

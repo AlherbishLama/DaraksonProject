@@ -1,11 +1,11 @@
-//  Created by Nina on 25/07/1441 AH.
-//  Copyright © 1441 Lama Alherbish. All rights reserved.
+// Level 1 
+//  Copyright © 2020 Darakson. All rights reserved.
 //------------------------Refractor Status : Completed-----------------------------------------------
 //Importing essintial dependencies and frameworks here
 import UIKit // For UI
 import AVFoundation // To draw Circles
 import CocoaMQTT // To connect to the car wirelessly
-import Firebase
+import Firebase // for linking the project with firebase.
 //-------------------Circle--------------------------------------------------------------------------
 class circleView:UIView{
     override func draw(_ rect: CGRect) {

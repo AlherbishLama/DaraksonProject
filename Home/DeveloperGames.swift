@@ -1,12 +1,6 @@
-
-//
 //  DeveloperGames.swift
-//  Home
-//
-//  Created by  Hanen Alkhalf on 29/06/1441 AH.
-//  Copyright © 1441 Lama Alherbish. All rights reserved.
-//
-
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status :Not Completed-----------------------------------------------
 import UIKit
 class DeveloperGames: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
         
@@ -25,11 +19,9 @@ class DeveloperGames: UIViewController,UICollectionViewDataSource, UICollectionV
         let width =  (view.frame.size.width - 20  ) / 2
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
          layout.itemSize = CGSize(width: width, height: width)
-        // Do any additional setup after loading the view.
     }
     
-    
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           
                 return imagArr.count}
   
@@ -67,27 +59,8 @@ class DeveloperGames: UIViewController,UICollectionViewDataSource, UICollectionV
                                                                             
           self.navigationController?.pushViewController(storyboard, animated: true)
         }
-
-        
-    }
-    
-
     }
 
-
-   
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 

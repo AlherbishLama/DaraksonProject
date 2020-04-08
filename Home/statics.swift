@@ -1,13 +1,8 @@
-//
 //  statics.swift
-//  Home
-//
-//  Created by Lama Alherbish on 1/31/20.
-//  Copyright © 2020 Lama Alherbish. All rights reserved.
-//
-
-import Foundation
-import UIKit
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status :Completed-----------------------------------------------
+import Foundation // provides the NSObject root class
+import UIKit // for UI object
 
 class statics {
     
@@ -17,7 +12,6 @@ class statics {
     static let ThirdPartRegestration = "RegisterPart3"
     static let FourthPartRegisteration = "RegisterPart4"
     static let FifthPartRegisteration = "RegisterPart5"
-    
     static let ResetPasswordView = "ForgotPassword"
     static let LoginView = "LoginVC"
     

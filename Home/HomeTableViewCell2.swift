@@ -1,11 +1,7 @@
-//
 //  HomeTableViewCell2.swift
 //  Home
-//
-//  Created by Lama Alherbish on 08/02/2020.
-//  Copyright © 2020 Lama Alherbish. All rights reserved.
-//
-
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status : Completed-----------------------------------------------
 import UIKit
 
 class HomeTableViewCell2: UITableViewCell {
@@ -19,13 +15,11 @@ class HomeTableViewCell2: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

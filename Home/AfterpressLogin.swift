@@ -1,10 +1,6 @@
-//
 //  AfterpressLogin.swift
-//  Home
-//
-//  Created by Lama Alherbish on 08/02/2020.
-//  Copyright © 2020 Lama Alherbish. All rights reserved.
-//
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status :Not Completed-----------------------------------------------
 
 import Foundation
 import UIKit

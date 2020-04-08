@@ -1,19 +1,13 @@
-//
 //  MatchViewCell.swift
-//  Home
-//
-//  Created by Lama Alherbish on 23/02/2020.
-//  Copyright © 2020 Lama Alherbish. All rights reserved.
-//
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status :Not Completed-----------------------------------------------
 
 import UIKit
 
 class MatchViewCell : UICollectionViewCell  {
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var BackImageView: UIImageView!
-    
     var card:Card?
     
     func setCard(_ card:Card){

@@ -1,10 +1,7 @@
-//
 //  playview.swift
 //  Home
-//
-//  Created by Lama Alherbish on 08/02/2020.
-//  Copyright © 2020 Lama Alherbish. All rights reserved.
-//
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status :Not Completed-----------------------------------------------
 
 import UIKit
 import CocoaMQTT
@@ -50,9 +47,7 @@ class playview: UIViewController , UIWebViewDelegate {
 
     }
     
-   
 
-    
     
     @IBAction func connect(_ sender: UIButton) {  mqttClient.connect()
 
@@ -99,13 +94,6 @@ class playview: UIViewController , UIWebViewDelegate {
     /*
      @IBAction func Maxbutton(_ sender: Any) {
      }
-      MARK: - Navigation
-
-     In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         Get the new view controller using segue.destination.
-         Pass the selected object to the new view controller.
-    }
     */
 
 }

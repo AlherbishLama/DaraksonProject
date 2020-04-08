@@ -1,19 +1,15 @@
-//
 //  Learnpage.swift
-//  Home
-//
-//  Created by  Hanen Alkhalf on 11/07/1441 AH.
-//  Copyright © 1441 Lama Alherbish. All rights reserved.
-//
-
-import UIKit
-import Firebase
-
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status : Not Completed-----------------------------------------------
+import UIKit // for UI object
+import Firebase // for linking the project with firebase.
+// Variables 
 var levell0 = false
 var levell1 = false
 var levell2 = false
 var LockimagArr = ["","Lock","Lock","Lock"]
 var childLevel = ""
+//-----------------------------start of the class Learnpage ---------------------------------------------------------
 class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate{
     
     let LevelimagArr = ["L0","L1","L2","L3"]
@@ -83,9 +79,8 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
           // self.navigationController?.pushViewController(storyboard, animated: true)
          //}
 //
-         
      }
-    
+    //-----------------------------Level of Child in Database---------------------------------------------------------
     func getLevel() -> String {
          let current = Auth.auth().currentUser?.uid
          var childLevel = ""

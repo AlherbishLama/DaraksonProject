@@ -1,10 +1,6 @@
-//
 //  GussMyMovie.swift
-//  Home
-//
-//  Created by Lama Alherbish on 02/03/2020.
-//  Copyright © 2020 Lama Alherbish. All rights reserved.
-//  Adding the mqtt to the code
+// Copyright © 2020 Darakson. All rights reserved.
+//------------------------Refractor Status : Completed-----------------------------------------------
 
 import UIKit
 import CocoaMQTT
@@ -15,7 +11,6 @@ class GussMyMovie: UIViewController {
     
     @IBOutlet weak var YesButton: UIButton!
     @IBOutlet weak var NoButton: UIButton!
-    
     @IBAction func No(_ sender: Any) {
         mqttClient.publish("GMM", withString: "n")
         print("No")

@@ -1,19 +1,9 @@
-//
-//  LearnCollectionViewCell.swift
-//  Home
-//
-//  Created by  Hanen Alkhalf on 11/07/1441 AH.
-//  Copyright © 1441 Lama Alherbish. All rights reserved.
-//
+// Copyright © 2020 Darakson. All rights reserved.
 
-import UIKit
+import UIKit // for UI object
 
 class LearnCollectionViewCell: UICollectionViewCell {
   
-    
     @IBOutlet weak var Levelimag: UIImageView!
     @IBOutlet weak var Lockimag: UIImageView!
-    
-    
-   //
-}
+    }
