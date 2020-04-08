@@ -6,10 +6,13 @@ Learning and viewing your outputs on a physical car seems more exiting then just
 Users can login to their profile or register for new users.<br/>
 The user plays with car by navigating it around and having a view of what the car's camera lense is capturing.<br/>
 Darakson provides some developer games that include:
-  * Tic Tac Toe
+
   * Drive the car
+  * Driving Licens 
   * Guess My Movie
   * Matching game
+  * Tic Tac Toe
+  * Learn : Print statments, Loop, Variables, If-else .
   
 The Learn feautre is divided into levels.
 
@@ -18,3 +21,4 @@ The second level aims to teach the concept of variabls by allowing the user to s
 The third level is teaching the loop function. Allows the user to enter a number and the car will go in circles with respect to that number.
 
 **Always Seat belts on and Safe driving**
+visit Darakson website: https://landpagedarakson.firebaseapp.com/ 
