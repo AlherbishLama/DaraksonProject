@@ -61,14 +61,14 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
             //}
              
          } else if item == "L1" {
-            if (levell0 == true){
+            if (levell0 == true || childLevel == "1"){
             let storyboard = self.storyboard?.instantiateViewController(identifier: "1") as! level1
                                                                              
                 self.navigationController?.pushViewController(storyboard, animated: true)
             }
        }
         else if item == "L2" {
-           if (levell1 == true){
+           if (levell1 == true || childLevel == "2"){
         let storyboard = self.storyboard?.instantiateViewController(identifier: "2") as! Level2
                                                                              
        self.navigationController?.pushViewController(storyboard, animated: true)//
