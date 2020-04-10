@@ -385,12 +385,7 @@ class Level2: UIViewController,UITextFieldDelegate {
         view.addSubview(ski)
         view.addSubview(skip)
          }
-    
-    //The typing field if user touch to exit then save user input
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            youcan.resignFirstResponder()
-    }
-        
+            
     //Mr.Robots Eye blinking, P.s We all blink if you don't the please get that checked
     func blinkeye(){
 

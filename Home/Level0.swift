@@ -107,12 +107,18 @@ class Level0: UIViewController {
     
 //The skip button to start learning
     @IBAction func Skip(_ sender: UIButton) {
+        if (ski.alpha <= 1.0 || skip.alpha <= 1.0){//if pressed while hidden
+            return
+        }
+
+        
         //Intializing the value in order to skip and start learning
         ski.alpha = 0.0// hide the skip buttom
         skip.alpha = 0.0// hide the skip lable
         line = 6;// last sentence is learn
-        talking.text = ""// clear the talking
+        
         self.gonext.alpha = 0.0//hide the next button
+        talking.text = ""// clear the talking
         animateText(words: storyLine[line])
         
         UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseOut, animations: {
@@ -167,6 +173,8 @@ class Level0: UIViewController {
     @IBAction func gotoNext(_ sender: UIButton) {
         UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseOut, animations: {
                 self.gonext.alpha = 0.0// hide the button
+                self.ski.alpha = 0.0// hide Skip button
+                self.skip.alpha = 0.0// hide skip lable
             })
         
         self.animateButton(sender)//animate button
@@ -196,7 +204,7 @@ class Level0: UIViewController {
             fade()// fade the START button
             appearcloud()
             
-            RunLoop.current.run(until: Date() + 8.0)// pause the code her for 8 ms
+            RunLoop.current.run(until: Date() + 5.0)// pause the code her for 8 ms
             
             appearNext()
             talking.font = talking.font.withSize(18)
@@ -223,6 +231,8 @@ class Level0: UIViewController {
         else if gonext.alpha == 0.0{
             UIView.animate(withDuration: 0.1, delay: 6.0, options: .curveEaseOut, animations: {
                 self.gonext.alpha = 1// appear
+                self.ski.alpha = 1.0// appear Skip button
+                self.skip.alpha = 1.0// appear skip lable
             })
         }
     }
@@ -230,7 +240,7 @@ class Level0: UIViewController {
 //Let the beginning cloud appear an stay like that
     func appearcloud(){
         if cloudBubble.alpha == 0.0{// if it is initially hidden
-            UIView.animate(withDuration: 0.4, delay: 8.0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: 5.0, options: .curveEaseOut, animations: {
                  self.cloudBubble.alpha = 1 // show it
             })
          }else{
@@ -242,7 +252,7 @@ class Level0: UIViewController {
     
 //The sound for the intro of the start button
     func sound(){
-        let pathsound = Bundle.main.path(forResource: "B", ofType: "wav")!// The sound file
+        let pathsound = Bundle.main.path(forResource: "m", ofType: "wav")!// The sound file
         let url = URL(fileURLWithPath: pathsound)
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: url)
