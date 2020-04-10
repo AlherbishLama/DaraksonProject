@@ -84,6 +84,7 @@ class Level0: UIViewController {
     
     //------------- The helping variables for the movie scene-----------
     var line = 0 // Decides which dialog is played, Sequencial hence, starts from zero
+    var hidden = true
     var storyLine: [String] = ["Hello World \nMy Name is Mr. Robot!"     ,
                                "Let us talk about Languages"             ,
                                "we don't know human language"            ,
@@ -107,12 +108,13 @@ class Level0: UIViewController {
     
 //The skip button to start learning
     @IBAction func Skip(_ sender: UIButton) {
-        if (ski.alpha <= 1.0 || skip.alpha <= 1.0){//if pressed while hidden
+        if (hidden){//if pressed while hidden
+            print("inside")
             return
         }
 
-        
         //Intializing the value in order to skip and start learning
+        self.hidden = false
         ski.alpha = 0.0// hide the skip buttom
         skip.alpha = 0.0// hide the skip lable
         line = 6;// last sentence is learn
@@ -171,7 +173,12 @@ class Level0: UIViewController {
     
 //this will appear 3 times for the scenario hiding the button when the cloud is typing something
     @IBAction func gotoNext(_ sender: UIButton) {
+        if(self.hidden){
+            return
+        }
+        
         UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseOut, animations: {
+                self.hidden = true
                 self.gonext.alpha = 0.0// hide the button
                 self.ski.alpha = 0.0// hide Skip button
                 self.skip.alpha = 0.0// hide skip lable
@@ -183,6 +190,7 @@ class Level0: UIViewController {
         RunLoop.current.run(until: Date() + 0.5)// pause the code here
         
         appearNext()// show the button again
+        
         animateText(words: storyLine[line])// anime the current sentence
         self.line = self.line + 1//probe the line
         
@@ -193,6 +201,7 @@ class Level0: UIViewController {
                 self.trying.alpha = 1.0
             })
         }
+        self.hidden = false
         
     }
     
@@ -213,6 +222,7 @@ class Level0: UIViewController {
         }
         ski.alpha = 1.0// apear Skip button
         skip.alpha = 1.0// appear skip lable
+        self.hidden = false
     }
     
 //-----------------------------helping functions to read code easier ------------------------
@@ -225,15 +235,18 @@ class Level0: UIViewController {
     
 //will let the next button appear
     func appearNext(){
+        
         if line >= 6{ // if it is the end of the story line
             self.gonext.alpha = 0.0// hide
         }
         else if gonext.alpha == 0.0{
             UIView.animate(withDuration: 0.1, delay: 6.0, options: .curveEaseOut, animations: {
+                
                 self.gonext.alpha = 1// appear
                 self.ski.alpha = 1.0// appear Skip button
                 self.skip.alpha = 1.0// appear skip lable
             })
+            
         }
     }
     
@@ -277,7 +290,7 @@ class Level0: UIViewController {
     func animateText(words: String){
         //For each letter in word
         for i in words{
-            AudioServicesPlaySystemSound(1306)
+            //AudioServicesPlaySystemSound(1306)
             talking.text! += "\(i)"
             RunLoop.current.run(until: Date() + 0.18)// the speed of typing the letters
         }

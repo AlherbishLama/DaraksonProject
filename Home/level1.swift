@@ -87,6 +87,7 @@ class level1: UIViewController {
                                "Try type a word and I will\nstore it inside level 1 variable"   ]
     var line = 0
     var count = 0
+    var hidden = true
  //------------------------------All the function used in level 0--------
     //Takes the user to the learning page
     @IBAction func fefo(_ sender: UIButton) {
@@ -100,7 +101,12 @@ class level1: UIViewController {
     }
 //The skip button to start learning
     @IBAction func skipp(_ sender: UIButton) {
+        if (hidden){//if pressed while hidden
+            print("inside")
+            return
+        }
         //hide everything
+        //self.hidden = true
         nextgo.alpha = 0.0
         skii.alpha = 0.0
         skip.alpha = 0.0
@@ -175,8 +181,16 @@ class level1: UIViewController {
     }
 //The button responsible for the next dialog of the learning scene
     @IBAction func nextt(_ sender: UIButton) {
+        
+        if(self.hidden){
+            return
+        }
+        
         UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseOut, animations: {
+            self.hidden = true
             self.nextgo.alpha = 0.0// hide the next button
+            self.skii.alpha = 0.0// hide Skip button
+            self.skip.alpha = 0.0// hide skip lable
         })
         self.animateButton(sender)// animate the button
         dialog.text = ""//empty the dialog
@@ -186,7 +200,7 @@ class level1: UIViewController {
         
         appearNext()// display the next button
         animateText(words: storyLine[line])// start wrttinng the dialog
-        
+        //self.hidden = false
         self.line = self.line + 1// increment line scene
         if line > 6{ // if end of the dialog
             self.nextgo.alpha = 0.0//hide next
@@ -229,6 +243,7 @@ class level1: UIViewController {
                 self.redbox.alpha = 0.0
             })
         }
+        self.hidden = false
     }    
 //The start button at the beginning of the intro
     @IBAction func startb(_ sender: UIButton) {
@@ -245,6 +260,7 @@ class level1: UIViewController {
             }
         skii.alpha = 1.0// apear Skip button
         skip.alpha = 1.0// appear skip lable
+        self.hidden = false
     }
     
 //-----------------------------helping functions to read code easier ------------------------
@@ -286,7 +302,9 @@ class level1: UIViewController {
         }
         else if nextgo.alpha == 0.0{
             UIView.animate(withDuration: 0.1, delay: 10.1, options: .curveEaseOut, animations: {
-                self.nextgo.alpha = 1// appear
+                self.nextgo.alpha = 1.0// appear
+                self.skii.alpha = 1.0// appear Skip button
+                self.skip.alpha = 1.0// appear skip lable
             })
         }
     }
@@ -306,7 +324,7 @@ class level1: UIViewController {
 //to animate the typing effect of the words
     func animateText(words: String){
         for i in words{
-            AudioServicesPlaySystemSound(1306)
+            //AudioServicesPlaySystemSound(1306)
             dialog.text! += "\(i)"
             RunLoop.current.run(until: Date() + 0.18)// the speed of typing the letters
         }
