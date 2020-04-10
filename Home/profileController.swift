@@ -32,6 +32,14 @@ import UserNotifications
     var isValid = true
     var isAllowed = true
     var isValid2 = true
+    static var childName = ""
+    static var childAge = ""
+    static var childBio = ""
+    static var childHobby = ""
+    static var carName = ""
+
+
+    
 
     
     override func viewDidLoad() {
@@ -44,25 +52,19 @@ import UserNotifications
             let request = UNNotificationRequest(identifier: "waiting", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         }
-
+        
         setFields()
         }
     
     
     func setFields(){
-        let current = Auth.auth().currentUser?.uid
-
-    Database.database().reference().child("users").child(current!).observe(.value) { (snapshot) in
-        
-        let s = snapshot.value as? [String:String]
-        self.ChildNameTextField.text = s!["Child_Name"]
-        self.CarNameTextField.text = s!["Car_Name"]
-        self.ChildAgeTextField.text = s!["Child_Age"]
-        self.BioTextFieldView.text = s!["Bio"]
-        self.ChildHobbyTextField.text = s!["Favorit_Hobby"]
-        
+        self.ChildNameTextField.text = profileController.childName
+        self.CarNameTextField.text = profileController.carName
+        self.ChildAgeTextField.text = profileController.childAge
+        self.BioTextFieldView.text = profileController.childBio
+        self.ChildHobbyTextField.text = profileController.childHobby
         }
-    }
+    
        
     
    //_____Edit buttun :

@@ -17,12 +17,13 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
     @IBAction func unwind(_ sender: UIStoryboardSegue){}
     @IBOutlet weak var levelcollection: UICollectionView!
     override func viewDidLoad() {
-        childLevel = getLevel()
+        childLevel = statics.childLevel
         super.viewDidLoad()
         if (levell0 == true || childLevel == "1"){
            LockimagArr[1] = ""
         }
          if (levell1 == true || childLevel == "2"){
+            LockimagArr[1] = ""
            LockimagArr[2] = ""
         }
         
@@ -80,18 +81,6 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
          //}
 //
      }
-    //-----------------------------Level of Child in Database---------------------------------------------------------
-    func getLevel() -> String {
-         let current = Auth.auth().currentUser?.uid
-         var childLevel = ""
-        Database.database().reference().child("users").child(current!).observe(.value) { (snapshot) in
-         
-         let s = snapshot.value as? [String:String]
-         childLevel = s!["Level"]!
-         
-         }
-         return childLevel
 
-     }
 
 }

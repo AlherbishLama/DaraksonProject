@@ -139,12 +139,16 @@ class LoginController:UIViewController , UITextFieldDelegate {
 
                 self.navigationController?.pushViewController(storyboard, animated: true) }
             else {
+                
+                if(statics.setFields()==true){
                     //transmit to Home page
-                  let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC2") as! AfterpressLogin
+                    let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC2") as! AfterpressLogin
 
-            self.navigationController?.pushViewController(storyboard, animated: true)
+                   self.navigationController?.pushViewController(storyboard, animated: true)
 
-            storyboard.navigationItem.hidesBackButton = true
+                   storyboard.navigationItem.hidesBackButton = true
+                }
+                   
                            }
                        }
         }
