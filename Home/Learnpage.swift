@@ -27,6 +27,7 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
            LockimagArr[2] = ""
         }
         
+        
         levelcollection.delegate = self
         levelcollection.dataSource = self 
         let width =  (view.frame.size.width - 20 ) / 2
@@ -61,7 +62,7 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
             //}
              
          } else if item == "L1" {
-            if (levell0 == true || childLevel == "1"){
+            if (levell0 == true || childLevel == "1" || childLevel == "2"){
             let storyboard = self.storyboard?.instantiateViewController(identifier: "1") as! level1
                                                                              
                 self.navigationController?.pushViewController(storyboard, animated: true)
