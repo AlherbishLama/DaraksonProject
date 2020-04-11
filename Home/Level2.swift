@@ -91,8 +91,12 @@ class Level2: UIViewController,UITextFieldDelegate {
     //-----------------------------------------Finish---------------------------------------------------------
     @IBAction func FFinshh(_ sender: UIButton) {
         levell2 = true
-        updateChildLevel()
-        LockimagArr[3] = ""
+         if statics.childLevel == "3"{
+                   return ;
+         }else {
+            updateChildLevel()
+            LockimagArr[3] = ""
+        }
     }
     //---------------------update level in Database ---------------------------------------------------------
     func updateChildLevel(){

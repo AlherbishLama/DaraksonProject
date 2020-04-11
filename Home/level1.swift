@@ -92,9 +92,12 @@ class level1: UIViewController {
     //Takes the user to the learning page
     @IBAction func fefo(_ sender: UIButton) {
           levell1 = true//To open the next level
+        if statics.childLevel == "2" || statics.childLevel == "3"{
+            return ;
+        }else{
           updateChildLevel()
         LockimagArr[2] = "" // removing the lock from level 2 which is the next level
-      }
+        }}
     func updateChildLevel(){
         let current = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").child(current!).updateChildValues(["Level":"2"])

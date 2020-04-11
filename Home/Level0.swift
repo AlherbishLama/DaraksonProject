@@ -97,8 +97,12 @@ class Level0: UIViewController {
 //Takes the user to the learning page
     @IBAction func finished(_ sender: UIButton) {
         levell0 = true//To open the next level
-        updateChildLevel()
-        LockimagArr[1] = "" // removing the lock from level 1 which is the next level
+        if statics.childLevel == "2" || statics.childLevel == "3"{
+            return ;
+        }else {
+            updateChildLevel()
+            LockimagArr[1] = "" // removing the lock from level 1 which is the next level
+        }
     }
     
     func updateChildLevel(){
