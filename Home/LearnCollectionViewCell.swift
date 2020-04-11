@@ -6,4 +6,6 @@ class LearnCollectionViewCell: UICollectionViewCell {
   
     @IBOutlet weak var Levelimag: UIImageView!
     @IBOutlet weak var Lockimag: UIImageView!
+   
     }
+

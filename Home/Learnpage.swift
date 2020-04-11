@@ -82,6 +82,7 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
          //}
 //
      }
+    
 
 
 }

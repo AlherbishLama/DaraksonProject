@@ -1648,7 +1648,7 @@
                                 <state key="normal" title="Button" image="back"/>
                                 <connections>
                                     <action selector="finished:" destination="Lae-dF-mal" eventType="touchUpInside" id="Wqf-x7-Xdn"/>
-                                    <segue destination="Run-wG-hMP" kind="show" id="ywB-Et-KV4"/>
+                                    <segue destination="Run-wG-hMP" kind="show" id="geF-y4-JGi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-aL-caE">
@@ -1757,6 +1757,14 @@
                                     <outlet property="delegate" destination="Run-wG-hMP" id="QJi-gd-yha"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGg-gH-fdF">
+                                <rect key="frame" x="118" y="633" width="178" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="menu"/>
+                                <connections>
+                                    <segue destination="Sad-Ft-03P" kind="unwind" unwindAction="unwindToHome:" id="lG3-Xw-Xne"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1773,6 +1781,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAB-GL-bH1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Sad-Ft-03P" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5866.666666666667" y="867.85714285714278"/>
         </scene>
@@ -1826,6 +1835,7 @@
         <image name="logo3" width="94" height="103"/>
         <image name="logo4" width="46" height="119"/>
         <image name="logo5" width="117" height="169"/>
+        <image name="menu" width="788" height="409"/>
         <image name="next" width="144" height="137"/>
         <image name="pinkbox" width="254" height="192"/>
         <image name="profile" width="48" height="48"/>
@@ -1842,6 +1852,6 @@
         <image name="yellowbox" width="257" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ywB-Et-KV4"/>
+        <segue reference="geF-y4-JGi"/>
     </inferredMetricsTieBreakers>
 </document>
