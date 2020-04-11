@@ -7,7 +7,7 @@ import UIKit.UIFont // provides access to the font’s characteristics
 import CocoaMQTT // import MQTT module dependency
 import Firebase // for linking the project with firebase.
 
-//-----------------------------start of the class CircleView2---------------------------------------------------------
+//--------------------------start of the class CircleView2----------------------------------------------
 class CircleView2:UIView{
     
     override func draw(_ rect: CGRect) {
@@ -32,7 +32,7 @@ class CircleView2:UIView{
     
 }//end class
 
-//-----------------------------start of the class CView2 ---------------------------------------------------------
+//-----------------------------start of the class CView2 ---------------------------------------------
 
 class CView2:UIView{
     let path = UIBezierPath()
@@ -55,7 +55,7 @@ class CView2:UIView{
     
 } //end class
 
-//-----------------------------start of the class Level 2---------------------------------------------------------
+//---------------------------start of the class Level 2-------------------------------------------------------
 
 class Level2: UIViewController,UITextFieldDelegate {
     // Link MQTT
@@ -78,47 +78,54 @@ class Level2: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var FFinsh: UIButton!
     @IBOutlet weak var talk: UILabel!
     var audioPlayer : AVAudioPlayer?
-    var storyLine: [String] = ["Now, we will learn how to use loop!",
-                               "Remember when you used the print() statement?",
-                                 "Let’s say you wanted to greet your car 10 times","then, you have to write print() 10 times too",
+    var storyLine: [String] = ["Now, we will learn how to use loop!"              ,
+                               "Remember when you used the print() statement?"    ,
+                                 "Let’s say you wanted to greet your car 10 times",
+                                 "then, you have to write print() 10 times too"   ,
                                  "but with the use of loop, you select the number of times to repeat itself","with your message inside the print()!!",
                                  "Depends on the number you enter; your car will turn around just like loops!",
                                  "If you enter 2, the loop will work for 2 turns, try it!",
                                  "Enter the number of loops"]
     var line = 0
-    
-    //---------------------------------------------------Finish---------------------------------------------------------
+    var hidden = true
+    //-----------------------------------------Finish---------------------------------------------------------
     @IBAction func FFinshh(_ sender: UIButton) {
         levell2 = true
         updateChildLevel()
         LockimagArr[3] = ""
     }
-    //-----------------------------update level in Database ---------------------------------------------------------
+    //---------------------update level in Database ---------------------------------------------------------
     func updateChildLevel(){
         let current = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").child(current!).updateChildValues(["Level":"3"])
     }
-    //-------------------------------------------Skip button---------------------------------------------------------
+    //--------------------------------------Skip button----------------------------------------------------
     @IBAction func Skip(_ sender: UIButton) {
+        if (hidden){//if pressed while hidden
+           print("indside")
+           return
+        }
+        
         line = 7
         talk.text = ""
-        gonext2.alpha = 1.0
+        gonext2.alpha = 0.0
+        ski.alpha = 0.0
+        skip.alpha = 0.0
+        self.hidden = true
         animateText(words: storyLine[line])
         self.gonext2.alpha = 0.0
-                             UIView.animate(withDuration: 1.0, delay: 3, options: .curveEaseOut, animations: {
-                             self.cloudbubble.alpha = 0.0
-                             self.talk.alpha = 0.0
-                             self.youcan.alpha = 1.0
-                             self.arrowright.alpha = 1.0
-                             self.arrowlift.alpha = 1.0
-                  //         self.run.alpha = 1.0
-                             })
+          UIView.animate(withDuration: 1.0, delay: 3, options: .curveEaseOut, animations: {
+            self.cloudbubble.alpha = 0.0
+            self.talk.alpha = 0.0
+            self.youcan.alpha = 1.0
+            self.arrowright.alpha = 1.0
+            self.arrowlift.alpha = 1.0
+           
+        })
     }
     
     //--------------------------------text field will ------------------------------
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //self.run.alpha = 1.0
-        //rrun(run)
         let text = CharacterSet.decimalDigits
         let l = CharacterSet(charactersIn: string)
         self.run.alpha = 1.0
@@ -159,9 +166,16 @@ class Level2: UIViewController,UITextFieldDelegate {
     }
   //--------------------------------------Next Button-------------------------
     @IBAction func next(_ sender: UIButton) {
+        if(self.hidden){
+            return
+        }
+        
         UIView.animate(withDuration: 0.8, delay: 0.2, options: .curveEaseOut, animations: {
-                       self.gonext2.alpha = 0.0
-                   })
+            self.hidden = true
+            self.gonext2.alpha = 0.0
+            self.ski.alpha = 0.0// apear Skip button
+            self.skip.alpha = 0.0// appear skip lable
+        })
                    self.animateButton(sender)
                    talk.text = ""
                    talk.font = talk.font.withSize(18)
@@ -169,6 +183,7 @@ class Level2: UIViewController,UITextFieldDelegate {
                    appearNext()
                    animateText(words: storyLine[line])
                    self.line = self.line + 1
+                   self.hidden = false
                    if line > 7{
                        self.gonext2.alpha = 0.0
                        UIView.animate(withDuration: 1.0, delay: 3, options: .curveEaseOut, animations: {
@@ -177,11 +192,13 @@ class Level2: UIViewController,UITextFieldDelegate {
                        self.youcan.alpha = 1.0
                        self.arrowright.alpha = 1.0
                        self.arrowlift.alpha = 1.0
-            //         self.run.alpha = 1.0
+           
                        })
                    }
+       
+        
     }
-     //--------------------------------------??-------------------------
+     //--------------------------------------?Start button-------------------------
     @IBAction func thefirstone(_ sender: UIButton) {
         if Start2.alpha == 1.0{
                   sound()
@@ -196,6 +213,7 @@ class Level2: UIViewController,UITextFieldDelegate {
             }
         ski.alpha = 1.0
         skip.alpha = 1.0
+        self.hidden = false
     }
     
    func fade(){
@@ -211,9 +229,11 @@ class Level2: UIViewController,UITextFieldDelegate {
         else if gonext2.alpha == 0.0{
                 
         UIView.animate(withDuration: 0.1, delay: 8.9, options: .curveEaseOut, animations: {
-                    self.gonext2.alpha = 1
-            })
-        }
+            self.gonext2.alpha = 1
+            self.ski.alpha = 1.0// appear Skip button
+            self.skip.alpha = 1.0// appear skip lable
+        })
+      }
     }
     
     func appearcloud(){
@@ -231,7 +251,7 @@ class Level2: UIViewController,UITextFieldDelegate {
        }
  //--------------------------------------Typing Sound-------------------------
     func sound(){
-        let pathsound = Bundle.main.path(forResource: "B", ofType: "wav")!
+        let pathsound = Bundle.main.path(forResource: "m", ofType: "wav")!
         let url = URL(fileURLWithPath: pathsound)
             
         do{
@@ -257,7 +277,7 @@ class Level2: UIViewController,UITextFieldDelegate {
     func animateText(words: String){
         //audioPlayer?.setVolume(0.5, fadeDuration: 0.5)
         for i in words{
-            AudioServicesPlaySystemSound(1306)
+            //AudioServicesPlaySystemSound(1306)
             talk.text! += "\(i)"
             RunLoop.current.run(until: Date() + 0.18)
         }
@@ -382,8 +402,8 @@ class Level2: UIViewController,UITextFieldDelegate {
              view.addSubview(notdidit)
              view.addSubview(FFinsh)
              view.addSubview(Start2)
-        view.addSubview(ski)
-        view.addSubview(skip)
+            view.addSubview(ski)
+            view.addSubview(skip)
          }
             
     //Mr.Robots Eye blinking, P.s We all blink if you don't the please get that checked
