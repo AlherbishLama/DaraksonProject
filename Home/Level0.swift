@@ -103,6 +103,8 @@ class Level0: UIViewController {
             updateChildLevel()
             LockimagArr[1] = "" // removing the lock from level 1 which is the next level
         }
+        let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
+        self.navigationController?.pushViewController(storyboard, animated: true)
     }
     
     func updateChildLevel(){
