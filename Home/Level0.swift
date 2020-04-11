@@ -296,7 +296,7 @@ class Level0: UIViewController {
     func animateText(words: String){
         //For each letter in word
         for i in words{
-            //AudioServicesPlaySystemSound(1306)
+            AudioServicesPlaySystemSound(1306)
             talking.text! += "\(i)"
             RunLoop.current.run(until: Date() + 0.18)// the speed of typing the letters
         }

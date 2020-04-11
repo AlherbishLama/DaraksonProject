@@ -19,10 +19,10 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
     override func viewDidLoad() {
         childLevel = statics.childLevel
         super.viewDidLoad()
-        if (levell0 == true || childLevel == "1"){
+        if (levell0 == true || childLevel == "1" || childLevel == "2" || childLevel == "3" ){
            LockimagArr[1] = ""
         }
-         if (levell1 == true || childLevel == "2"){
+         if (levell1 == true || childLevel == "2" || childLevel == "3"){
             LockimagArr[1] = ""
            LockimagArr[2] = ""
         }
@@ -69,7 +69,7 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
             }
        }
         else if item == "L2" {
-           if (levell1 == true || childLevel == "2"){
+           if (levell1 == true || childLevel == "2" || childLevel == "3"){
         let storyboard = self.storyboard?.instantiateViewController(identifier: "2") as! Level2
                                                                              
        self.navigationController?.pushViewController(storyboard, animated: true)//
