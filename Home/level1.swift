@@ -327,7 +327,7 @@ class level1: UIViewController {
 //to animate the typing effect of the words
     func animateText(words: String){
         for i in words{
-            //AudioServicesPlaySystemSound(1306)
+            AudioServicesPlaySystemSound(1306)
             dialog.text! += "\(i)"
             RunLoop.current.run(until: Date() + 0.18)// the speed of typing the letters
         }

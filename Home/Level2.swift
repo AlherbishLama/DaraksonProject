@@ -279,9 +279,9 @@ class Level2: UIViewController,UITextFieldDelegate {
            }
    //--------------------------------------Animate Text-------------------------
     func animateText(words: String){
-        //audioPlayer?.setVolume(0.5, fadeDuration: 0.5)
+        audioPlayer?.setVolume(0.5, fadeDuration: 0.5)
         for i in words{
-            //AudioServicesPlaySystemSound(1306)
+            AudioServicesPlaySystemSound(1306)
             talk.text! += "\(i)"
             RunLoop.current.run(until: Date() + 0.18)
         }
