@@ -80,10 +80,11 @@ class Level3: UIViewController {
     
     var line = 0 // Decides which dialog is played, Sequencial hence, starts from zero
     var hidden = true
-    var storyLine: [String] = ["if you need the story line you will understand better else, when                         you skip? you still can learn!",
-                               "the previous example give you 2 choices"            ,
-                               "Did you noteced the 'if-else?'"                ,
-                               "if-else is new concept make you decide between a lot of flows... 2flows,3flows or more!"]
+    var storyLine: [String] = ["if you need the story line you will understand better",
+                               "else, when you skip? you still can learn!",
+                               "the previous example give you 2 choices",
+                               "Did you noteced the 'if-else?'" ,
+                               "if-else is new concept make you decide between a lot of flows...\n2flows,3flows or more!"]
     
    
 //The skip button to start learning
@@ -101,7 +102,7 @@ class Level3: UIViewController {
                    return
                }
                
-               UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveEaseOut, animations: {
+               UIView.animate(withDuration: 0.8, delay: 0.4, options: .curveEaseOut, animations: {
                        self.hidden = true
                        self.Next.alpha = 0.0// hide the button
                 self.Skipp.alpha = 0.0// hide the skip buttom
@@ -116,13 +117,9 @@ class Level3: UIViewController {
                animateText(words: storyLine[line]) // anime the current sentence
                self.line = self.line + 1 //probe the line
                //if this is the end of the dialog
-               if line >= 4{
+               if line >= 5{
                    self.Next.alpha = 0.0
-                   // Label.alpha = 0.0
-                self.Next22.alpha = 1.0
-             //  let storyboard = self.storyboard?.instantiateViewController(identifier: "Last") as! Last
-              //      self.navigationController?.pushViewController(storyboard, animated:true)
-             //   self.hidden = false
+                   self.Next22.alpha = 1.0
         }
         self.hidden = false
     }
@@ -158,11 +155,11 @@ class Level3: UIViewController {
         //will let the next button appear
         func appearNext(){
             
-            if line == 4{ // if it is the end of the story line
+            if line == 5{ // if it is the end of the story line
                 self.Next.alpha = 0.0// hide
             }
             else if Next.alpha == 0.0{
-                UIView.animate(withDuration: 0.1, delay: 4.0, options: .curveEaseOut, animations: {
+                UIView.animate(withDuration: 0.1, delay: 8.0, options: .curveEaseOut, animations: {
                     
                     self.Next.alpha = 1 // appear
                     self.Skipp.alpha = 1.0
