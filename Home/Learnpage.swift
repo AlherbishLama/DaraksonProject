@@ -26,6 +26,11 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
             LockimagArr[1] = ""
            LockimagArr[2] = ""
         }
+        if (levell2 == true || childLevel == "3"){
+            LockimagArr[1] = ""
+            LockimagArr[2] = ""
+            LockimagArr[3] = ""
+        }
         
         
         levelcollection.delegate = self
