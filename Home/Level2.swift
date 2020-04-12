@@ -97,6 +97,7 @@ class Level2: UIViewController,UITextFieldDelegate {
             updateChildLevel()
             LockimagArr[3] = ""
         }
+        
     }
     //---------------------update level in Database ---------------------------------------------------------
     func updateChildLevel(){
@@ -124,6 +125,7 @@ class Level2: UIViewController,UITextFieldDelegate {
             self.youcan.alpha = 1.0
             self.arrowright.alpha = 1.0
             self.arrowlift.alpha = 1.0
+            self.run.alpha = 1.0
            
         })
     }
@@ -194,6 +196,8 @@ class Level2: UIViewController,UITextFieldDelegate {
                 self.youcan.alpha = 1.0
                 self.arrowright.alpha = 1.0
                 self.arrowlift.alpha = 1.0
+                self.run.alpha = 1.0
+                
         
             })
         }
@@ -284,6 +288,7 @@ class Level2: UIViewController,UITextFieldDelegate {
         mqttClient.connect()
         backGround()
         drawMrRobot()
+        self.youcan.delegate = self
     
         //Start animating
         blinkeye() //Let Mr.Robot blink!!!
