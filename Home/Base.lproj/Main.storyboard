@@ -1702,7 +1702,7 @@
                                 <color key="highlightedColor" red="0.94097001899999999" green="0.27684461719999998" blue="0.2302144039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5v-uk-K5A">
-                                <rect key="frame" x="187" y="686" width="125" height="73"/>
+                                <rect key="frame" x="187" y="686" width="94" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="store"/>
                                 <connections>
@@ -2252,7 +2252,7 @@
         <image name="yellowbox" width="257" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="geF-y4-JGi"/>
+        <segue reference="b9P-8w-2kW"/>
         <segue reference="zWN-n5-xzb"/>
     </inferredMetricsTieBreakers>
 </document>
