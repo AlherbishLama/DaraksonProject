@@ -441,6 +441,14 @@ class Level2: UIViewController,UITextFieldDelegate {
         animation.speed = 0.2
         gradient.add(animation, forKey: nil)
     }
+    
+    @IBAction func backToLearn(_ sender: Any) {
+        let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
+                                                                         
+        self.navigationController?.pushViewController(storyboard, animated: true)
+        storyboard.navigationItem.hidesBackButton = true
+    }
+    
 } //end class
 
 

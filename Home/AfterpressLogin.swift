@@ -63,9 +63,10 @@ class AfterpressLogin: UIViewController ,UITableViewDataSource, UITableViewDeleg
                 self.navigationController?.pushViewController(storyboard, animated: true)
                
            } else if item == "Learn" {
-                let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
-                                                                                          
-                         self.navigationController?.pushViewController(storyboard, animated: true)
+            let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
+                                                                             
+            self.navigationController?.pushViewController(storyboard, animated: true)
+            storyboard.navigationItem.hidesBackButton = true
         } else if item == "Help" {
                               //    let storyboard = self.storyboard?.instantiateViewController(identifier: "DeveloperGame") as! DeveloperGames
                                         openURL(url: "https://landpagedarakson.firebaseapp.com/")

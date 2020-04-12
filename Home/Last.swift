@@ -219,5 +219,11 @@ class Last: UIViewController {
             return postion
         }
 
-
+    @IBAction func backToLearn(_ sender: Any) {
+        let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
+                                                                         
+        self.navigationController?.pushViewController(storyboard, animated: true)
+        storyboard.navigationItem.hidesBackButton = true
+    }
+    
 }

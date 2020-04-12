@@ -497,5 +497,13 @@ class level1: UIViewController {
         postion.speed = 2.0
         return postion
     }
+    
+    @IBAction func backToLearn(_ sender: Any) {
+        let storyboard = self.storyboard?.instantiateViewController(identifier: "Learnpage") as! Learnpage
+                                                                         
+        self.navigationController?.pushViewController(storyboard, animated: true)
+        storyboard.navigationItem.hidesBackButton = true
+    }
+    
 }
 

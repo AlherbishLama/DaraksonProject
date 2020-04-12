@@ -26,6 +26,9 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
             LockimagArr[1] = ""
            LockimagArr[2] = ""
         }
+        if(levell2 == true || childLevel == "3"){
+            LockimagArr[3] = ""
+        }
         
         
         levelcollection.delegate = self
@@ -50,9 +53,8 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         let  cell2 = collectionView.cellForItem(at: indexPath)
+        _ = collectionView.cellForItem(at: indexPath)
          let item = LevelimagArr[indexPath.row]
-         
          if item == "L0" {
              let storyboard = self.storyboard?.instantiateViewController(identifier: "0") as! Level0
                                                                   
@@ -80,6 +82,12 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
 //
      }
     
+    @IBAction func backToHome(_ sender: Any) {
+        let storyboard = self.storyboard?.instantiateViewController(identifier: "HomeVC2") as! AfterpressLogin
 
+        self.navigationController?.pushViewController(storyboard, animated: true)
+        storyboard.navigationItem.hidesBackButton = true
+    }
+    
 
 }

@@ -176,6 +176,8 @@
 				A48A660B240313C600292DB1 /* Card.swift */,
 				A40E19DB240CEDEB008AF678 /* GussMyMovie.swift */,
 				A48A660D2403142000292DB1 /* CardModel.swift */,
+				A4705E2C23EF4EDB00F0C065 /* playview.swift */,
+				DA46C8FC24039F540078F263 /* DeveloperGames.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -272,7 +274,6 @@
 				DAB5851D2413A292001311D3 /* Level0.swift */,
 				DAB5851F2413A29D001311D3 /* LearnCollectionViewCell.swift */,
 				DAB585212413A2A5001311D3 /* Learnpage.swift */,
-				DA46C8FC24039F540078F263 /* DeveloperGames.swift */,
 				A493900623E614CA0086CA99 /* statics.swift */,
 				A4998F3A23E1CF4B00A09BDC /* HomeTableViewCell.swift */,
 				A4998F2D23E1AA9D00A09BDC /* Assets.xcassets */,
@@ -285,7 +286,6 @@
 				A4843A8B23EEB0BA00482719 /* profileController.swift */,
 				A4843A8D23EEBB0200482719 /* AfterpressLogin.swift */,
 				A4705E2A23EF2B6000F0C065 /* HomeTableViewCell2.swift */,
-				A4705E2C23EF4EDB00F0C065 /* playview.swift */,
 				DA46C8FE24039F970078F263 /* CollectionViewCell.swift */,
 				A45F32EA23ED9393001A5AF4 /* IQKeyboardManagerSwift */,
 			);

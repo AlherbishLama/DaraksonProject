@@ -566,7 +566,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="back"/>
                                         <connections>
-                                            <segue destination="Run-wG-hMP" kind="show" id="b9P-8w-2kW"/>
+                                            <action selector="backToLearn:" destination="vjX-hf-IMD" eventType="touchUpInside" id="5ZB-yf-d0m"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKe-x2-GL8">
@@ -1737,8 +1737,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="back"/>
                                 <connections>
+                                    <action selector="backToLearn:" destination="EKR-p2-1n0" eventType="touchUpInside" id="ZR8-cg-bVc"/>
                                     <action selector="fefo:" destination="EKR-p2-1n0" eventType="touchUpInside" id="ecT-6j-UHK"/>
-                                    <segue destination="Run-wG-hMP" kind="show" id="j76-7m-T4G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CW-po-Yar">
@@ -1884,7 +1884,7 @@
                                 <state key="normal" title="Button" image="back"/>
                                 <connections>
                                     <action selector="FFinshh:" destination="hQk-6h-nQs" eventType="touchUpInside" id="PRb-Uu-lDt"/>
-                                    <segue destination="Run-wG-hMP" kind="show" id="4mT-hV-9wt"/>
+                                    <action selector="backToLearn:" destination="hQk-6h-nQs" eventType="touchUpInside" id="ehk-es-sui"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOX-ki-Pzh">
@@ -2046,8 +2046,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="back"/>
                                 <connections>
+                                    <action selector="backToLearn:" destination="Lae-dF-mal" eventType="touchUpInside" id="kPy-8i-eZL"/>
                                     <action selector="finished:" destination="Lae-dF-mal" eventType="touchUpInside" id="Wqf-x7-Xdn"/>
-                                    <segue destination="Run-wG-hMP" kind="show" id="geF-y4-JGi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-aL-caE">
@@ -2096,11 +2096,11 @@
             <objects>
                 <viewController storyboardIdentifier="Learnpage" id="Run-wG-hMP" customClass="Learnpage" customModule="Darakson" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V8y-iy-xR8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rA3-0m-5fj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="2" sectionInsetReference="safeArea" id="uX6-Y3-Rig">
                                     <size key="itemSize" width="407" height="335"/>
@@ -2109,7 +2109,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="BackgroundLearn" id="vhC-cY-hvr">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                    <rect key="frame" x="0.0" y="-44" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <cells>
@@ -2161,6 +2161,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="menu"/>
                                 <connections>
+                                    <action selector="backToHome:" destination="Run-wG-hMP" eventType="touchUpInside" id="ooF-29-D9f"/>
                                     <segue destination="Sad-Ft-03P" kind="unwind" unwindAction="unwindToHome:" id="lG3-Xw-Xne"/>
                                 </connections>
                             </button>
@@ -2252,7 +2253,6 @@
         <image name="yellowbox" width="257" height="194"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b9P-8w-2kW"/>
         <segue reference="zWN-n5-xzb"/>
     </inferredMetricsTieBreakers>
 </document>
