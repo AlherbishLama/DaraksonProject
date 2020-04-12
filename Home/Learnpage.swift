@@ -57,12 +57,9 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
              let storyboard = self.storyboard?.instantiateViewController(identifier: "0") as! Level0
                                                                   
                              self.navigationController?.pushViewController(storyboard, animated: true)
-            //if (levell0){
-           //     LockimagArr[1] = ""
-            //}
              
          } else if item == "L1" {
-            if (levell0 == true || childLevel == "1" || childLevel == "2"){
+            if (levell0 == true || childLevel == "1" || childLevel == "2" || childLevel == "3"){
             let storyboard = self.storyboard?.instantiateViewController(identifier: "1") as! level1
                                                                              
                 self.navigationController?.pushViewController(storyboard, animated: true)
@@ -75,11 +72,11 @@ class Learnpage: UIViewController ,UICollectionViewDataSource, UICollectionViewD
        self.navigationController?.pushViewController(storyboard, animated: true)//
            }}
         
-       // else if item == "Level3" {
-         // let storyboard = self.storyboard?.instantiateViewController(identifier: "") as!
-                                                                             
-          // self.navigationController?.pushViewController(storyboard, animated: true)
-         //}
+       else if item == "L3" {
+               if (levell2 == true || childLevel == "3"){
+          let storyboard = self.storyboard?.instantiateViewController(identifier: "3") as! Level3
+       self.navigationController?.pushViewController(storyboard, animated: true)
+               }} 
 //
      }
     

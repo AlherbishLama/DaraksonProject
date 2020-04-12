@@ -59,6 +59,10 @@
 		DAB5851E2413A292001311D3 /* Level0.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5851D2413A292001311D3 /* Level0.swift */; };
 		DAB585202413A29D001311D3 /* LearnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5851F2413A29D001311D3 /* LearnCollectionViewCell.swift */; };
 		DAB585222413A2A5001311D3 /* Learnpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB585212413A2A5001311D3 /* Learnpage.swift */; };
+		DAB8AF0A2442C4BA00700305 /* forprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8AF062442C4B800700305 /* forprint.swift */; };
+		DAB8AF0B2442C4BA00700305 /* tostore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8AF072442C4B900700305 /* tostore.swift */; };
+		DAB8AF0C2442C4BA00700305 /* Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8AF082442C4B900700305 /* Level3.swift */; };
+		DAB8AF0D2442C4BA00700305 /* Last.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8AF092442C4BA00700305 /* Last.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +123,10 @@
 		DAB5851D2413A292001311D3 /* Level0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level0.swift; sourceTree = "<group>"; };
 		DAB5851F2413A29D001311D3 /* LearnCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAB585212413A2A5001311D3 /* Learnpage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Learnpage.swift; sourceTree = "<group>"; };
+		DAB8AF062442C4B800700305 /* forprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forprint.swift; sourceTree = "<group>"; };
+		DAB8AF072442C4B900700305 /* tostore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tostore.swift; sourceTree = "<group>"; };
+		DAB8AF082442C4B900700305 /* Level3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level3.swift; sourceTree = "<group>"; };
+		DAB8AF092442C4BA00700305 /* Last.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Last.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +264,10 @@
 				A4998F2623E1AA9B00A09BDC /* SceneDelegate.swift */,
 				A4998F2A23E1AA9B00A09BDC /* Main.storyboard */,
 				DA61E5D2242661C200CE8CBD /* Level2.swift */,
+				DAB8AF062442C4B800700305 /* forprint.swift */,
+				DAB8AF092442C4BA00700305 /* Last.swift */,
+				DAB8AF082442C4B900700305 /* Level3.swift */,
+				DAB8AF072442C4B900700305 /* tostore.swift */,
 				38F241E22424D91C00B6450B /* level1.swift */,
 				DAB5851D2413A292001311D3 /* Level0.swift */,
 				DAB5851F2413A29D001311D3 /* LearnCollectionViewCell.swift */,
@@ -428,11 +440,13 @@
 				A45F330123ED9393001A5AF4 /* IQPreviousNextView.swift in Sources */,
 				A4998F2523E1AA9B00A09BDC /* AppDelegate.swift in Sources */,
 				A493900923E61D270086CA99 /* SignUpController.swift in Sources */,
+				DAB8AF0C2442C4BA00700305 /* Level3.swift in Sources */,
 				A40DF20423E8AAB200A90120 /* SecondPartRegisteration.swift in Sources */,
 				A4998F3B23E1CF4B00A09BDC /* HomeTableViewCell.swift in Sources */,
 				DAB585222413A2A5001311D3 /* Learnpage.swift in Sources */,
 				A45F330D23ED9393001A5AF4 /* IQUITextFieldView+Additions.swift in Sources */,
 				A4843A8E23EEBB0200482719 /* AfterpressLogin.swift in Sources */,
+				DAB8AF0D2442C4BA00700305 /* Last.swift in Sources */,
 				A40DF20823E8D5B300A90120 /* FourthPartRegisteration.swift in Sources */,
 				A40E19DC240CEDEB008AF678 /* GussMyMovie.swift in Sources */,
 				A4998F2723E1AA9B00A09BDC /* SceneDelegate.swift in Sources */,
@@ -455,6 +469,8 @@
 				A40DF20A23E8DA4700A90120 /* FifthPartRegisteration.swift in Sources */,
 				A4843A8C23EEB0BA00482719 /* profileController.swift in Sources */,
 				A40DF20623E8B31100A90120 /* thirdPartRegisteration.swift in Sources */,
+				DAB8AF0B2442C4BA00700305 /* tostore.swift in Sources */,
+				DAB8AF0A2442C4BA00700305 /* forprint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
